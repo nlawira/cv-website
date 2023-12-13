@@ -9,8 +9,8 @@ def home():
 
 def main():
     st.sidebar.write("I am a sidebar")
-    page = st.sidebar.selectbox('Select Page', ["One", "Two"], index=0)
-    if page == "One":
+    page = st.sidebar.selectbox('Select Page', ["Home", "Work"], index=0)
+    if page == "Home":
         home()
 
 if __name__ == "__main__":
