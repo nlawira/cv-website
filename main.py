@@ -1,6 +1,7 @@
 # Importing necessary libraries
 import streamlit as st
 import plotly.graph_objs as go
+from PIL import Image
 import plotly.express as px
 import pandas as pd
 
