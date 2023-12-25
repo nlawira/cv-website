@@ -5,35 +5,6 @@ from PIL import Image
 import plotly.express as px
 import pandas as pd
 
-# Include the Montserrat font from Google Fonts
-font_css_link = "https://fonts.googleapis.com/css?family=Montserrat:400,700"
-font_css = f'<link rel="stylesheet" type="text/css" href="{font_css_link}">'
-st.markdown(font_css, unsafe_allow_html=True)
-
-# Apply the Montserrat font in the custom CSS
-custom_font_css = """
-<style>
-    body {
-        font-family: 'Montserrat', sans-serif;
-    }
-</style>
-"""
-st.markdown(custom_font_css, unsafe_allow_html=True)
-
-# Custom CSS to set text alignment to center
-alignment_css = """
-<style>
-    .centered-text {
-        text-align: center;
-    }
-</style>
-"""
-st.markdown(alignment_css, unsafe_allow_html=True)
-
-# Use the custom class to apply the alignment
-st.title("Centered Title")
-st.write('<p class="centered-text">This text is centered.</p>', unsafe_allow_html=True)
-
 #Home Page
 def home():
     st.title("This is a website title")
@@ -44,14 +15,31 @@ def home():
 
 #Main Page
 def work():
+    st.title("This is the work page")
+    return
+
+def education():
+    st.title("This is the education page")
+    return
+
+def cca_va():
+    st.title("This is the CCA & VA page")
+    return
+
+def hobbies_pl():
+    st.title("This is the hobbies & personal life page")
     return
 
 def main():
     #Sidebar
     st.sidebar.image(Image.open("Images/Personal_Photo.jpg"), use_column_width = True)
-    st.sidebar.header('Nathan Lawira')
-    st.sidebar.write("Senior Undergraduate Student in Nanyang Technological University")
-    st.sidebar.write("Pursuing a Bachelor of Engineering in Chemical & Biomolecular Engineering Specializing in Intellectual Property with a Minor in Modern Languages")
+    st.sidebar.markdown("""
+    <center>
+        <h1>Nathan Lawira</h1>
+        <p>Senior Undergraduate Student in <b>Nanyang Technological University</b></p>
+        <p>Pursuing a <b>Bachelor of Engineering in Chemical & Biomolecular Engineering</b> Specializing in Intellectual Property with a Minor in Modern Languages</p>
+    </center>
+    """, unsafe_allow_html=True)
 
     #Social Media Links
     st.sidebar.markdown("""
@@ -63,13 +51,22 @@ def main():
     </div>
     """, unsafe_allow_html=True)
 
-# Rest of your Streamlit app code
-    st.sidebar.markdown("<hr>", unsafe_allow_html=True)
+    # Rest of your Streamlit app code
+    st.sidebar.markdown("""<hr>""", unsafe_allow_html=True)
 
     #Main Page Selection
-    page = st.sidebar.selectbox('Select Page', ["Home", "Work"], index=0)
+    page = st.sidebar.selectbox('Select Page', ["Home", "Work","Education","Co-Curricular & Voluntary Activies","Hobbies & Personal Life"], index=0)
     if page == "Home":
         home()
+    if page == "Work":
+        work()
+    if page == "Education":
+        education()
+    if page == "Co-Curricular & Voluntary Activies":
+        cca_va()
+    if page == "Hobbies & Personal Life":
+        hobbies_pl()
+
 
 if __name__ == "__main__":
     main()
