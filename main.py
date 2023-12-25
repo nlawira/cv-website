@@ -1,5 +1,7 @@
 # Importing necessary libraries
 import streamlit as st
+#from streamlit_lottie import st_lottie
+#import requests
 import plotly.graph_objs as go
 from PIL import Image
 import plotly.express as px
@@ -7,10 +9,18 @@ import pandas as pd
 
 #Home Page
 def home():
-    st.title("This is a website title")
-    st.header("This is a header")
-    st.subheader("This is a subheader")
-    st.write("These are some messages")
+    #Title
+    st.title("Hello, I am Nathan! :wave:")
+    
+    #Header Section
+    st.subheader("Summary")
+    st.write("I am a Chemical & Biomolecular Engineering student at Nanyang Technological University and will graduate in June 2024. \
+             My academic background equips me with strong analytical, problem-solving, and \
+             critical thinking skills, while my enthusiasm and passion for data analytics, coding, and software development \
+             reflects my keen interest in leveraging technologies to address and solve complex challenges!")
+    st.write("Eager to apply my skills, I am actively seeking a full-time position in data analytics, coding, or software-related \
+             fields where I can provide my expertise to create lasting contributions and continuously improve and grow professionally!")
+    st.write("---")
     return
 
 #Main Page
@@ -22,15 +32,18 @@ def education():
     st.title("This is the education page")
     return
 
-def cca_va():
+def cca():
     st.title("This is the CCA & VA page")
     return
 
-def hobbies_pl():
+def hobbies():
     st.title("This is the hobbies & personal life page")
     return
 
 def main():
+    #Default settings
+    st.set_page_config(page_title="My Webpage", layout="wide")
+
     #Sidebar
     st.sidebar.image(Image.open("Images/Personal_Photo.jpg"), use_column_width = True)
     st.sidebar.markdown("""
@@ -52,7 +65,7 @@ def main():
     """, unsafe_allow_html=True)
 
     # Rest of your Streamlit app code
-    st.sidebar.markdown("""<hr>""", unsafe_allow_html=True)
+    st.sidebar.write("---")
 
     #Main Page Selection
     page = st.sidebar.selectbox('Select Page', ["Home", "Work","Education","Co-Curricular & Voluntary Activies","Hobbies & Personal Life"], index=0)
@@ -63,9 +76,9 @@ def main():
     if page == "Education":
         education()
     if page == "Co-Curricular & Voluntary Activies":
-        cca_va()
+        cca()
     if page == "Hobbies & Personal Life":
-        hobbies_pl()
+        hobbies()
 
 
 if __name__ == "__main__":
