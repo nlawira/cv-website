@@ -39,7 +39,7 @@ def home():
         st.write("---")
         st.subheader("Personality")
         # MBTI Type and Description and Last Taken
-        mbti_type = "Architect (INTJ-T)"
+        mbti_type = "Myers-Briggs Type Indicator (MBTI): Architect (INTJ-T)"
         mbti_description = "Architects are imaginative and strategic thinkers, with a plan for everything. \
             These thoughtful tacticians love perfecting the details of life, applying creativity and rationality. \
             They embrace rationality and impartiality, excelling in intellectual debates and scientific or technological fields. \
@@ -57,16 +57,16 @@ def home():
 
         # Creating the color map
         color_map = {
-            'Extraverted': '#4298b4',
-            'Introverted': '#b2d7e3',
+            'Extraverted': '#b2d7e3',
+            'Introverted': '#4298b4',
             'Intuitive': '#e4ae3a',
             'Observant': '#f4dfb0',
             'Thinking': '#33a474',
             'Feeling': '#a5e3c9',
             'Judging': '#88619a',
             'Prospecting': '#d0bfd7',
-            'Assertive': '#f25e62',
-            'Turbulent': '#fabfc0',
+            'Assertive': '#fabfc0',
+            'Turbulent': '#f25e62',
         }
 
         # Creating the plotly bar graph
