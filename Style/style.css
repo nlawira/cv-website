@@ -26,6 +26,14 @@ button[type=submit]:hover {
   background-color: #45a049;
 }
 
+/* Changing the Font Type for body and heading*/
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
 
 /* Hide Streamlit Branding */
 #MainMenu {visibility: hidden;}
