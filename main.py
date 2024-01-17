@@ -15,9 +15,101 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">', unsafe_allow_html=True)
         st.markdown(f"<style>{f.read()}</style/", unsafe_allow_html=True)
-
 local_css("style/style.css")
 
+# Defining Functions
+def work_experience():
+    # Data for Work Experience
+    work_experience_data = {
+        'Company': ['KMPG Services Pte. Ltd. (Singapore)', 'Pfizer Asia Pacific Pte. Ltd. (Singapore)'],
+        'Start': ['2022-05', '2023-01'],
+        'Finish': ['2022-07', '2023-07'],
+        'Description': [
+            'Interned as a **Management Intern** in the **R&D and Grants Consulting Team**',
+            'Interned as a **Production Intern** in **Process Centric Team 1 (PCT1)**',
+            ]
+    }
+
+    # Create a DataFrame
+    df_work_experience = pd.DataFrame(work_experience_data)
+
+    # Convert date columns to datetime
+    df_work_experience['Start'] = pd.to_datetime(df_work_experience['Start'])
+    df_work_experience['Finish'] = pd.to_datetime(df_work_experience['Finish'])
+
+    # Create a Gantt chart using Plotly Express
+    fig_work = px.timeline(df_work_experience, x_start='Start', x_end='Finish', y='Company',
+                    color='Company', labels={'Company': 'Job Title'},
+                    title='',
+                    category_orders={'Company': list(df_work_experience['Company'])},
+                    height=400,
+                    )
+
+    # Customize the layout of the chart
+    fig_work.update_layout(
+        xaxis=dict(title='Timeline', showgrid=True, gridcolor='lightgray', zeroline=False),
+        yaxis=dict(title='', showgrid=True, gridcolor='lightgray', zeroline=False),
+        showlegend=False,
+        hovermode=False,
+        margin=dict(t=5, l=0, r=0, b=5),
+        xaxis_title_font=dict(size=20),
+    )
+
+    # Display the chart
+    st.plotly_chart(fig_work,use_container_width=True)
+
+    # Display additional details
+    for index, row in df_work_experience.iterrows():
+        start_month = row['Start'].strftime('%B')  # %B represents the full month name
+        finish_month = row['Finish'].strftime('%B')  # %B represents the full month name
+        st.write(f"**{row['Company']} ({start_month} {row['Start'].year} - {finish_month} {row['Finish'].year}):** {row['Description']}")
+
+def education_history():
+    # Data for education history
+    education_data = {
+        'School': ['Cahaya Bangsa Classical School (Indonesia)','Nanyang Technological University (Singapore)'],
+        'Start': ['2016-08', '2020-08'],
+        'Finish': ['2020-06', '2024-06'],
+        'Description': [
+            'Earned a **High School Degree**',
+            'Earned **Bachelor\'s of Engineering in Chemical & Biomolecular Engineering** with \
+            a **Specialization in Intellectual Property** and a **Minor in Modern Languages**'
+        ]
+    }
+
+    # Create a DataFrame
+    df_education = pd.DataFrame(education_data)
+
+    # Convert date columns to datetime
+    df_education['Start'] = pd.to_datetime(df_education['Start'])
+    df_education['Finish'] = pd.to_datetime(df_education['Finish'])
+
+    # Create a Gantt chart using Plotly Express
+    fig_education = px.timeline(df_education, x_start='Start', x_end='Finish', y='School',
+                                color='School', labels={'School': 'Education Level'},
+                                title='',
+                                category_orders={'School': list(df_education['School'])},
+                                height=400)
+
+    # Customize the layout of the chart
+    fig_education.update_layout(
+        xaxis=dict(title='Timeline', showgrid=True, gridcolor='lightgray', zeroline=False),
+        yaxis=dict(title='', showgrid=True, gridcolor='lightgray', zeroline=False),
+        showlegend=False,
+        hovermode=False,
+        margin=dict(t=5, l=0, r=0, b=5),
+        xaxis_title_font=dict(size=20),
+    )
+
+    # Display the chart
+    st.plotly_chart(fig_education, use_container_width = True)
+
+    # Display additional details
+    for index, row in df_education.iterrows():
+        start_month = row['Start'].strftime('%B')  # %B represents the full month name
+        finish_month = row['Finish'].strftime('%B')  # %B represents the full month name
+        st.write(f"**{row['School']} ({start_month} {row['Start'].year} - {finish_month} {row['Finish'].year}):** {row['Description']}")
+        
 # Defining Pages
 def home():
     with st.container():
@@ -35,105 +127,122 @@ def home():
         # --- WORK EXPERIENCE ---
         st.write("---")
         st.subheader("Work Experience")
-
-        # Data for Work Experience
-        work_experience_data = {
-            'Company': ['KMPG Services Pte. Ltd. (Singapore)', 'Pfizer Asia Pacific Pte. Ltd. (Singapore)'],
-            'Start': ['2022-05', '2023-01'],
-            'Finish': ['2022-07', '2023-07'],
-            'Description': [
-                'Interned as a **Management Intern** in the **R&D and Grants Consulting Team**',
-                'Interned as a **Production Intern** in **Process Centric Team 1 (PCT1)**',
-                ]
-        }
-
-        # Create a DataFrame
-        df_work_experience = pd.DataFrame(work_experience_data)
-
-        # Convert date columns to datetime
-        df_work_experience['Start'] = pd.to_datetime(df_work_experience['Start'])
-        df_work_experience['Finish'] = pd.to_datetime(df_work_experience['Finish'])
-
-        # Create a Gantt chart using Plotly Express
-        fig_work = px.timeline(df_work_experience, x_start='Start', x_end='Finish', y='Company',
-                        color='Company', labels={'Company': 'Job Title'},
-                        title='',
-                        category_orders={'Company': list(df_work_experience['Company'])},
-                        height=400,
-                        )
-
-        # Customize the layout of the chart
-        fig_work.update_layout(
-            xaxis=dict(title='Timeline', showgrid=True, gridcolor='lightgray', zeroline=False),
-            yaxis=dict(title='', showgrid=True, gridcolor='lightgray', zeroline=False),
-            showlegend=False,
-            hovermode=False,
-            margin=dict(t=5, l=0, r=0, b=5),
-        )
-
-        # Display the chart
-        st.plotly_chart(fig_work,use_container_width=True)
-
-        # Display additional details
-        for index, row in df_work_experience.iterrows():
-            start_month = row['Start'].strftime('%B')  # %B represents the full month name
-            finish_month = row['Finish'].strftime('%B')  # %B represents the full month name
-            st.write(f"**{row['Company']} ({start_month} {row['Start'].year} - {finish_month} {row['Finish'].year}):** {row['Description']}")
+        work_experience()
         st.write('Please navigate to the "Work" tab via the sidebar to find out more about my achievements!')
 
     with st.container():
         # --- SKILLS ---
         st.write("---")
         st.subheader("Skills")
+        
+        with st.container():
+            # Digital Skills Sections
+            st.subheader("Computer/Digital Skills")
+            # Skills Data
+            data = {
+                'Skill': ['Python', 'Data Visualization', 'Machine Learning', 'Web Development', 'Communication'],
+                'Proficiency': [90, 80, 75, 70, 85],
+                'Description': [
+                    'Proficient in Python programming language.',
+                    'Experience in creating informative and visually appealing visualizations.',
+                    'Familiarity with machine learning algorithms and frameworks.',
+                    'Skills in building web applications using various technologies.',
+                    'Strong communication and collaboration skills.'
+                ]
+            }
+
+            df = pd.DataFrame(data)
+
+            # Create radar chart
+            fig = go.Figure()
+
+            fig.add_trace(go.Scatterpolar(
+                r=df['Proficiency'],
+                theta=df['Skill'],
+                fill='toself',
+                text=df['Proficiency'],
+                hoverinfo='text+theta',
+                line=dict(color='rgba(50, 171, 96, 1.0)'),
+                marker=dict(color='rgba(50, 171, 96, 1.0)', size=8),
+            ))
+
+            # Set layout
+            fig.update_layout(
+                polar=dict(radialaxis=dict(visible=True, range=[0, 100])),
+                showlegend=False,
+            )
+
+            # Display description below the chart
+            st.plotly_chart(fig,use_container_width=True)
+            st.write("### Skill Descriptions:")
+            for skill, description in zip(df['Skill'], df['Description']):
+                st.write(f"**{skill}:** {description}")
+
+        # Space Divider
+        st.write("")
+        st.write("")
+
+        with st.container():
+            # Language Proficiency Section
+            st.subheader("Language Proficiency")
+
+            # Languages Data
+            languages = ['English', 'Bahasa Indonesia', 'Korean', 'Chinese', 'Japanese']
+            proficiency_levels = [5, 5, 2, 1, 1]
+
+            # Mapping for custom colors (replace with your preferred colors)
+            color_mapping = {
+                5: '#69B34C', #Native/Bilingual
+                4: '#ACB334', #Full Professional
+                3: '#FAB733', #Professional
+                2: '#FF8E15', #Limited Working
+                1: '#FF0D0D', # Elementary
+            }
+
+            # Mapping for custom text labels on x-axis
+            proficiency_labels = {
+                5: 'Native/Bilingual',
+                4: 'Full Professional',
+                3: 'Professional',
+                2: 'Limited Working',
+                1: 'Elementary',
+                0: 'None'
+            }
+
+
+            # Create a horizontal bar chart
+            fig = go.Figure(go.Bar(
+                x=proficiency_levels[::-1],
+                y=languages[::-1],
+                orientation='h',
+                marker_color=[color_mapping[level] for level in proficiency_levels[::-1]],  # Color mapping
+            ))
+
+            # Set layout
+            fig.update_layout(
+                xaxis=dict(
+                    ticktext=[proficiency_labels[level] for level in [5,4,3,2,1,0]],  # Text labels
+                    tickvals=[5,4,3,2,1,0],  # Corresponding values
+                ),
+                title_text='',
+                xaxis_title='Proficiency Level',
+                yaxis_title='Language',
+                showlegend=False,
+                modebar_remove=['lasso', 'select','toimage', 'pan'],
+                margin=dict(t=5, b=5),
+                yaxis_title_font=dict(size=20),
+                xaxis_title_font=dict(size=20),
+            )
+
+            # Display the bar chart
+            st.plotly_chart(fig, use_container_width=True)
 
     with st.container():
         # --- EDUCATION ---
         st.write("---")
         st.subheader("Education")
-        # Sample data for education history
-        education_data = {
-            'School': ['Cahaya Bangsa Classical School (Indonesia)','Nanyang Technological University (Singapore)'],
-            'Start': ['2016-08', '2020-08'],
-            'Finish': ['2020-06', '2024-06'],
-            'Description': [
-                'Earned a **High School Degree**',
-                'Earned **Bachelor\'s of Engineering in Chemical & Biomolecular Engineering** with \
-                a **Specialization in Intellectual Property** and a **Minor in Modern Languages**'
-            ]
-        }
-
-        # Create a DataFrame
-        df_education = pd.DataFrame(education_data)
-
-        # Convert date columns to datetime
-        df_education['Start'] = pd.to_datetime(df_education['Start'])
-        df_education['Finish'] = pd.to_datetime(df_education['Finish'])
-
-        # Create a Gantt chart using Plotly Express
-        fig_education = px.timeline(df_education, x_start='Start', x_end='Finish', y='School',
-                                    color='School', labels={'School': 'Education Level'},
-                                    title='',
-                                    category_orders={'School': list(df_education['School'])},
-                                    height=400)
-
-        # Customize the layout of the chart
-        fig_education.update_layout(
-            xaxis=dict(title='Timeline', showgrid=True, gridcolor='lightgray', zeroline=False),
-            yaxis=dict(title='', showgrid=True, gridcolor='lightgray', zeroline=False),
-            showlegend=False,
-            hovermode=False,
-            margin=dict(t=5, l=0, r=0, b=5),
-        )
-
-        # Display the chart
-        st.plotly_chart(fig_education, use_container_width = True)
- 
-        # Display additional details
-        for index, row in df_education.iterrows():
-            start_month = row['Start'].strftime('%B')  # %B represents the full month name
-            finish_month = row['Finish'].strftime('%B')  # %B represents the full month name
-            st.write(f"**{row['School']} ({start_month} {row['Start'].year} - {finish_month} {row['Finish'].year}):** {row['Description']}")
-        st.write('Please navigate to the "Education" tab via the sidebar to find out more about my projects and co-curricular activities!')
+        education_history()
+        st.write('Please navigate to the "Education" tab via the sidebar to find out more about my academic projects!')
     
     # --- PERSONALITY ---
     with st.container():
@@ -191,7 +300,7 @@ def home():
                 xaxis_visible=False, 
                 yaxis_visible=False, 
                 showlegend=False,
-                margin=dict(t=5, b=5),)
+                margin=dict(t=5, b=5))
             
             # Display everything
             st.subheader(mbti_type)
@@ -207,31 +316,41 @@ def home():
             disc_type = "DISC Personality: Conscientiousness & Steadiness"
             last_taken_disc = "Test was taken on January 16, 2024 via Truity."
 
-            # Replace the following with your actual DISC personality scores
+            # DISC Personality Data
             data = dict(
                 trait=['Dominance', 'Influence', 'Steadiness', 'Conscientiousness'],
                 score=[50, 32.1, 78.2, 100],
+                percentage=[19.2,12.3,30.1,38.4],
                 description=[
                     'Takes charge to get things done. Makes decisions and takes action.',
                     'Engages others and shares enthusiasm. Inspires and persuades others.',
                     'Is helpful and shows care for others. Looks for ways to assist and serve.',
                     'Works steadily within systems. Focuses on order, accuracy and precision.']
                     )
-            
-            # Find the index of the trait with the highest score
-            max_score_index = data['score'].index(max(data['score']))
 
-            fig_disc = px.line_polar(data, r='score', theta='trait', line_close=True)
-
-            fig_disc.update_layout(
+            # Creating Polar Chart
+            fig_disc1 = px.line_polar(data, r='score', theta='trait', line_close=True)
+            fig_disc1.update_layout(
                 polar=dict(radialaxis=dict(visible=True)),
                 showlegend=False, 
                 hovermode=False
             )
 
+            # Creating Pie Chart
+            colors = ['#D62728','#FFBF00', '#2CA02C',  '#1F77B4']
+            fig_disc2 = go.Figure(data=[go.Pie(labels=data['trait'], values=data['percentage'], marker=dict(colors=colors))])
+            fig_disc2.update_layout(
+                title_text="",
+                showlegend=False,
+            )
+
             # Display everything
             st.subheader(disc_type)
-            st.plotly_chart(fig_disc,use_container_width=True)
+            left, right = st.columns(2)
+            with left:
+                st.plotly_chart(fig_disc1)
+            with right:
+                st.plotly_chart(fig_disc2)
             for trait, desc in zip(data['trait'], data['description']):
                 st.write(f"**{trait}:** {desc}")
             st.write(last_taken_disc)
@@ -257,11 +376,32 @@ def home():
     return
 
 def work():
-    st.title("This is the work page")
+    st.title("Work Experience")
+    with st.container():
+        st.subheader("Summary")
+        work_experience()
+    st.write("- - -")
+    with st.container():
+        st.subheader("Production, PCT1 - Intern at Pfizer Asia Pacific Pte. Ltd.")
+        st.write("Some description here")
+    with st.container():
+        st.subheader("R&D and Grants Consulting - Management Intern at KPMG Services Pte. Ltd.")
+        st.write("Some description here")
     return
 
 def education():
-    st.title("This is the education page")
+    st.title("Education History")
+    with st.container():
+        st.subheader("Summary")
+        education_history()
+    st.write("- - -")
+    with st.container():
+        st.subheader("Academic Projects")
+        st.write("Some description here")
+    st.write("- - -")
+    with st.container():
+        st.subheader("Relevant Coursework")
+        st.write("Some description here")
     return
 
 def cca():
@@ -281,7 +421,7 @@ def main():
             <h1>Nathan Lawira</h1>
             <p>Senior Undergraduate Student in <b>Nanyang Technological University</b></p>
             <p>Pursuing a <b>Bachelor of Engineering in Chemical & Biomolecular Engineering</b> Specializing in Intellectual Property with a Minor in Modern Languages</p>
-            <p>Expected to graduate in 2024</p>
+            <p>Expected to graduate in <b>May 2024</b></p>
         </center>
         """, unsafe_allow_html=True)
 
