@@ -320,7 +320,7 @@ def home():
             data = dict(
                 trait=['Dominance', 'Influence', 'Steadiness', 'Conscientiousness'],
                 score=[50, 32.1, 78.2, 100],
-                percentage=[19.2,12.3,30.1,38.4],
+                percentage=[19.2, 12.3, 30.1, 38.4],
                 description=[
                     'Takes charge to get things done. Makes decisions and takes action.',
                     'Engages others and shares enthusiasm. Inspires and persuades others.',
