@@ -67,13 +67,14 @@ def work_experience():
 def education_history():
     # Data for education history
     education_data = {
-        'School': ['Cahaya Bangsa Classical School (Indonesia)','Nanyang Technological University (Singapore)'],
-        'Start': ['2016-08', '2020-08'],
-        'Finish': ['2020-06', '2024-06'],
+        'School': ['Cahaya Bangsa Classical School (Indonesia)','Nanyang Technological University (Singapore)','National University of Singapore (Singapore)'],
+        'Start': ['2016-08', '2020-08', '2022-01'],
+        'Finish': ['2020-06', '2024-06', '2022-06'],
         'Description': [
             'Earned a **High School Degree**',
             'Earned **Bachelor\'s of Engineering in Chemical & Biomolecular Engineering** with \
-            a **Specialization in Intellectual Property** and a **Minor in Modern Languages**'
+            a **Specialization in Intellectual Property** and a **Minor in Modern Languages**',
+            'Local student exchange under the **Singapore Universities Student Exchange Program (SUSEP)**'
         ]
     }
 
@@ -242,7 +243,7 @@ def home():
         st.write("---")
         st.subheader("Education")
         education_history()
-        st.write('Please navigate to the "Education" tab via the sidebar to find out more about my academic projects!')
+        st.write('Please navigate to the "Education" tab via the sidebar to find out more about my education history!')
     
     # --- PERSONALITY ---
     with st.container():
@@ -381,12 +382,22 @@ def work():
         st.subheader("Summary")
         work_experience()
     st.write("- - -")
+    # Pfizer Internship
     with st.container():
         st.subheader("Production, PCT1 - Intern at Pfizer Asia Pacific Pte. Ltd.")
-        st.write("Some description here")
+        left,right = st.columns([2,1])
+        with left:
+            st.write("Some description here")
+        with right:
+            st.write("Some pictures here")
+    # KPMG Internship
     with st.container():
         st.subheader("R&D and Grants Consulting - Management Intern at KPMG Services Pte. Ltd.")
-        st.write("Some description here")
+        left,right = st.columns([1,2])
+        with left:
+            st.write("Some pictures here")
+        with right:
+            st.write("Some description here")
     return
 
 def education():
@@ -395,21 +406,155 @@ def education():
         st.subheader("Summary")
         education_history()
     st.write("- - -")
+    # Academic Projects
     with st.container():
         st.subheader("Academic Projects")
         st.write("Some description here")
     st.write("- - -")
+    # Relevant Classes/Modules
     with st.container():
-        st.subheader("Relevant Coursework")
+        st.subheader("Relevant Classes/Modules")
+        st.write("Some description here")
+    # Online Courses
+    with st.container():
+        st.subheader("Online Courses")
         st.write("Some description here")
     return
 
 def cca():
-    st.title("This is the CCA & VA page")
+    st.title("Co-Curricular, Leadership, and Voluntary Activities")
+    # NTU Piano Ensemble
+    with st.container():
+        st.subheader("NTU Piano Ensemble")
+        st.caption("Logistics Director")
+        st.caption("**Time Stamp Here**")
+        st.caption("Associated with **Nanyang Technological University**")
+        left,right=st.columns([2,1])
+        with left:
+            st.write("Some description here")
+        with right:
+            st.write("Some picture here")
+    # ICN
+    with st.container():
+        st.subheader("Indonesian Cultural Night")
+        st.caption("Corporate Liaison Officer")
+        st.caption("**Time Stamp Here**")
+        st.caption("Associated with **Nanyang Technological University**")
+        left,right=st.columns([1,2])
+        with left:
+            st.write("Some picture here")
+        with right:
+            st.write("Some description here")
+    # TMC Serikat
+    with st.container():
+        st.subheader("Toastmasters Club Serikat")
+        st.caption("Vice President of Membership")
+        st.caption("**Time Stamp Here**")
+        st.caption("Associated with **Nanyang Technological University**")
+        left,right=st.columns([2,1])
+        with left:
+            st.write("Some description here")
+        with right:
+            st.write("Some picture here")
+    # NTU Earthlink
+    with st.container():
+        st.subheader("NTU Earthlink — Eco-Campus Portfolio")
+        st.caption("Campaign Executive")
+        st.caption("**Time Stamp Here**")
+        st.caption("Associated with **Nanyang Technological University**")
+        left,right=st.columns([1,2])
+        with left:
+            st.write("Some picture here")
+        with right:
+            st.write("Some description here")
+    # NTUSU WIC
+    with st.container():
+        st.subheader("NTU Student Union — Welfare Initiatives Committee")
+        st.caption("Logistics Officer")
+        st.caption("**Time Stamp Here**")
+        st.caption("Associated with **Nanyang Technological University**")
+        left,right=st.columns([2,1])
+        with left:
+            st.write("Some description here")
+        with right:
+            st.write("Some picture here")
+    # MUN Club
+    with st.container():
+        st.subheader("CBCS Model United Nations Club")
+        st.caption("Board of Executive, President")
+        st.caption("**Time Stamp Here**")
+        st.caption("Associated with **Cahaya Bangsa Classical School**")
+        left,right=st.columns([1,2])
+        with left:
+                st.write("Some picture here")
+        with right:
+                st.write("Some description here")
+    # Yearbook Team
+    with st.container():
+        st.subheader("CBCS Yearbook Team")
+        st.caption("Journalist")
+        st.caption("**Time Stamp Here**")
+        st.caption("Associated with **Cahaya Bangsa Classical School**")
+        left,right=st.columns([2,1])
+        with left:
+                st.write("Some description here")
+        with right:
+                st.write("Some picture here")
+    # Debate
+    with st.container():
+        st.subheader("CBCS Debate Club")
+        st.caption("Member")
+        st.caption("**Time Stamp Here**")
+        st.caption("Associated with **Cahaya Bangsa Classical School**")
+        left,right=st.columns([1,2])
+        with left:
+                st.write("Some picture here")
+        with right:
+                st.write("Some description here")
     return
 
 def hobbies():
-    st.title("This is the hobbies & personal life page")
+    st.title("Hobbies & Personal Life")
+    # Learning New Languages
+    with st.container():
+        st.subheader("Learning New Languages")
+        left,right=st.columns([2,1])
+        with left:
+            st.write("Some description here")
+        with right:
+            st.write("Some picture here")
+    # Photography
+    with st.container():
+        st.subheader("Photography")
+        left,right=st.columns([1,2])
+        with left:
+            st.write("Some picture here")
+        with right:
+             st.write("Some description here")
+    # Music
+    with st.container():
+        st.subheader("Listening & Playing Music")
+        left,right=st.columns([2,1])
+        with left:
+            st.write("Some description here")
+        with right:
+            st.write("Some picture here")
+    # Reading
+    with st.container():
+        st.subheader("Reading")
+        left,right=st.columns([1,2])
+        with left:
+            st.write("Some picture here")
+        with right:
+             st.write("Some description here")
+    # Exercising
+    with st.container():
+        st.subheader("Exercising")
+        left,right=st.columns([2,1])
+        with left:
+            st.write("Some description here")
+        with right:
+            st.write("Some picture here")
     return
 
 def main():
