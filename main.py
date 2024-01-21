@@ -62,7 +62,7 @@ def work_experience():
     for index, row in df_work_experience.iterrows():
         start_month = row['Start'].strftime('%B')  # %B represents the full month name
         finish_month = row['Finish'].strftime('%B')  # %B represents the full month name
-        st.write(f"**{row['Company']} ({start_month} {row['Start'].year} - {finish_month} {row['Finish'].year}):** {row['Description']}")
+        st.write(f"- **{row['Company']} ({start_month} {row['Start'].year} - {finish_month} {row['Finish'].year}):** {row['Description']}")
 
 def education_history():
     # Data for education history
@@ -109,7 +109,7 @@ def education_history():
     for index, row in df_education.iterrows():
         start_month = row['Start'].strftime('%B')  # %B represents the full month name
         finish_month = row['Finish'].strftime('%B')  # %B represents the full month name
-        st.write(f"**{row['School']} ({start_month} {row['Start'].year} - {finish_month} {row['Finish'].year}):** {row['Description']}")
+        st.write(f"- **{row['School']} ({start_month} {row['Start'].year} - {finish_month} {row['Finish'].year}):** {row['Description']}")
         
 # Defining Pages
 def home():
@@ -177,7 +177,7 @@ def home():
             st.plotly_chart(fig,use_container_width=True)
             st.write("### Skill Descriptions:")
             for skill, description in zip(df['Skill'], df['Description']):
-                st.write(f"**{skill}:** {description}")
+                st.write(f"- **{skill}:** {description}")
 
         # Space Divider
         st.write("")
@@ -353,7 +353,7 @@ def home():
             with right:
                 st.plotly_chart(fig_disc2)
             for trait, desc in zip(data['trait'], data['description']):
-                st.write(f"**{trait}:** {desc}")
+                st.write(f"- **{trait}:** {desc}")
             st.write(last_taken_disc)
 
     with st.container():

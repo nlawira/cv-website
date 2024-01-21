@@ -27,7 +27,7 @@ button[type=submit]:hover {
 }
 
 /* Changing the Font Type for body and heading*/
-body {
+html, body, [class*="st-"] {
   font-family: 'Montserrat', sans-serif;
 }
 
