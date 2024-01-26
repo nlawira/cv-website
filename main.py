@@ -17,16 +17,16 @@ def local_css(file_name):
         st.markdown(f"<style>{f.read()}</style/", unsafe_allow_html=True)
 local_css("style/style.css")
 
-# Defining Functions
+# Defining Experience/History
 def work_experience():
     # Data for Work Experience
     work_experience_data = {
-        'Company': ['KMPG Services Pte. Ltd. (Singapore)', 'Pfizer Asia Pacific Pte. Ltd. (Singapore)'],
-        'Start': ['2022-05', '2023-01'],
-        'Finish': ['2022-07', '2023-07'],
+        'Company': ['Pfizer Asia Pacific Pte. Ltd. (Singapore)', 'KMPG Services Pte. Ltd. (Singapore)'],
+        'Start': ['2023-01', '2022-05'],
+        'Finish': [ '2023-07', '2022-07'],
         'Description': [
-            'Interned as a **Management Intern** in the **R&D and Grants Consulting Team**',
             'Interned as a **Production Intern** in **Process Centric Team 1 (PCT1)**',
+            'Interned as a **Management Intern** in the **R&D and Grants Consulting Team**',
             ]
     }
 
@@ -67,14 +67,14 @@ def work_experience():
 def education_history():
     # Data for education history
     education_data = {
-        'School': ['Cahaya Bangsa Classical School (Indonesia)','Nanyang Technological University (Singapore)','National University of Singapore (Singapore)'],
-        'Start': ['2016-08', '2020-08', '2022-01'],
-        'Finish': ['2020-06', '2024-06', '2022-06'],
+        'School': ['Nanyang Technological University (Singapore)','National University of Singapore (Singapore)','Cahaya Bangsa Classical School (Indonesia)'],
+        'Start': ['2020-08', '2022-01', '2016-08'],
+        'Finish': ['2024-06', '2022-06', '2020-06'],
         'Description': [
-            'Earned a **High School Degree**',
             'Earned **Bachelor\'s of Engineering in Chemical & Biomolecular Engineering** with \
             a **Specialization in Intellectual Property** and a **Minor in Modern Languages**',
-            'Local student exchange under the **Singapore Universities Student Exchange Program (SUSEP)**'
+            'Local student exchange under the **Singapore Universities Student Exchange Program (SUSEP)**',
+            'Earned a **High School Degree**',
         ]
     }
 
@@ -347,7 +347,7 @@ def home():
 
             # Display everything
             st.subheader(disc_type)
-            left, right = st.columns(2)
+            left, right = st.columns([1.25,1])
             with left:
                 st.plotly_chart(fig_disc1)
             with right:
@@ -384,20 +384,43 @@ def work():
     st.write("- - -")
     # Pfizer Internship
     with st.container():
-        st.subheader("Production, PCT1 - Intern at Pfizer Asia Pacific Pte. Ltd.")
+        st.subheader("Pfizer Asia Pacific Pte. Ltd.")
+        st.write("**Production, PCT1 - Intern**")
+        st.caption("**Jan 2023 - Jul 2023**")
         left,right = st.columns([2,1])
         with left:
-            st.write("Some description here")
+            st.write("- Resolved a product's out-of-specification (OOS) issue by data mining and trending, \
+                     **resulting in the implementation of a corrective and preventive action**\n",
+                     "- Spearheaded development of a Python code that automates reports daily alarms in \
+                        Pfizer Tuas API & Solvent Recovery Plant, **improving reporting efficiency by 90%**\n",
+                     "- Designed a matrix for deconflicting of equipment and process lines, **reducing planning \
+                        time by 95%**\n",
+                     "- Collaborated with the alarm management and the continuous improvement team for \
+                        alarm reporting and reduction initiatives, eliciting reclassification of alarms \
+                        to **reduce alarm fatigue experienced by operators**\n",
+                     "- Supported the process engineers in day-to-day activities such as batch books \
+                        review, batch data documentation, and process issues troubleshooting")
         with right:
-            st.write("Some pictures here")
+            st.image(Image.open("Images/Pfizer_Logo.png"), use_column_width = True)
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    
     # KPMG Internship
     with st.container():
-        st.subheader("R&D and Grants Consulting - Management Intern at KPMG Services Pte. Ltd.")
+        st.subheader("KPMG Services Pte. Ltd.")
+        st.write("**R&D and Grants Consulting - Management Intern**")
+        st.caption("**May 2022 - Jul 2022**")
         left,right = st.columns([1,2])
         with left:
-            st.write("Some pictures here")
+            st.image(Image.open("Images/KPMG_Logo.png"), use_column_width = True)
         with right:
-            st.write("Some description here")
+            st.write("- Updated over **8 letter templates and claims forms** used in engagements and recordkeeping\n",
+                     "- Researched and collated information about clients’ R&D projects, desirable grants or incentives, \
+                        and potential competitors for **7 engagements**\n",
+                     "- Prepared slide decks used in **5 engagements** to formulate an R&D storyline\n",
+                     "- Conducted risk assessments for **5 engagements' completion**")
     return
 
 def education():
@@ -415,6 +438,7 @@ def education():
     with st.container():
         st.subheader("Relevant Classes/Modules")
         st.write("Some description here")
+    st.write("- - -")
     # Online Courses
     with st.container():
         st.subheader("Online Courses")
@@ -426,85 +450,139 @@ def cca():
     # NTU Piano Ensemble
     with st.container():
         st.subheader("NTU Piano Ensemble")
-        st.caption("Logistics Director")
-        st.caption("**Time Stamp Here**")
+        st.write("**Logistics Director**")
+        st.caption("**Aug 2021 - Jul 2023**")
         st.caption("Associated with **Nanyang Technological University**")
         left,right=st.columns([2,1])
         with left:
-            st.write("Some description here")
+            st.write("- Spearheaded the logistics, including transportation of instruments, stage planning, \
+                     and equipment tracking, for **8 concerts**\n",
+                     "- Processed **over 30 bookings** for the music room weekly\n",
+                     "- Supervised providing logistical support for NTU Symphony Orchestra, NTU Chinese Orchestra, and NTU \
+                        Symphonic Band in **NTUPE's first inter-CCA concert**\n",
+                     "- Organized and manned the physical and virtual booths for NTUSU and CAC Welcome Week\n",
+                     "- **Implemented an alternative solution** for members to access NTUPE facilities by cooperating \
+                        with Nanyang House administrators and NTU Student Affairs Office\n",
+                     "- Managed NTUPE inventory and equipment lending to other CCAs")
         with right:
             st.write("Some picture here")
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    
     # ICN
     with st.container():
         st.subheader("Indonesian Cultural Night")
-        st.caption("Corporate Liaison Officer")
-        st.caption("**Time Stamp Here**")
+        st.write("**Corporate Liaison Officer**")
+        st.caption("**Aug 2022 -  Jun 2023**")
         st.caption("Associated with **Nanyang Technological University**")
         left,right=st.columns([1,2])
         with left:
             st.write("Some picture here")
         with right:
             st.write("Some description here")
+    
+    # Space Divider
+    st.write("")
+    st.write("")    
+    
     # TMC Serikat
     with st.container():
         st.subheader("Toastmasters Club Serikat")
-        st.caption("Vice President of Membership")
-        st.caption("**Time Stamp Here**")
+        st.write("**Vice President of Membership**")
+        st.caption("**Jan 2022 - Dec 2022**")
         st.caption("Associated with **Nanyang Technological University**")
         left,right=st.columns([2,1])
         with left:
-            st.write("Some description here")
+            st.write("- Earned an **additional 13 members**, on top of **7 executive committee members**, by advertising \
+                     through Indonesian students’ channels throughout Singapore, thereby chartering the club\n",
+                     "- Obtained **a vouch through collaboration** with PPI Singapura\n",
+                     "- Hosted every Zoom chapter meeting and handled logistics including creating polls, \
+                        spotlighting speakers, and accommodating speakers and guests\n",
+                     "- Spearhead publicizing of chapter meetings, **obtaining an average of 3 guests** for each meeting\n",
+                     "- Managed Telegram group for guests and non-members")
         with right:
             st.write("Some picture here")
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+
     # NTU Earthlink
     with st.container():
         st.subheader("NTU Earthlink — Eco-Campus Portfolio")
-        st.caption("Campaign Executive")
-        st.caption("**Time Stamp Here**")
+        st.write("**Campaign Executive**")
+        st.caption("**Aug 2021 - Jun 2022**")
         st.caption("Associated with **Nanyang Technological University**")
         left,right=st.columns([1,2])
         with left:
             st.write("Some picture here")
         with right:
-            st.write("Some description here")
+            st.write("- Collaborated with a team to **improve on 4 existing campaigns** that promote eco-friendly campus living\n",
+                     "- Brainstormed and managed the written content for **4 campaigns**\n",
+                     '- Directed the video content for "See It Yourself"" campaign to raise awareness amongst NTU \
+                        population about correct recycling practices and collaboration with susGain')
+    
+    # Space Divider
+    st.write("")
+    st.write("")    
+
     # NTUSU WIC
     with st.container():
         st.subheader("NTU Student Union — Welfare Initiatives Committee")
-        st.caption("Logistics Officer")
-        st.caption("**Time Stamp Here**")
+        st.write("**Logistics Officer**")
+        st.caption("**Aug 2021 -  Jun 2022**")
         st.caption("Associated with **Nanyang Technological University**")
         left,right=st.columns([2,1])
         with left:
-            st.write("Some description here")
+            st.write("- Collaborated in a **team of 5-8 members** to plan welfare events for NTU students\n",
+                     "- Implemented ideas for engagement activities and welfare items for **4 university-wide welfare events**\n",
+                     "- Managed the logistics and transport of equipment for **4 university-wide welfare events**")
         with right:
             st.write("Some picture here")
+    
+    # Space Divider
+    st.write("")
+    st.write("")    
+    
     # MUN Club
     with st.container():
         st.subheader("CBCS Model United Nations Club")
-        st.caption("Board of Executive, President")
-        st.caption("**Time Stamp Here**")
+        st.write("**Board of Executive, President**")
+        st.caption("**Aug 2019 - Jun 2020**")
         st.caption("Associated with **Cahaya Bangsa Classical School**")
         left,right=st.columns([1,2])
         with left:
                 st.write("Some picture here")
         with right:
                 st.write("Some description here")
+    
+    # Space Divider
+    st.write("")
+    st.write("")    
+    
     # Yearbook Team
     with st.container():
         st.subheader("CBCS Yearbook Team")
-        st.caption("Journalist")
-        st.caption("**Time Stamp Here**")
+        st.write("**Journalist**")
+        st.caption("**Aug 2019 - Jun 2020**")
         st.caption("Associated with **Cahaya Bangsa Classical School**")
         left,right=st.columns([2,1])
         with left:
                 st.write("Some description here")
         with right:
                 st.write("Some picture here")
+    
+    # Space Divider
+    st.write("")
+    st.write("")    
+    
     # Debate
     with st.container():
         st.subheader("CBCS Debate Club")
-        st.caption("Member")
-        st.caption("**Time Stamp Here**")
+        st.write("**Founding Member**")
+        st.caption("**Aug 2018 - Jun 2020**")
         st.caption("Associated with **Cahaya Bangsa Classical School**")
         left,right=st.columns([1,2])
         with left:
