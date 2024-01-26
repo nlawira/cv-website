@@ -446,7 +446,7 @@ def education():
     return
 
 def cca():
-    st.title("Co-Curricular, Leadership, and Voluntary Activities")
+    st.title("Co-Curricular and Leadership Activities")
     # NTU Piano Ensemble
     with st.container():
         st.subheader("NTU Piano Ensemble")
@@ -589,6 +589,48 @@ def cca():
                 st.write("Some picture here")
         with right:
                 st.write("Some description here")
+
+    # Divider
+    st.divider()
+    
+    # Voluntary Activities
+    st.title("Voluntary Activities")
+
+    # New Life 
+    with st.container():
+        st.subheader("New Life Community Services")
+        st.write("**English Teacher**")
+        st.caption("**Feb 2023 - May 2023, Sep 2023 - Dec 2023**")
+        left,right=st.columns([2,1])
+        with left:
+                st.write("Some description here")
+        with right:
+                st.write("Some picture here")
+
+    # NTU CCEB OCEP
+    with st.container():
+        st.subheader("NTU CCEB's Overseas Community Engagement Project")
+        st.write("**Student Volunteer in Project T. A. B.**")
+        st.caption("**Aug 2021 - Dec 2021**")
+        st.caption("Associated with **Nanyang Technological University**")
+        left,right=st.columns([1,2])
+        with left:
+                st.write("Some picture here")
+        with right:
+                st.write("Some description here")
+    
+    # Kalimantan
+    with st.container():
+        st.subheader("Living Waters Village (Kalimantan)")
+        st.write("**Student Volunteer**")
+        st.caption("**Apr 2019 - May 2019**")
+        st.caption("Associated with **Cahaya Bangsa Classical School**")
+        left,right=st.columns([2,1])
+        with left:
+                st.write("Some description here")
+        with right:
+                st.write("Some picture here")
+
     return
 
 def hobbies():
