@@ -479,13 +479,19 @@ def education():
         st.subheader("National University of Singapore, Singapore (NUS)")
         left,right = st.columns([1,1.5])
         with left:
-            st.image(Image.open("Images/NUS_Logo.png"), use_column_width = True)
+            st.image(Image.open("Images/NUS_Logo.png"), width = 350)
         with right:
             st.write("**Exchange Program**")
             st.caption("**Jan 2022 - Jun 2022**")
             st.write("- Exchanged under the **Singaporean Universities Student Exchange Program (SUSEP)**\n",
                      "- Exposed to a new educational environment and student community\n",
                      "- Expanded network and made new connections with NUS students")
+
+        
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")
 
     # CBCS        
     with st.container():
@@ -496,13 +502,10 @@ def education():
             st.caption("**Aug 2016 - Jun 2020**")
             st.write("- Final CGPA: **3.782/4.000**\n",
                      "- Proved academic excellence and achieved **Valedictorian** award for Class of 2020 Natural Science track\n",
-                     "- Actively involved in various student clubs and activities")
+                     "- **Actively involved** in various student clubs and activities")
         with right:
-            st.image(Image.open("Images/CBCS_Logo.png"), use_column_width = True)
-    
-    # Space Divider
-    st.write("")
-    st.write("")
+            st.image(Image.open("Images/CBCS_Logo.png"), width = 350)
+    st.write("- - -")
 
     # Academic Projects
     with st.container():
@@ -763,7 +766,7 @@ def main():
             <h1>Nathan Lawira</h1>
             <p>Senior Undergraduate Student in <b>Nanyang Technological University</b></p>
             <p>Pursuing a <b>Bachelor of Engineering in Chemical & Biomolecular Engineering</b> Specializing in Intellectual Property with a Minor in Modern Languages</p>
-            <p>Expected to graduate in <b>May 2024</b></p>
+            <p>Expected to graduate in <b>June 2024</b></p>
         </center>
         """, unsafe_allow_html=True)
 
