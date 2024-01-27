@@ -133,7 +133,7 @@ def home():
         st.write("---")
         st.subheader("Work Experience")
         work_experience()
-        st.write('Please navigate to the "Work" tab via the sidebar to find out more about my achievements!')
+        st.write('Please navigate to the **Work** tab via the sidebar to find out more about my achievements!')
 
     with st.container():
         # --- SKILLS ---
@@ -184,6 +184,7 @@ def home():
                 st.write(f"- **{skill}:** {description}")
 
         # Space Divider
+        st.write("")
         st.write("")
         st.write("")
 
@@ -247,7 +248,7 @@ def home():
         st.write("---")
         st.subheader("Education")
         education_history()
-        st.write('Please navigate to the "Education" tab via the sidebar to find out more about my education history!')
+        st.write('Please navigate to the **Education** tab via the sidebar to find out more about my education history!')
     
     # --- PERSONALITY ---
     with st.container():
@@ -313,6 +314,8 @@ def home():
             st.plotly_chart(fig_mbti, use_container_width=True)
             st.write(last_taken_mbti)
 
+        # Space Divider
+        st.write("")
         st.write("")
         st.write("")
         
@@ -550,6 +553,7 @@ def cca():
     # Space Divider
     st.write("")
     st.write("")
+    st.write("")
     
     # ICN
     with st.container():
@@ -564,6 +568,7 @@ def cca():
             st.write("Some description here")
     
     # Space Divider
+    st.write("")
     st.write("")
     st.write("")    
     
@@ -588,6 +593,7 @@ def cca():
     # Space Divider
     st.write("")
     st.write("")
+    st.write("")
 
     # NTU Earthlink
     with st.container():
@@ -606,7 +612,8 @@ def cca():
     
     # Space Divider
     st.write("")
-    st.write("")    
+    st.write("")
+    st.write("")
 
     # NTUSU WIC
     with st.container():
@@ -624,7 +631,8 @@ def cca():
     
     # Space Divider
     st.write("")
-    st.write("")    
+    st.write("")
+    st.write("")  
     
     # MUN Club
     with st.container():
@@ -640,7 +648,8 @@ def cca():
     
     # Space Divider
     st.write("")
-    st.write("")    
+    st.write("")
+    st.write("")   
     
     # Yearbook Team
     with st.container():
@@ -656,7 +665,8 @@ def cca():
     
     # Space Divider
     st.write("")
-    st.write("")    
+    st.write("")
+    st.write("")   
     
     # Debate
     with st.container():
@@ -669,9 +679,7 @@ def cca():
                 st.write("Some picture here")
         with right:
                 st.write("Some description here")
-
-    # Divider
-    st.divider()
+    st.write("- - -")
     
     # Voluntary Activities
     st.title("Voluntary Activities")
@@ -723,6 +731,12 @@ def hobbies():
             st.write("Some description here")
         with right:
             st.write("Some picture here")
+
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")
+
     # Photography
     with st.container():
         st.subheader("Photography")
@@ -731,6 +745,12 @@ def hobbies():
             st.write("Some picture here")
         with right:
              st.write("Some description here")
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")    
+    
     # Music
     with st.container():
         st.subheader("Listening & Playing Music")
@@ -739,6 +759,12 @@ def hobbies():
             st.write("Some description here")
         with right:
             st.write("Some picture here")
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")
+    
     # Reading
     with st.container():
         st.subheader("Reading")
@@ -747,6 +773,12 @@ def hobbies():
             st.write("Some picture here")
         with right:
              st.write("Some description here")
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")    
+    
     # Exercising
     with st.container():
         st.subheader("Exercising")
