@@ -21,7 +21,7 @@ local_css("style/style.css")
 def work_experience():
     # Data for Work Experience
     work_experience_data = {
-        'Company': ['Pfizer Asia Pacific Pte. Ltd. (Singapore)', 'KMPG Services Pte. Ltd. (Singapore)'],
+        'Company': ['Pfizer Asia Pacific Pte. Ltd., Singapore', 'KMPG Services Pte. Ltd., Singapore'],
         'Start': ['2023-01', '2022-05'],
         'Finish': [ '2023-07', '2022-07'],
         'Description': [
@@ -67,11 +67,11 @@ def work_experience():
 def education_history():
     # Data for education history
     education_data = {
-        'School': ['Nanyang Technological University (Singapore)','National University of Singapore (Singapore)','Cahaya Bangsa Classical School (Indonesia)'],
+        'School': ['Nanyang Technological University, Singapore','National University of Singapore, Singapore','Cahaya Bangsa Classical School, Indonesia'],
         'Start': ['2020-08', '2022-01', '2016-08'],
         'Finish': ['2024-06', '2022-06', '2020-06'],
         'Description': [
-            'Earned **Bachelor\'s of Engineering in Chemical & Biomolecular Engineering** with \
+            'To earn **Bachelor\'s of Engineering (Honours) in Chemical & Biomolecular Engineering** with \
             a **Specialization in Intellectual Property** and a **Minor in Modern Languages**',
             'Local student exchange under the **Singapore Universities Student Exchange Program (SUSEP)**',
             'Earned a **High School Degree**',
@@ -110,7 +110,11 @@ def education_history():
         start_month = row['Start'].strftime('%B')  # %B represents the full month name
         finish_month = row['Finish'].strftime('%B')  # %B represents the full month name
         st.write(f"- **{row['School']} ({start_month} {row['Start'].year} - {finish_month} {row['Finish'].year}):** {row['Description']}")
-        
+
+# Function to change the image index
+def change_image(delta, images):
+    st.session_state.index = (st.session_state.index + delta) % len(images)
+
 # Defining Pages
 def home():
     with st.container():
@@ -385,10 +389,10 @@ def work():
     # Pfizer Internship
     with st.container():
         st.subheader("Pfizer Asia Pacific Pte. Ltd.")
-        st.write("**Production, PCT1 - Intern**")
-        st.caption("**Jan 2023 - Jul 2023**")
-        left,right = st.columns([2,1])
+        left,right = st.columns([1.5,1])
         with left:
+            st.write("**Production, PCT1 - Intern**")
+            st.caption("**Jan 2023 - Jul 2023**")
             st.write("- Resolved a product's out-of-specification (OOS) issue by data mining and trending, \
                      **resulting in the implementation of a corrective and preventive action**\n",
                      "- Spearheaded development of a Python code that automates reports daily alarms in \
@@ -410,12 +414,12 @@ def work():
     # KPMG Internship
     with st.container():
         st.subheader("KPMG Services Pte. Ltd.")
-        st.write("**R&D and Grants Consulting - Management Intern**")
-        st.caption("**May 2022 - Jul 2022**")
-        left,right = st.columns([1,2])
+        left,right = st.columns([1,1.5])
         with left:
             st.image(Image.open("Images/KPMG_Logo.png"), use_column_width = True)
         with right:
+            st.write("**R&D and Grants Consulting - Management Intern**")
+            st.caption("**May 2022 - Jul 2022**")
             st.write("- Updated over **8 letter templates and claims forms** used in engagements and recordkeeping\n",
                      "- Researched and collated information about clients’ R&D projects, desirable grants or incentives, \
                         and potential competitors for **7 engagements**\n",
@@ -429,16 +433,89 @@ def education():
         st.subheader("Summary")
         education_history()
     st.write("- - -")
+    
+    # NTU
+    with st.container():
+        st.subheader("Nanyang Technological University, Singapore (NTU)")
+        left,right = st.columns([1.5,1])
+        with left:
+            st.write("**Bachelor's of Engineering (Honours)**")
+            st.caption("**Aug 2020 - Jun 2024 (Expected)**")
+            st.write("- Major: **Chemical & Biomolecular Engineering**\n",
+                     "- CGPA: **4.47/5.00** (As of end of 2023)\n",
+                     "- Currently pursuing a **Specialization in Intellectual Property** and a **Minor in Modern Languages**\n",
+                     "- **Actively involved in leadership positions** across various CCAs and clubs")
+        with right:
+            # Defining image paths and loading them
+            image_paths = ["Images/NTU_Logo.png", "Images/NTU_1.jpg", "Images/NTU_2.jpg", "Images/NTU_3.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index' not in st.session_state:
+                st.session_state.index = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', on_click=change_image, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', on_click=change_image, args=(1, images))
+
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")
+    
+    # NUS
+    with st.container():
+        st.subheader("National University of Singapore, Singapore (NUS)")
+        left,right = st.columns([1,1.5])
+        with left:
+            st.image(Image.open("Images/NUS_Logo.png"), use_column_width = True)
+        with right:
+            st.write("**Exchange Program**")
+            st.caption("**Jan 2022 - Jun 2022**")
+            st.write("- Exchanged under the **Singaporean Universities Student Exchange Program (SUSEP)**\n",
+                     "- Exposed to a new educational environment and student community\n",
+                     "- Expanded network and made new connections with NUS students")
+
+    # CBCS        
+    with st.container():
+        st.subheader("Cahaya Bangsa Classical School, Indonesia (CBCS)")
+        left,right = st.columns([1.5,1])
+        with left:
+            st.write("**Indonesian High School Degree**")
+            st.caption("**Aug 2016 - Jun 2020**")
+            st.write("- Final CGPA: **3.782/4.000**\n",
+                     "- Proved academic excellence and achieved **Valedictorian** award for Class of 2020 Natural Science track\n",
+                     "- Actively involved in various student clubs and activities")
+        with right:
+            st.image(Image.open("Images/CBCS_Logo.png"), use_column_width = True)
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+
     # Academic Projects
     with st.container():
         st.subheader("Academic Projects")
         st.write("Some description here")
     st.write("- - -")
+    
     # Relevant Classes/Modules
     with st.container():
         st.subheader("Relevant Classes/Modules")
         st.write("Some description here")
     st.write("- - -")
+    
     # Online Courses
     with st.container():
         st.subheader("Online Courses")
@@ -453,7 +530,7 @@ def cca():
         st.write("**Logistics Director**")
         st.caption("**Aug 2021 - Jul 2023**")
         st.caption("Associated with **Nanyang Technological University**")
-        left,right=st.columns([2,1])
+        left,right=st.columns([1.5,1])
         with left:
             st.write("- Spearheaded the logistics, including transportation of instruments, stage planning, \
                      and equipment tracking, for **8 concerts**\n",
@@ -477,7 +554,7 @@ def cca():
         st.write("**Corporate Liaison Officer**")
         st.caption("**Aug 2022 -  Jun 2023**")
         st.caption("Associated with **Nanyang Technological University**")
-        left,right=st.columns([1,2])
+        left,right=st.columns([1,1.5])
         with left:
             st.write("Some picture here")
         with right:
@@ -493,7 +570,7 @@ def cca():
         st.write("**Vice President of Membership**")
         st.caption("**Jan 2022 - Dec 2022**")
         st.caption("Associated with **Nanyang Technological University**")
-        left,right=st.columns([2,1])
+        left,right=st.columns([1.5,1])
         with left:
             st.write("- Earned an **additional 13 members**, on top of **7 executive committee members**, by advertising \
                      through Indonesian students’ channels throughout Singapore, thereby chartering the club\n",
@@ -515,7 +592,7 @@ def cca():
         st.write("**Campaign Executive**")
         st.caption("**Aug 2021 - Jun 2022**")
         st.caption("Associated with **Nanyang Technological University**")
-        left,right=st.columns([1,2])
+        left,right=st.columns([1,1.5])
         with left:
             st.write("Some picture here")
         with right:
@@ -534,7 +611,7 @@ def cca():
         st.write("**Logistics Officer**")
         st.caption("**Aug 2021 -  Jun 2022**")
         st.caption("Associated with **Nanyang Technological University**")
-        left,right=st.columns([2,1])
+        left,right=st.columns([1.5,1])
         with left:
             st.write("- Collaborated in a **team of 5-8 members** to plan welfare events for NTU students\n",
                      "- Implemented ideas for engagement activities and welfare items for **4 university-wide welfare events**\n",
@@ -552,7 +629,7 @@ def cca():
         st.write("**Board of Executive, President**")
         st.caption("**Aug 2019 - Jun 2020**")
         st.caption("Associated with **Cahaya Bangsa Classical School**")
-        left,right=st.columns([1,2])
+        left,right=st.columns([1,1.5])
         with left:
                 st.write("Some picture here")
         with right:
@@ -568,7 +645,7 @@ def cca():
         st.write("**Journalist**")
         st.caption("**Aug 2019 - Jun 2020**")
         st.caption("Associated with **Cahaya Bangsa Classical School**")
-        left,right=st.columns([2,1])
+        left,right=st.columns([1.5,1])
         with left:
                 st.write("Some description here")
         with right:
@@ -584,7 +661,7 @@ def cca():
         st.write("**Founding Member**")
         st.caption("**Aug 2018 - Jun 2020**")
         st.caption("Associated with **Cahaya Bangsa Classical School**")
-        left,right=st.columns([1,2])
+        left,right=st.columns([1,1.5])
         with left:
                 st.write("Some picture here")
         with right:
@@ -601,7 +678,7 @@ def cca():
         st.subheader("New Life Community Services")
         st.write("**English Teacher**")
         st.caption("**Feb 2023 - May 2023, Sep 2023 - Dec 2023**")
-        left,right=st.columns([2,1])
+        left,right=st.columns([1.5,1])
         with left:
                 st.write("Some description here")
         with right:
@@ -613,7 +690,7 @@ def cca():
         st.write("**Student Volunteer in Project T. A. B.**")
         st.caption("**Aug 2021 - Dec 2021**")
         st.caption("Associated with **Nanyang Technological University**")
-        left,right=st.columns([1,2])
+        left,right=st.columns([1,1.5])
         with left:
                 st.write("Some picture here")
         with right:
@@ -625,7 +702,7 @@ def cca():
         st.write("**Student Volunteer**")
         st.caption("**Apr 2019 - May 2019**")
         st.caption("Associated with **Cahaya Bangsa Classical School**")
-        left,right=st.columns([2,1])
+        left,right=st.columns([1.5,1])
         with left:
                 st.write("Some description here")
         with right:
@@ -701,7 +778,13 @@ def main():
 
     # Page Selection
     st.sidebar.write("---")
-    page = st.sidebar.selectbox('Select Page', ["Home", "Work","Education","Co-Curricular & Voluntary Activies","Hobbies & Personal Life"], index=0)
+    page = st.sidebar.selectbox('Select Page', 
+                                ["Home",
+                                 "Work",
+                                 "Education",
+                                 "Co-Curricular & Voluntary Activies",
+                                 "Hobbies & Personal Life"],
+                                 index=0)
     if page == "Home":
         home()
     if page == "Work":
