@@ -121,7 +121,7 @@ def home():
         # --- TITLE & SUMMARY ---
         st.title("Hello, I am Nathan! :wave:")
         st.subheader("Summary")
-        st.write("I am a Chemical & Biomolecular Engineering student at Nanyang Technological University and will graduate in May 2024. \
+        st.write("I am a Chemical & Biomolecular Engineering student at Nanyang Technological University and will graduate in June 2024. \
                 My academic background equips me with strong analytical, problem-solving, and \
                 critical thinking skills, while my enthusiasm and passion for data analytics, coding, and software development \
                 reflects my keen interest in leveraging technologies to address and solve complex challenges!")
