@@ -112,8 +112,16 @@ def education_history():
         st.write(f"- **{row['School']} ({start_month} {row['Start'].year} - {finish_month} {row['Finish'].year}):** {row['Description']}")
 
 # Function to change the image index
-def change_image(delta, images):
-    st.session_state.index = (st.session_state.index + delta) % len(images)
+def change_image_1(delta, images):
+    st.session_state.index_1 = (st.session_state.index_1 + delta) % len(images)
+def change_image_2(delta, images):
+    st.session_state.index_2 = (st.session_state.index_2 + delta) % len(images)
+def change_image_3(delta, images):
+    st.session_state.index_3 = (st.session_state.index_3 + delta) % len(images)
+def change_image_4(delta, images):
+    st.session_state.index_4 = (st.session_state.index_4 + delta) % len(images)
+def change_image_5(delta, images):
+    st.session_state.index_5 = (st.session_state.index_5 + delta) % len(images)
 
 # Defining Pages
 def home():
@@ -408,7 +416,7 @@ def work():
                      "- Supported the process engineers in day-to-day activities such as batch books \
                         review, batch data documentation, and process issues troubleshooting")
         with right:
-            st.image(Image.open("Images/Pfizer_Logo.png"), use_column_width = True)
+            st.image(Image.open("Images/Pfizer_1.png"), use_column_width = True)
     
     # Space Divider
     st.write("")
@@ -419,7 +427,7 @@ def work():
         st.subheader("KPMG Services Pte. Ltd.")
         left,right = st.columns([1,1.5])
         with left:
-            st.image(Image.open("Images/KPMG_Logo.png"), use_column_width = True)
+            st.image(Image.open("Images/KPMG_1.png"), use_column_width = True)
         with right:
             st.write("**R&D and Grants Consulting - Management Intern**")
             st.caption("**May 2022 - Jul 2022**")
@@ -450,26 +458,26 @@ def education():
                      "- **Actively involved in leadership positions** across various CCAs and clubs")
         with right:
             # Defining image paths and loading them
-            image_paths = ["Images/NTU_Logo.png", "Images/NTU_1.jpg", "Images/NTU_2.jpg", "Images/NTU_3.jpg"]
+            image_paths = ["Images/NTU_1.png", "Images/NTU_2.jpg", "Images/NTU_3.jpg", "Images/NTU_4.jpg"]
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index' not in st.session_state:
-                st.session_state.index = 0
+            if 'index_1' not in st.session_state:
+                st.session_state.index_1 = 0
 
             # Display the current image
-            st.image(images[st.session_state.index], width=350)
+            st.image(images[st.session_state.index_1], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', on_click=change_image, args=(-1, images))
+                st.button('Prev', key='prev_1', on_click=change_image_1, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', on_click=change_image, args=(1, images))
+                st.button('Next', key='next_1', on_click=change_image_1, args=(1, images))
 
     
     # Space Divider
@@ -482,7 +490,27 @@ def education():
         st.subheader("National University of Singapore, Singapore (NUS)")
         left,right = st.columns([1,1.5])
         with left:
-            st.image(Image.open("Images/NUS_Logo.png"), width = 350)
+            # Defining image paths and loading them
+            image_paths = ["Images/NUS_1.png", "Images/NUS_2.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_2' not in st.session_state:
+                st.session_state.index_2 = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_2], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_2', on_click=change_image_2, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_2', on_click=change_image_2, args=(1, images))
         with right:
             st.write("**Exchange Program**")
             st.caption("**Jan 2022 - Jun 2022**")
@@ -507,7 +535,7 @@ def education():
                      "- Proved academic excellence and achieved **Valedictorian** award for Class of 2020 Natural Science track\n",
                      "- **Actively involved** in various student clubs and activities")
         with right:
-            st.image(Image.open("Images/CBCS_Logo.png"), width = 350)
+            st.image(Image.open("Images/CBCS_1.png"), width = 350)
     st.write("- - -")
 
     # Academic Projects
@@ -533,11 +561,11 @@ def cca():
     # NTU Piano Ensemble
     with st.container():
         st.subheader("NTU Piano Ensemble")
-        st.write("**Logistics Director**")
-        st.caption("**Aug 2021 - Jul 2023**")
-        st.caption("Associated with **Nanyang Technological University**")
         left,right=st.columns([1.5,1])
         with left:
+            st.write("**Logistics Director**")
+            st.caption("**Aug 2021 - Jul 2023**")
+            st.caption("Associated with **Nanyang Technological University**")
             st.write("- Spearheaded the logistics, including transportation of instruments, stage planning, \
                      and equipment tracking, for **8 concerts**\n",
                      "- Processed **over 30 bookings** for the music room weekly\n",
@@ -548,7 +576,27 @@ def cca():
                         with Nanyang House administrators and NTU Student Affairs Office\n",
                      "- Managed NTUPE inventory and equipment lending to other CCAs")
         with right:
-            st.write("Some picture here")
+            # Defining image paths and loading them
+            image_paths = ["Images/NTUPE_1.png", "Images/NTUPE_2.png"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_1' not in st.session_state:
+                st.session_state.index_1 = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_1], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_1', on_click=change_image_1, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_1', on_click=change_image_1, args=(1, images))
     
     # Space Divider
     st.write("")
@@ -558,13 +606,33 @@ def cca():
     # ICN
     with st.container():
         st.subheader("Indonesian Cultural Night")
-        st.write("**Corporate Liaison Officer**")
-        st.caption("**Aug 2022 -  Jun 2023**")
-        st.caption("Associated with **Nanyang Technological University**")
         left,right=st.columns([1,1.5])
         with left:
-            st.write("Some picture here")
+            # Defining image paths and loading them
+            image_paths = ["Images/ICN_1.png", "Images/ICN_2.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_2' not in st.session_state:
+                st.session_state.index_2 = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_2], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_2', on_click=change_image_2, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_2', on_click=change_image_2, args=(1, images))
         with right:
+            st.write("**Corporate Liaison Officer**")
+            st.caption("**Aug 2022 -  Jun 2023**")
+            st.caption("Associated with **Nanyang Technological University**")
             st.write("Some description here")
     
     # Space Divider
@@ -575,11 +643,11 @@ def cca():
     # TMC Serikat
     with st.container():
         st.subheader("Toastmasters Club Serikat")
-        st.write("**Vice President of Membership**")
-        st.caption("**Jan 2022 - Dec 2022**")
-        st.caption("Associated with **Nanyang Technological University**")
         left,right=st.columns([1.5,1])
         with left:
+            st.write("**Vice President of Membership**")
+            st.caption("**Jan 2022 - Dec 2022**")
+            st.caption("Associated with **Nanyang Technological University**")
             st.write("- Earned an **additional 13 members**, on top of **7 executive committee members**, by advertising \
                      through Indonesian students’ channels throughout Singapore, thereby chartering the club\n",
                      "- Obtained **a vouch through collaboration** with PPI Singapura\n",
@@ -588,7 +656,27 @@ def cca():
                      "- Spearhead publicizing of chapter meetings, **obtaining an average of 3 guests** for each meeting\n",
                      "- Managed Telegram group for guests and non-members")
         with right:
-            st.write("Some picture here")
+            # Defining image paths and loading them
+            image_paths = ["Images/TMC_Serikat_1.png", "Images/TMC_Serikat_2.jpg", "Images/TMC_Serikat_3.jpg", "Images/TMC_Serikat_4.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_3' not in st.session_state:
+                st.session_state.index_3 = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_3], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_3', on_click=change_image_3, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_3', on_click=change_image_3, args=(1, images))
     
     # Space Divider
     st.write("")
@@ -598,13 +686,13 @@ def cca():
     # NTU Earthlink
     with st.container():
         st.subheader("NTU Earthlink — Eco-Campus Portfolio")
-        st.write("**Campaign Executive**")
-        st.caption("**Aug 2021 - Jun 2022**")
-        st.caption("Associated with **Nanyang Technological University**")
         left,right=st.columns([1,1.5])
         with left:
-            st.write("Some picture here")
+            st.image(Image.open("Images/Earthlink_1.jpg"), width = 350)
         with right:
+            st.write("**Campaign Executive**")
+            st.caption("**Aug 2021 - Jun 2022**")
+            st.caption("Associated with **Nanyang Technological University**")
             st.write("- Collaborated with a team to **improve on 4 existing campaigns** that promote eco-friendly campus living\n",
                      "- Brainstormed and managed the written content for **4 campaigns**\n",
                      '- Directed the video content for "See It Yourself"" campaign to raise awareness amongst NTU \
@@ -618,16 +706,36 @@ def cca():
     # NTUSU WIC
     with st.container():
         st.subheader("NTU Student Union — Welfare Initiatives Committee")
-        st.write("**Logistics Officer**")
-        st.caption("**Aug 2021 -  Jun 2022**")
-        st.caption("Associated with **Nanyang Technological University**")
         left,right=st.columns([1.5,1])
         with left:
+            st.write("**Logistics Officer**")
+            st.caption("**Aug 2021 -  Jun 2022**")
+            st.caption("Associated with **Nanyang Technological University**")
             st.write("- Collaborated in a **team of 5-8 members** to plan welfare events for NTU students\n",
                      "- Implemented ideas for engagement activities and welfare items for **4 university-wide welfare events**\n",
                      "- Managed the logistics and transport of equipment for **4 university-wide welfare events**")
         with right:
-            st.write("Some picture here")
+            # Defining image paths and loading them
+            image_paths = ["Images/WIC_1.png", "Images/WIC_2.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_4' not in st.session_state:
+                st.session_state.index_4 = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_4], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_4', on_click=change_image_4, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_4', on_click=change_image_4, args=(1, images))
     
     # Space Divider
     st.write("")
@@ -637,14 +745,14 @@ def cca():
     # MUN Club
     with st.container():
         st.subheader("CBCS Model United Nations Club")
-        st.write("**Board of Executive, President**")
-        st.caption("**Aug 2019 - Jun 2020**")
-        st.caption("Associated with **Cahaya Bangsa Classical School**")
         left,right=st.columns([1,1.5])
         with left:
-                st.write("Some picture here")
+            st.write("Some picture here")
         with right:
-                st.write("Some description here")
+            st.write("**Board of Executive, President**")
+            st.caption("**Aug 2019 - Jun 2020**")
+            st.caption("Associated with **Cahaya Bangsa Classical School**")
+            st.write("Some description here")
     
     # Space Divider
     st.write("")
@@ -654,14 +762,14 @@ def cca():
     # Yearbook Team
     with st.container():
         st.subheader("CBCS Yearbook Team")
-        st.write("**Journalist**")
-        st.caption("**Aug 2019 - Jun 2020**")
-        st.caption("Associated with **Cahaya Bangsa Classical School**")
         left,right=st.columns([1.5,1])
         with left:
-                st.write("Some description here")
+            st.write("**Journalist**")
+            st.caption("**Aug 2019 - Jun 2020**")
+            st.caption("Associated with **Cahaya Bangsa Classical School**")
+            st.write("Some description here")
         with right:
-                st.write("Some picture here")
+            st.write("Some picture here")
     
     # Space Divider
     st.write("")
@@ -671,14 +779,14 @@ def cca():
     # Debate
     with st.container():
         st.subheader("CBCS Debate Club")
-        st.write("**Founding Member**")
-        st.caption("**Aug 2018 - Jun 2020**")
-        st.caption("Associated with **Cahaya Bangsa Classical School**")
         left,right=st.columns([1,1.5])
         with left:
-                st.write("Some picture here")
+            st.write("Some picture here")
         with right:
-                st.write("Some description here")
+            st.write("**Founding Member**")
+            st.caption("**Aug 2018 - Jun 2020**")
+            st.caption("Associated with **Cahaya Bangsa Classical School**")
+            st.write("Some description here")
     st.write("- - -")
     
     # Voluntary Activities
@@ -687,37 +795,58 @@ def cca():
     # New Life 
     with st.container():
         st.subheader("New Life Community Services")
-        st.write("**English Teacher**")
-        st.caption("**Feb 2023 - May 2023, Sep 2023 - Dec 2023**")
         left,right=st.columns([1.5,1])
         with left:
-                st.write("Some description here")
+            st.write("**English Teacher**")
+            st.caption("**Feb 2023 - May 2023, Sep 2023 - Dec 2023**")
+            st.write("Some description here")
         with right:
-                st.write("Some picture here")
+            # Defining image paths and loading them
+            image_paths = ["Images/English_Teaching_1.png", "Images/English_Teaching_2.jpg", "Images/English_Teaching_3.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_5' not in st.session_state:
+                st.session_state.index_5 = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_5], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_5', on_click=change_image_5, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_5', on_click=change_image_5, args=(1, images))
 
     # NTU CCEB OCEP
     with st.container():
         st.subheader("NTU CCEB's Overseas Community Engagement Project")
-        st.write("**Student Volunteer in Project T. A. B.**")
-        st.caption("**Aug 2021 - Dec 2021**")
-        st.caption("Associated with **Nanyang Technological University**")
+        
         left,right=st.columns([1,1.5])
         with left:
-                st.write("Some picture here")
+            st.write("Some picture here")
         with right:
-                st.write("Some description here")
+            st.write("**Student Volunteer in Project T. A. B.**")
+            st.caption("**Aug 2021 - Dec 2021**")
+            st.caption("Associated with **Nanyang Technological University**")
+            st.write("Some description here")
     
     # Kalimantan
     with st.container():
         st.subheader("Living Waters Village (Kalimantan)")
-        st.write("**Student Volunteer**")
-        st.caption("**Apr 2019 - May 2019**")
-        st.caption("Associated with **Cahaya Bangsa Classical School**")
         left,right=st.columns([1.5,1])
         with left:
-                st.write("Some description here")
+            st.write("**Student Volunteer**")
+            st.caption("**Apr 2019 - May 2019**")
+            st.caption("Associated with **Cahaya Bangsa Classical School**")
+            st.write("Some description here")
         with right:
-                st.write("Some picture here")
+            st.write("Some picture here")
 
     return
 

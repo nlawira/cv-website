@@ -26,6 +26,11 @@ button[type=submit]:hover {
   background-color: #45a049;
 }
 
+.stButton>button:hover {
+  background-color: #e6e6e6;
+  color: rgb(0, 0, 0);
+}
+
 /* Changing the Font Type for body and heading*/
 html, body, [class*="st-"] {
   font-family: 'Montserrat', sans-serif;
