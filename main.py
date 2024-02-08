@@ -413,8 +413,8 @@ def work():
                      "- Collaborated with the alarm management and the continuous improvement team for \
                         alarm reporting and reduction initiatives, eliciting reclassification of alarms \
                         to **reduce alarm fatigue experienced by operators**\n",
-                     "- Supported the process engineers in day-to-day activities such as batch books \
-                        review, batch data documentation, and process issues troubleshooting")
+                     "- Supported the process engineers in day-to-day activities, including over 15 batch books \
+                        review, over 20 batch data documentations, and process issues troubleshooting")
         with right:
             st.image(Image.open("Images/Pfizer_1.png"), use_column_width = True)
     
@@ -434,8 +434,8 @@ def work():
             st.write("- Updated over **8 letter templates and claims forms** used in engagements and recordkeeping\n",
                      "- Researched and collated information about clients’ R&D projects, desirable grants or incentives, \
                         and potential competitors for **7 engagements**\n",
-                     "- Prepared slide decks used in **5 engagements** to formulate an R&D storyline\n",
-                     "- Conducted risk assessments for **5 engagements' completion**")
+                     "- Prepared slide decks for **5 engagements** to formulate an R&D storyline for tax incentives\n",
+                     "- Conducted risk assessments for **5 engagements** towards completion & documentation")
     return
 
 def education():
@@ -571,8 +571,9 @@ def cca():
                      "- Processed **over 30 bookings** for the music room weekly\n",
                      "- Supervised providing logistical support for NTU Symphony Orchestra, NTU Chinese Orchestra, and NTU \
                         Symphonic Band in **NTUPE's first inter-CCA concert**\n",
-                     "- Organized and manned the physical and virtual booths for NTUSU and CAC Welcome Week\n",
-                     "- **Implemented an alternative solution** for members to access NTUPE facilities by cooperating \
+                     "- Organized and manned the physical and virtual booths for NTUSU and CAC Welcome Week, successfully \
+                        achieving **over 100 new members per year**\n",
+                     "- **Resolved an issue** regarding members' access to NTUPE facilities by collaborating \
                         with Nanyang House administrators and NTU Student Affairs Office\n",
                      "- Managed NTUPE inventory and equipment lending to other CCAs")
         with right:
@@ -654,7 +655,7 @@ def cca():
                      "- Hosted every Zoom chapter meeting and handled logistics including creating polls, \
                         spotlighting speakers, and accommodating speakers and guests\n",
                      "- Spearhead publicizing of chapter meetings, **obtaining an average of 3 guests** for each meeting\n",
-                     "- Managed Telegram group for guests and non-members")
+                     "- Managed Telegram group of over **40 members and guests**")
         with right:
             # Defining image paths and loading them
             image_paths = ["Images/TMC_Serikat_1.png", "Images/TMC_Serikat_2.jpg", "Images/TMC_Serikat_3.jpg", "Images/TMC_Serikat_4.jpg"]
@@ -799,7 +800,10 @@ def cca():
         with left:
             st.write("**English Teacher**")
             st.caption("**Feb 2023 - May 2023, Sep 2023 - Dec 2023**")
-            st.write("Some description here")
+            st.write("- Designed teaching program, learning materials, and syllabus to teach **12-15 Indonesian \
+                     migrant workers** in Singapore aged 20 to 40 years old, successly advancing English speaking proficiency\n",
+                     "- Collaborated with a **team of 4-5 members** to deliver teaching content biweekly\n,"
+                     "- Planned overall timeline and monthly meetings")
         with right:
             # Defining image paths and loading them
             image_paths = ["Images/English_Teaching_1.png", "Images/English_Teaching_2.jpg", "Images/English_Teaching_3.jpg"]
