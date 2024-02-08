@@ -946,8 +946,8 @@ def main():
                                 ["Home",
                                  "Work",
                                  "Education",
-                                 "Co-Curricular & Voluntary Activies",
-                                 "Hobbies & Personal Life"],
+                                 "Co-Curricular & Voluntary Activies"
+                                 ],
                                  index=0)
     if page == "Home":
         home()
