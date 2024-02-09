@@ -6,6 +6,7 @@ import plotly.graph_objs as go
 from PIL import Image
 import plotly.express as px
 import pandas as pd
+from pdf2image import convert_from_path
 
 # Initial Settings
 st.set_page_config(page_title="My Webpage", layout="wide")
@@ -122,6 +123,11 @@ def change_image_4(delta, images):
     st.session_state.index_4 = (st.session_state.index_4 + delta) % len(images)
 def change_image_5(delta, images):
     st.session_state.index_5 = (st.session_state.index_5 + delta) % len(images)
+
+# Converting PDF to Images
+def pdf_to_images(pdf_file):
+    images = convert_from_path(pdf_file)
+    return images
 
 # Defining Pages
 def home():
@@ -413,8 +419,8 @@ def work():
                      "- Collaborated with the alarm management and the continuous improvement team for \
                         alarm reporting and reduction initiatives, eliciting reclassification of alarms \
                         to **reduce alarm fatigue experienced by operators**\n",
-                     "- Supported the process engineers in day-to-day activities, including over 15 batch books \
-                        review, over 20 batch data documentations, and process issues troubleshooting")
+                     "- Supported the process engineers in day-to-day activities, including **over 15 batch books \
+                        review**, **over 20 batch data documentations**, and process issues troubleshooting")
         with right:
             st.image(Image.open("Images/Pfizer_1.png"), use_column_width = True)
     
@@ -535,7 +541,27 @@ def education():
                      "- Proved academic excellence and achieved **Valedictorian** award for Class of 2020 Natural Science track\n",
                      "- **Actively involved** in various student clubs and activities")
         with right:
-            st.image(Image.open("Images/CBCS_1.png"), width = 350)
+            # Defining image paths and loading them
+            image_paths = ["Images/CBCS_1.png", "Images/CBCS_2.jpg", "Images/CBCS_3.jpg", "Images/CBCS_4.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_3' not in st.session_state:
+                st.session_state.index_3 = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_3], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_3', on_click=change_image_3, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_3', on_click=change_image_3, args=(1, images))
     st.write("- - -")
 
     # Academic Projects
@@ -553,7 +579,18 @@ def education():
     # Online Courses
     with st.container():
         st.subheader("Online Courses")
-        st.write("Some description here")
+        left, right = st.columns(2)
+        # with left:
+        #     # Path to PDF File
+        #     pdf_path = "Images/Advanced_Python.pdf"
+        #     images = pdf_to_images(pdf_path)
+        #     for i, image in enumerate(images):
+        #         st.image(image, caption=f"Page {i+1}", use_column_width=True)
+        # with right:
+        #     pdf_path = "Images/Applied Social Network Analysis in Python.pdf"
+        #     images = pdf_to_images(pdf_path)
+        #     for i, image in enumerate(images):
+        #         st.image(image, caption=f"Page {i+1}", use_column_width=True)
     return
 
 def cca():
@@ -950,7 +987,7 @@ def main():
                                 ["Home",
                                  "Work",
                                  "Education",
-                                 "Co-Curricular & Voluntary Activies"
+                                 "Co-Curricular & Voluntary Activies",
                                  ],
                                  index=0)
     if page == "Home":
@@ -963,7 +1000,6 @@ def main():
         cca()
     if page == "Hobbies & Personal Life":
         hobbies()
-
 
 if __name__ == "__main__":
     main()
