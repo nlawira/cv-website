@@ -1,4 +1,6 @@
 streamlit
+streamlit_lottie
 plotly
 pillow
 pandas
+pdf2image
