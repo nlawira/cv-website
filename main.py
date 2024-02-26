@@ -637,7 +637,7 @@ def cca():
                      "- Managed NTUPE inventory and equipment lending to other CCAs")
         with right:
             # Defining image paths and loading them
-            image_paths = ["Images/NTUPE_1.png", "Images/NTUPE_2.png"]
+            image_paths = ["Images/NTUPE_1.png", "Images/NTUPE_2.PNG"]
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
@@ -669,7 +669,7 @@ def cca():
         left,right=st.columns([1,1.5])
         with left:
             # Defining image paths and loading them
-            image_paths = ["Images/ICN_1.png", "Images/ICN_2.jpg"]
+            image_paths = ["Images/ICN_1.png", "Images/ICN_2.jpg", "Images/ICN_3.jpg"]
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
