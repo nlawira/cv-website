@@ -157,45 +157,48 @@ def home():
         with st.container():
             # Digital Skills Sections
             st.subheader("Computer/Digital Skills")
-            # Skills Data
-            data = {
-                'Skill': ['Python', 'Data Visualization', 'Machine Learning', 'Web Development', 'Communication'],
-                'Proficiency': [90, 80, 75, 70, 85],
-                'Description': [
-                    'Proficient in Python programming language.',
-                    'Experience in creating informative and visually appealing visualizations.',
-                    'Familiarity with machine learning algorithms and frameworks.',
-                    'Skills in building web applications using various technologies.',
-                    'Strong communication and collaboration skills.'
-                ]
-            }
+            
+            st.write("This section is still a work-in-progress. Sorry!")
 
-            df = pd.DataFrame(data)
+        #     # Skills Data
+        #     data = {
+        #         'Skill': ['Python', 'Data Visualization', 'Machine Learning', 'Web Development', 'Communication'],
+        #         'Proficiency': [90, 80, 75, 70, 85],
+        #         'Description': [
+        #             'Proficient in Python programming language.',
+        #             'Experience in creating informative and visually appealing visualizations.',
+        #             'Familiarity with machine learning algorithms and frameworks.',
+        #             'Skills in building web applications using various technologies.',
+        #             'Strong communication and collaboration skills.'
+        #         ]
+        #     }
 
-            # Create radar chart
-            fig = go.Figure()
+        #     df = pd.DataFrame(data)
 
-            fig.add_trace(go.Scatterpolar(
-                r=df['Proficiency'],
-                theta=df['Skill'],
-                fill='toself',
-                text=df['Proficiency'],
-                hoverinfo='text+theta',
-                line=dict(color='rgba(50, 171, 96, 1.0)'),
-                marker=dict(color='rgba(50, 171, 96, 1.0)', size=8),
-            ))
+        #     # Create radar chart
+        #     fig = go.Figure()
 
-            # Set layout
-            fig.update_layout(
-                polar=dict(radialaxis=dict(visible=True, range=[0, 100])),
-                showlegend=False,
-            )
+        #     fig.add_trace(go.Scatterpolar(
+        #         r=df['Proficiency'],
+        #         theta=df['Skill'],
+        #         fill='toself',
+        #         text=df['Proficiency'],
+        #         hoverinfo='text+theta',
+        #         line=dict(color='rgba(50, 171, 96, 1.0)'),
+        #         marker=dict(color='rgba(50, 171, 96, 1.0)', size=8),
+        #     ))
 
-            # Display description below the chart
-            st.plotly_chart(fig,use_container_width=True)
-            st.write("### Skill Descriptions:")
-            for skill, description in zip(df['Skill'], df['Description']):
-                st.write(f"- **{skill}:** {description}")
+        #     # Set layout
+        #     fig.update_layout(
+        #         polar=dict(radialaxis=dict(visible=True, range=[0, 100])),
+        #         showlegend=False,
+        #     )
+
+        #     # Display description below the chart
+        #     st.plotly_chart(fig,use_container_width=True)
+        #     st.write("### Skill Descriptions:")
+        #     for skill, description in zip(df['Skill'], df['Description']):
+        #         st.write(f"- **{skill}:** {description}")
 
         # Space Divider
         st.write("")
@@ -410,15 +413,15 @@ def work():
         with left:
             st.write("**Production, PCT1 - Intern**")
             st.caption("**Jan 2023 - Jul 2023**")
-            st.write("- Resolved a product's out-of-specification (OOS) issue by data mining and trending, \
-                     **resulting in the implementation of a corrective and preventive action**\n",
-                     "- Spearheaded development of a Python code that automates reports daily alarms in \
-                        Pfizer Tuas API & Solvent Recovery Plant, **improving reporting efficiency by 90%**\n",
-                     "- Designed a matrix for deconflicting of equipment and process lines, **reducing planning \
-                        time by 95%**\n",
-                     "- Collaborated with the alarm management and the continuous improvement team for \
-                        alarm reporting and reduction initiatives, eliciting reclassification of alarms \
-                        to **reduce alarm fatigue experienced by operators**\n",
+            st.write("- Resolved a product's out-of-specification (OOS) deviation by data mining and analysis, \
+                     **leading to the implementation of corrective and preventive actions**\n",
+                     "- Developed a Python code to automate the reporting daily alarms in \
+                        Pfizer Tuas API & Solvent Recovery Plant, **reducing reporting time by approximately 90%**\n",
+                     "- Designed a matrix for equipment and process lines to prevent clashes and support more efficienct \
+                        and precise planning in production and changeover, **improving planning efficiency by 500%**\n",
+                     "- Collaborated with alarm management and continuous improvement teams for \
+                        alarm reporting and reduction initiatives, **eliciting reclassification and reduction of over 50 alarms** \
+                        to reduce alarm fatigue experienced by technicians\n",
                      "- Supported the process engineers in day-to-day activities, including **over 15 batch books \
                         review**, **over 20 batch data documentations**, and process issues troubleshooting")
         with right:
@@ -437,11 +440,11 @@ def work():
         with right:
             st.write("**R&D and Grants Consulting - Management Intern**")
             st.caption("**May 2022 - Jul 2022**")
-            st.write("- Updated over **8 letter templates and claims forms** used in engagements and recordkeeping\n",
-                     "- Researched and collated information about clients’ R&D projects, desirable grants or incentives, \
+            st.write("- Updated **8 letter templates and claims forms** used in engagements and recordkeeping\n",
+                     "- Researched and collated information about clients’ R&D projects, grants & incentives, \
                         and potential competitors for **7 engagements**\n",
-                     "- Prepared slide decks for **5 engagements** to formulate an R&D storyline for tax incentives\n",
-                     "- Conducted risk assessments for **5 engagements** towards completion & documentation")
+                     "- Facilitated the creation of slide decks used in **5 engagements** to formulate an R&D storyline to fulfill tax incentives requirements\n",
+                     "- Conducted risk assessments for **5 engagements** to completion")
     return
 
 def education():
@@ -565,20 +568,39 @@ def education():
     st.write("- - -")
 
     # Academic Projects
+    st.subheader("Academic Projects")
     with st.container():
-        st.subheader("Academic Projects")
-        st.write("Some description here")
+        st.subheader("Final Year Design Project (FYDP)")
+        st.write("On the topic of **Biomass Wastes Valorization to Platform Chemicals**")
+        st.caption("**Jan 2024 -  May 2024 (Expected)**")
+        st.caption("Associated with **Nanyang Technological University**")
+        st.write("-	Developing a **sustainable production line processing biomass wastes into furfural and acids** via Aspen Plus and HYSYS\n",
+                 "- **Collaborating with a group of 6 people** in designing the simulation, reviewing literature, and conducting cost and market analysis")
+    with st.container():
+        st.subheader("Senior Thesis Defence")
+        st.write("On the topic of **Diving Deeper into Indonesia's Voting Age and Being Politically Informed**")
+        st.caption("**Aug 2019 -  May 2020**")
+        st.caption("Associated with **Cahaya Bangsa Classical School**")
+        st.write("This part is still a work-in-progress. Sorry!")
+    with st.container():
+        st.subheader("Karya Ilmiah (Indonesian Thesis Defence)")
+        st.write("On the topic of **Article 222 Law No. 7 of 2017 Governing Elections (Presidential Threshold)**")
+        st.caption("**Aug 2018 -  May 2019**")
+        st.caption("Associated with **Cahaya Bangsa Classical School**")
+        st.caption("Delivered in **Bahasa Indonesia**")
+        st.write("This part is still a work-in-progress. Sorry!")
     st.write("- - -")
     
     # Relevant Classes/Modules
     with st.container():
         st.subheader("Relevant Classes/Modules")
-        st.write("Some description here")
+        st.write("This part is still a work-in-progress. Sorry!")
     st.write("- - -")
     
     # Online Courses
     with st.container():
         st.subheader("Online Courses")
+        st.write("This part is still a work-in-progress. Sorry!")
         left, right = st.columns(2)
         # with left:
         #     # Path to PDF File
@@ -603,14 +625,14 @@ def cca():
             st.write("**Logistics Director**")
             st.caption("**Aug 2021 - Jul 2023**")
             st.caption("Associated with **Nanyang Technological University**")
-            st.write("- Spearheaded the logistics, including transportation of instruments, stage planning, \
+            st.write("- Directed the logistics, including transportation of instruments, stage planning, \
                      and equipment tracking, for **8 concerts**\n",
                      "- Processed **over 30 bookings** for the music room weekly\n",
                      "- Supervised providing logistical support for NTU Symphony Orchestra, NTU Chinese Orchestra, and NTU \
                         Symphonic Band in **NTUPE's first inter-CCA concert**\n",
-                     "- Organized and manned the physical and virtual booths for NTUSU and CAC Welcome Week, successfully \
-                        achieving **over 100 new members per year**\n",
-                     "- **Resolved an issue** regarding members' access to NTUPE facilities by collaborating \
+                     "- Organized and manned the physical and virtual booths for NTUSU and CAC Welcome Week, achieving \
+                        **over 100 new members per year**\n",
+                     "- **Resolved an issue** regarding members' access to NTUPE facilities by partnering \
                         with Nanyang House administrators and NTU Student Affairs Office\n",
                      "- Managed NTUPE inventory and equipment lending to other CCAs")
         with right:
@@ -671,7 +693,7 @@ def cca():
             st.write("**Corporate Liaison Officer**")
             st.caption("**Aug 2022 -  Jun 2023**")
             st.caption("Associated with **Nanyang Technological University**")
-            st.write("Some description here")
+            st.write("This part is still a work-in-progress. Sorry!")
     
     # Space Divider
     st.write("")
@@ -688,7 +710,7 @@ def cca():
             st.caption("Associated with **Nanyang Technological University**")
             st.write("- Earned an **additional 13 members**, on top of **7 executive committee members**, by advertising \
                      through Indonesian students’ channels throughout Singapore, thereby chartering the club\n",
-                     "- Obtained **a vouch through collaboration** with PPI Singapura\n",
+                     "- Obtained a vouch **through collaboration with PPI Singapura**\n",
                      "- Hosted every Zoom chapter meeting and handled logistics including creating polls, \
                         spotlighting speakers, and accommodating speakers and guests\n",
                      "- Spearhead publicizing of chapter meetings, **obtaining an average of 3 guests** for each meeting\n",
@@ -731,10 +753,10 @@ def cca():
             st.write("**Campaign Executive**")
             st.caption("**Aug 2021 - Jun 2022**")
             st.caption("Associated with **Nanyang Technological University**")
-            st.write("- Collaborated with a team to **improve on 4 existing campaigns** that promote eco-friendly campus living\n",
-                     "- Brainstormed and managed the written content for **4 campaigns**\n",
-                     '- Directed the video content for "See It Yourself"" campaign to raise awareness amongst NTU \
-                        population about correct recycling practices and collaboration with susGain')
+            st.write("- Cooperated with a team to **improve 4 existing campaigns**, promoting eco-friendly campus living\n",
+                     "- Brainstormed and conducted the written content creation for **4 campaigns**\n",
+                     "- Directed \"See It Yourself\" campaign's video content to raise awareness amongst NTU \
+                        population about correct recycling practices and collaboration with susGain")
     
     # Space Divider
     st.write("")
@@ -751,7 +773,7 @@ def cca():
             st.caption("Associated with **Nanyang Technological University**")
             st.write("- Collaborated in a **team of 5-8 members** to plan welfare events for NTU students\n",
                      "- Implemented ideas for engagement activities and welfare items for **4 university-wide welfare events**\n",
-                     "- Managed the logistics and transport of equipment for **4 university-wide welfare events**")
+                     "- Supervised the logistics and transport of equipment for **4 university-wide welfare events**")
         with right:
             # Defining image paths and loading them
             image_paths = ["Images/WIC_1.png", "Images/WIC_2.jpg"]
@@ -785,12 +807,12 @@ def cca():
         st.subheader("CBCS Model United Nations Club")
         left,right=st.columns([1,1.5])
         with left:
-            st.write("Some picture here")
+            st.write("")
         with right:
             st.write("**Board of Executive, President**")
             st.caption("**Aug 2019 - Jun 2020**")
             st.caption("Associated with **Cahaya Bangsa Classical School**")
-            st.write("Some description here")
+            st.write("This part is still a work-in-progress. Sorry!")
     
     # Space Divider
     st.write("")
@@ -805,9 +827,9 @@ def cca():
             st.write("**Journalist**")
             st.caption("**Aug 2019 - Jun 2020**")
             st.caption("Associated with **Cahaya Bangsa Classical School**")
-            st.write("Some description here")
+            st.write("This part is still a work-in-progress. Sorry!")
         with right:
-            st.write("Some picture here")
+            st.write("")
     
     # Space Divider
     st.write("")
@@ -819,12 +841,12 @@ def cca():
         st.subheader("CBCS Debate Club")
         left,right=st.columns([1,1.5])
         with left:
-            st.write("Some picture here")
+            st.write("")
         with right:
             st.write("**Founding Member**")
             st.caption("**Aug 2018 - Jun 2020**")
             st.caption("Associated with **Cahaya Bangsa Classical School**")
-            st.write("Some description here")
+            st.write("This part is still a work-in-progress. Sorry!")
     st.write("- - -")
     
     # Voluntary Activities
@@ -839,7 +861,7 @@ def cca():
             st.caption("**Feb 2023 - May 2023, Sep 2023 - Dec 2023**")
             st.write("- Designed teaching program, learning materials, and syllabus to teach **12-15 Indonesian \
                      migrant workers** in Singapore aged 20 to 40 years old, successly advancing English speaking proficiency\n",
-                     "- Collaborated with a **team of 4-5 members** to deliver teaching content biweekly\n,"
+                     "- Worked together with a **team of 4-5 members** to deliver teaching content biweekly\n"
                      "- Planned overall timeline and monthly meetings")
         with right:
             # Defining image paths and loading them
@@ -870,12 +892,12 @@ def cca():
         
         left,right=st.columns([1,1.5])
         with left:
-            st.write("Some picture here")
+            st.write("")
         with right:
             st.write("**Student Volunteer in Project T. A. B.**")
             st.caption("**Aug 2021 - Dec 2021**")
             st.caption("Associated with **Nanyang Technological University**")
-            st.write("Some description here")
+            st.write("This part is still a work-in-progress. Sorry!")
     
     # Kalimantan
     with st.container():
@@ -885,9 +907,9 @@ def cca():
             st.write("**Student Volunteer**")
             st.caption("**Apr 2019 - May 2019**")
             st.caption("Associated with **Cahaya Bangsa Classical School**")
-            st.write("Some description here")
+            st.write("This part is still a work-in-progress. Sorry!")
         with right:
-            st.write("Some picture here")
+            st.write("")
 
     return
 
@@ -987,7 +1009,7 @@ def main():
                                 ["Home",
                                  "Work",
                                  "Education",
-                                 "Co-Curricular & Voluntary Activies",
+                                 "Co-Curricular, Leadership & Voluntary Activies",
                                  ],
                                  index=0)
     if page == "Home":
@@ -996,7 +1018,7 @@ def main():
         work()
     if page == "Education":
         education()
-    if page == "Co-Curricular & Voluntary Activies":
+    if page == "Co-Curricular, Leadership & Voluntary Activies":
         cca()
     if page == "Hobbies & Personal Life":
         hobbies()
