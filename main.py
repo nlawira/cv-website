@@ -16,7 +16,7 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">', unsafe_allow_html=True)
         st.markdown(f"<style>{f.read()}</style/", unsafe_allow_html=True)
-local_css("style/style.css")
+local_css("Style/style.css")
 
 # Defining Experience/History
 def work_experience():
