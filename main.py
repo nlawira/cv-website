@@ -693,7 +693,12 @@ def cca():
             st.write("**Corporate Liaison Officer**")
             st.caption("**Aug 2022 -  Jun 2023**")
             st.caption("Associated with **Nanyang Technological University**")
-            st.write("This part is still a work-in-progress. Sorry!")
+            st.write("- Created and distributed **21 sponsorship proposals** to various companies\n",
+                     "- **Led a team of 14 people** working in NUS Run Big 2022 as paid volunteers \
+                     to raise funds for the final show\n",
+                     "- **Led a team of 22 people** working in Standard Chartered Singapore Marathon 2022 \
+                     as paid volunteers to raise funds for the final show\n",
+                     "- Managed the flower sales booth during the day of the final show")
     
     # Space Divider
     st.write("")
@@ -807,12 +812,35 @@ def cca():
         st.subheader("CBCS Model United Nations Club")
         left,right=st.columns([1,1.5])
         with left:
-            st.write("")
+            # Defining image paths and loading them
+            image_paths = ["Images/CBCS_1.png", "Images/WIC_2.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_5' not in st.session_state:
+                st.session_state.index_4 = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_4], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_4', on_click=change_image_4, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_4', on_click=change_image_4, args=(1, images))
         with right:
             st.write("**Board of Executive, President**")
             st.caption("**Aug 2019 - Jun 2020**")
             st.caption("Associated with **Cahaya Bangsa Classical School**")
-            st.write("This part is still a work-in-progress. Sorry!")
+            st.write("- Assumed the role of Board of Executive for high school MUN Club\n",
+                     "- Mentored new members on MUN rules, protocols, and procedures\n",
+                     "- Conducted and oversaw \"Conference Zero\" for members participating in competitions\n",
+                     "- Observed members' performance prior to competitions and provided detailed feedback")
     
     # Space Divider
     st.write("")
