@@ -6,7 +6,6 @@ import plotly.graph_objs as go
 from PIL import Image
 import plotly.express as px
 import pandas as pd
-from pdf2image import convert_from_path
 
 # Initial Settings
 st.set_page_config(page_title="My Webpage", layout="wide")
@@ -129,12 +128,6 @@ def change_image_7(delta, images):
     st.session_state.index_7 = (st.session_state.index_7 + delta) % len(images)
 def change_image_8(delta, images):
     st.session_state.index_8 = (st.session_state.index_8 + delta) % len(images)
-
-# Converting PDF to Images
-def convert_pdf_to_images(pdf_path):
-    # Convert PDF to a list of images
-    images = convert_from_path(pdf_path)
-    return images
 
 # Defining Pages
 def home():
@@ -646,16 +639,6 @@ def education():
     with st.container():
         st.subheader("Online Courses")
         st.write("This part is still a work-in-progress. Sorry!")
-        left, right = st.columns(2)
-        with left:
-            # Path to PDF File
-            pdf_path = "Images/Advanced_Python.pdf"
-            image = convert_pdf_to_images(pdf_path)
-            st.image(image, use_column_width=True)
-        with right:
-            pdf_path = "Images/Applied Social Network Analysis in Python.pdf"
-            image = convert_pdf_to_images(pdf_path)
-            st.image(image, use_column_width=True)
     return
 
 def cca():
