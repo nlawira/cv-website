@@ -139,8 +139,8 @@ def home():
                 My academic background equips me with strong analytical, problem-solving, and \
                 critical thinking skills, while my enthusiasm and passion for data analytics, coding, and software development \
                 reflects my keen interest in leveraging technologies to address and solve complex challenges!")
-        st.write("Eager to apply my skills, I am actively seeking a full-time position in data analytics, coding, or software-related \
-                fields where I can provide my expertise to create lasting contributions and continuously improve and grow professionally!")
+        st.write("Eager to apply my skills, I am actively seeking a full-time position in analyst, data science, and any-related roles where \
+                 I can provide my skills and expertise in coding and data analysis to create lasting contributions and continuously improve and grow professionally!")
    
     with st.container():
         # --- WORK EXPERIENCE ---
