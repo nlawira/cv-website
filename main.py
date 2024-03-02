@@ -123,6 +123,12 @@ def change_image_4(delta, images):
     st.session_state.index_4 = (st.session_state.index_4 + delta) % len(images)
 def change_image_5(delta, images):
     st.session_state.index_5 = (st.session_state.index_5 + delta) % len(images)
+def change_image_6(delta, images):
+    st.session_state.index_6 = (st.session_state.index_6 + delta) % len(images)
+def change_image_7(delta, images):
+    st.session_state.index_7 = (st.session_state.index_7 + delta) % len(images)
+def change_image_8(delta, images):
+    st.session_state.index_8 = (st.session_state.index_8 + delta) % len(images)
 
 # Converting PDF to Images
 def pdf_to_images(pdf_file):
@@ -809,38 +815,38 @@ def cca():
     
     # MUN Club
     with st.container():
-        st.subheader("CBCS Model United Nations Club")
+        st.subheader("Model United Nations (MUN) Club")
         left,right=st.columns([1,1.5])
         with left:
             # Defining image paths and loading them
-            image_paths = ["Images/CBCS_1.png", "Images/WIC_2.jpg"]
+            image_paths = ["Images/CBCS_1.png", "Images/MUN_1.jpg", "Images/MUN_2.jpg", "Images/MUN_3.jpg", "Images/MUN_4.jpeg"]
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
             if 'index_5' not in st.session_state:
-                st.session_state.index_4 = 0
+                st.session_state.index_5 = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_4], width=350)
+            st.image(images[st.session_state.index_5], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_4', on_click=change_image_4, args=(-1, images))
+                st.button('Prev', key='prev_5', on_click=change_image_5, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_4', on_click=change_image_4, args=(1, images))
+                st.button('Next', key='next_5', on_click=change_image_5, args=(1, images))
         with right:
             st.write("**Board of Executive, President**")
             st.caption("**Aug 2019 - Jun 2020**")
             st.caption("Associated with **Cahaya Bangsa Classical School**")
-            st.write("- Assumed the role of Board of Executive for high school MUN Club\n",
-                     "- Mentored new members on MUN rules, protocols, and procedures\n",
-                     "- Conducted and oversaw \"Conference Zero\" for members participating in competitions\n",
-                     "- Observed members' performance prior to competitions and provided detailed feedback")
+            st.write("- Marketed the club throughout school, **obtaining 15+ new members**\n",
+                     "- **Mentored 15+ members** on MUN protocols and procedures, drafting position papers, and \
+                        effective speech delivery\n",
+                     "- **Conducted \"Conference Zero\" prior to every competition** to train and prepare participants")
     
     # Space Divider
     st.write("")
@@ -849,7 +855,7 @@ def cca():
     
     # Yearbook Team
     with st.container():
-        st.subheader("CBCS Yearbook Team")
+        st.subheader("Yearbook Team")
         left,right=st.columns([1.5,1])
         with left:
             st.write("**Journalist**")
@@ -857,7 +863,7 @@ def cca():
             st.caption("Associated with **Cahaya Bangsa Classical School**")
             st.write("This part is still a work-in-progress. Sorry!")
         with right:
-            st.write("")
+            st.image(Image.open("Images/CBCS_1.png"), width = 350)
     
     # Space Divider
     st.write("")
@@ -869,7 +875,27 @@ def cca():
         st.subheader("CBCS Debate Club")
         left,right=st.columns([1,1.5])
         with left:
-            st.write("")
+            # Defining image paths and loading them
+            image_paths = ["Images/CBCS_1.png", "Images/Debate_1.jpg", "Images/Debate_1.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_6' not in st.session_state:
+                st.session_state.index_6 = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_6], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_6', on_click=change_image_6, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_6', on_click=change_image_6, args=(1, images))
         with right:
             st.write("**Founding Member**")
             st.caption("**Aug 2018 - Jun 2020**")
@@ -897,22 +923,22 @@ def cca():
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index_5' not in st.session_state:
-                st.session_state.index_5 = 0
+            if 'index_7' not in st.session_state:
+                st.session_state.index_7 = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_5], width=350)
+            st.image(images[st.session_state.index_7], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_5', on_click=change_image_5, args=(-1, images))
+                st.button('Prev', key='prev_7', on_click=change_image_7, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_5', on_click=change_image_5, args=(1, images))
+                st.button('Next', key='next_7', on_click=change_image_7, args=(1, images))
 
     # NTU CCEB OCEP
     with st.container():
