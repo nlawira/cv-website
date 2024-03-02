@@ -861,7 +861,8 @@ def cca():
             st.write("**Journalist**")
             st.caption("**Aug 2019 - Jun 2020**")
             st.caption("Associated with **Cahaya Bangsa Classical School**")
-            st.write("This part is still a work-in-progress. Sorry!")
+            st.write("- Coordinated interviews with teachers and students for yearbook content\n",
+                     "- ")
         with right:
             st.image(Image.open("Images/CBCS_1.png"), width = 350)
     
@@ -898,9 +899,11 @@ def cca():
                 st.button('Next', key='next_6', on_click=change_image_6, args=(1, images))
         with right:
             st.write("**Founding Member**")
-            st.caption("**Aug 2018 - Jun 2020**")
+            st.caption("**Aug 2017 - Jun 2019**")
             st.caption("Associated with **Cahaya Bangsa Classical School**")
-            st.write("This part is still a work-in-progress. Sorry!")
+            st.write("- Participated in numerous Asian Parliamentary debate competitions as first speaker\n",
+                     "- **Achieved quarterfinalists awards** in Phyxius English Debating Competition 2017 and 2018\n",
+                     "- Analyzed past debate performances to identify strengths and weaknesses, formulating strategies for future competitions")
     st.write("- - -")
     
     # Voluntary Activities
@@ -963,7 +966,27 @@ def cca():
             st.caption("Associated with **Cahaya Bangsa Classical School**")
             st.write("This part is still a work-in-progress. Sorry!")
         with right:
-            st.write("")
+            # Defining image paths and loading them
+            image_paths = ["Images/LWV_1.jpg", "Images/LWV_2.JPG", "Images/LWV_3.JPG"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_8' not in st.session_state:
+                st.session_state.index_8 = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_8], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_8', on_click=change_image_8, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_8', on_click=change_image_8, args=(1, images))
 
     return
 
