@@ -598,9 +598,47 @@ def education():
     st.write("- - -")
     
     # Relevant Classes/Modules
+    st.subheader("Relevant Classes/Modules")
+    st.write("")
+
+    #CB4247
     with st.container():
-        st.subheader("Relevant Classes/Modules")
-        st.write("This part is still a work-in-progress. Sorry!")
+        st.subheader("CB4247 Statistics & Computational Inference to Big Data")
+        left,right=st.columns([1.5,1])
+        with left:
+            st.caption("**2023-2024 Semester 2**")
+            st.caption("Associated with **Nanyang Technological University**")
+            st.write("This part is still a work-in-progress. Sorry!")
+        with right:
+            st.write("")
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")
+
+    #CB0494
+    with st.container():
+        st.subheader("CB0494 Introduction to Data Science and Artificial Intelligence")
+        left,right=st.columns([1,1.5])
+        with left:
+            st.write("")
+        with right:
+            st.caption("**2021-2022 Semester 2**")
+            st.caption("Associated with **Nanyang Technological University**")
+            st.write("This part is still a work-in-progress. Sorry!")
+
+    #CH2010
+    with st.container():
+        st.subheader("CH2010 Engineering Statistics")
+        left,right=st.columns([1.5,1])
+        with left:
+            st.caption("**2021-2022 Semester 1**")
+            st.caption("Associated with **Nanyang Technological University**")
+            st.write("This part is still a work-in-progress. Sorry!")
+        with right:
+            st.write("")
+
     st.write("- - -")
     
     # Online Courses
@@ -862,7 +900,8 @@ def cca():
             st.caption("**Aug 2019 - Jun 2020**")
             st.caption("Associated with **Cahaya Bangsa Classical School**")
             st.write("- Coordinated interviews with teachers and students for yearbook content\n",
-                     "- ")
+                     "- Compiled teachers' testimonies of their teaching experience and students' school life\n",
+                     "- Proofread yearbook for grammar and spelling mistakes before release")
         with right:
             st.image(Image.open("Images/CBCS_1.png"), width = 350)
     
@@ -901,7 +940,7 @@ def cca():
             st.write("**Founding Member**")
             st.caption("**Aug 2017 - Jun 2019**")
             st.caption("Associated with **Cahaya Bangsa Classical School**")
-            st.write("- Participated in numerous Asian Parliamentary debate competitions as first speaker\n",
+            st.write("- Participated in numerous Asian Parliamentary debate competitions as the team's first speaker\n",
                      "- **Achieved quarterfinalists awards** in Phyxius English Debating Competition 2017 and 2018\n",
                      "- Analyzed past debate performances to identify strengths and weaknesses, formulating strategies for future competitions")
     st.write("- - -")
@@ -946,15 +985,16 @@ def cca():
     # NTU CCEB OCEP
     with st.container():
         st.subheader("NTU CCEB's Overseas Community Engagement Project")
-        
         left,right=st.columns([1,1.5])
         with left:
-            st.write("")
+            st.image(Image.open("Images/CCEB_1.png"), width = 350)
         with right:
             st.write("**Student Volunteer in Project T. A. B.**")
             st.caption("**Aug 2021 - Dec 2021**")
             st.caption("Associated with **Nanyang Technological University**")
-            st.write("This part is still a work-in-progress. Sorry!")
+            st.write("- **Headed a team of 4 people** to create educational content for Spright Academy students on mental health\n",
+                     "- **Delegated specific tasks to group members**, ensuring contributions were met for collaborative review\n",
+                     "- **Organized regular online meetings** to discuss and refine content, aiming for seamless integration and flow")
     
     # Kalimantan
     with st.container():
@@ -964,7 +1004,8 @@ def cca():
             st.write("**Student Volunteer**")
             st.caption("**Apr 2019 - May 2019**")
             st.caption("Associated with **Cahaya Bangsa Classical School**")
-            st.write("This part is still a work-in-progress. Sorry!")
+            st.write("- **Engaged in a 10-day volunteer program** serving and teaching the children of the Dayak tribe\n",
+                     "- Assisting the adults with day-to-day labor activities, such as construction, farming, and cooking")
         with right:
             # Defining image paths and loading them
             image_paths = ["Images/LWV_1.jpg", "Images/LWV_2.JPG", "Images/LWV_3.JPG"]
