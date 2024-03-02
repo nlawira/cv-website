@@ -131,8 +131,9 @@ def change_image_8(delta, images):
     st.session_state.index_8 = (st.session_state.index_8 + delta) % len(images)
 
 # Converting PDF to Images
-def pdf_to_images(pdf_file):
-    images = convert_from_path(pdf_file)
+def convert_pdf_to_images(pdf_path):
+    # Convert PDF to a list of images
+    images = convert_from_path(pdf_path)
     return images
 
 # Defining Pages
@@ -646,17 +647,15 @@ def education():
         st.subheader("Online Courses")
         st.write("This part is still a work-in-progress. Sorry!")
         left, right = st.columns(2)
-        # with left:
-        #     # Path to PDF File
-        #     pdf_path = "Images/Advanced_Python.pdf"
-        #     images = pdf_to_images(pdf_path)
-        #     for i, image in enumerate(images):
-        #         st.image(image, caption=f"Page {i+1}", use_column_width=True)
-        # with right:
-        #     pdf_path = "Images/Applied Social Network Analysis in Python.pdf"
-        #     images = pdf_to_images(pdf_path)
-        #     for i, image in enumerate(images):
-        #         st.image(image, caption=f"Page {i+1}", use_column_width=True)
+        with left:
+            # Path to PDF File
+            pdf_path = "Images/Advanced_Python.pdf"
+            image = convert_pdf_to_images(pdf_path)
+            st.image(image, use_column_width=True)
+        with right:
+            pdf_path = "Images/Applied Social Network Analysis in Python.pdf"
+            image = convert_pdf_to_images(pdf_path)
+            st.image(image, use_column_width=True)
     return
 
 def cca():
