@@ -6,6 +6,12 @@ import plotly.graph_objs as go
 from PIL import Image
 import plotly.express as px
 import pandas as pd
+from pdf2image import convert_from_path, convert_from_bytes
+from pdf2image.exceptions import (
+    PDFInfoNotInstalledError,
+    PDFPageCountError,
+    PDFSyntaxError
+)
 
 # Initial Settings
 st.set_page_config(page_title="My Webpage", layout="wide")
@@ -128,6 +134,13 @@ def change_image_7(delta, images):
     st.session_state.index_7 = (st.session_state.index_7 + delta) % len(images)
 def change_image_8(delta, images):
     st.session_state.index_8 = (st.session_state.index_8 + delta) % len(images)
+
+# Convert PDF to image
+def pdf_to_images(pdf_path):
+    # Convert PDF to a list of Pillow images
+    pop_path = r'C:\Users\nathanlawira\Personal\poppler-24.02.0\Library\bin'
+    images = convert_from_path(pdf_path,500,poppler_path = pop_path)
+    return images
 
 # Defining Pages
 def home():
@@ -638,7 +651,13 @@ def education():
     # Online Courses
     with st.container():
         st.subheader("Online Courses")
-        st.write("This part is still a work-in-progress. Sorry!")
+        left, middle, right = st.columns(3)
+        with left:
+            st.image(pdf_to_images('Online_Courses/Advanced_Python.pdf'))
+        with middle:
+            st.write("")
+        with right:
+            st.write("")
     return
 
 def cca():
