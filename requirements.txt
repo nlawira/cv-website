@@ -5,3 +5,4 @@ plotly
 pillow
 pandas
 pdf2image
+poppler-utils
