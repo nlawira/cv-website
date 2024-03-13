@@ -138,7 +138,7 @@ def change_image_8(delta, images):
 # Convert PDF to image
 def pdf_to_images(pdf_path):
     # Convert PDF to a list of Pillow images
-    pop_path = r'Personal/poppler-24.02.0/Library/bin'
+    pop_path = r'poppler-24.02.0/Library/bin'
     images = convert_from_path(pdf_path,500,poppler_path = pop_path)
     return images
 
