@@ -138,8 +138,7 @@ def change_image_8(delta, images):
 # Convert PDF to image
 def pdf_to_images(pdf_path):
     # Convert PDF to a list of Pillow images
-    # pop_path = r'poppler-24.02.0/Library/bin'
-    images = convert_from_path(pdf_path,500)
+    images = convert_from_path(pdf_path, 500)
     return images
 
 # Defining Pages
@@ -650,7 +649,6 @@ def education():
     
     # Online Courses
     st.subheader("Online Courses")
-    st.write("This part is still a work-in-progress. Sorry!")
     st.write("The certificates below are sorted in alphabetical order and not by date of completion. **They may also take a while to load.** Thank you for your patience!")
     st.write("")
 
