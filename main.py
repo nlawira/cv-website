@@ -651,51 +651,51 @@ def education():
     # Online Courses
     st.subheader("Online Courses")
     st.write("This part is still a work-in-progress. Sorry!")
-    # st.write("The certificates below are sorted in alphabetical order and not by date of completion. **They may also take a while to load.** Thank you for your patience!")
-    # st.write("")
+    st.write("The certificates below are sorted in alphabetical order and not by date of completion. **They may also take a while to load.** Thank you for your patience!")
+    st.write("")
 
-    # with st.container():
-    #     st.subheader("Programming, Data, and AI Related")
-    #     left, middle, right = st.columns(3)
-    #     with left:
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/Advanced_Python.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/Introduction_to_T-SQL.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Algorithms.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Fundamentals.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/Programming_for_Everybody.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/SQL_for_Data_Analysis.pdf'))
-    #     with middle:
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/Applied_Social_Network_Analysis_in_Python.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/Learning_Power_BI_Desktop.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Beyond_the_Fundamentals.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Object_Oriented_Design.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/Python_Data_Structures.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/Using_Python_to_Access_Web_Data.pdf'))
-    #     with right:
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/Generative_AI_Working_With_LLM.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/Learning_Regular_Expressions.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Data_Structures.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Real_World_Examples.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/SQL_Essential_Training.pdf'))
-    #         st.image(pdf_to_images('Online_Courses/Prog_and_Data/Top_Five_Things_to_Know_in_SQL.pdf'))
-    # with st.container():
-    #     st.subheader("Project Management Related")
-    #     left, middle, right = st.columns(3)
-    #     with left:
-    #         st.image(pdf_to_images('Online_Courses/Proj_Mngmt/Cybersecurity_Foundations.pdf'))
-    #     with middle:
-    #         st.image(pdf_to_images('Online_Courses/Proj_Mngmt/Finance_Foundations.pdf'))
-    #     with right:
-    #         st.image(pdf_to_images('Online_Courses/Proj_Mngmt/Strategic_Planning_Foundations.pdf'))
-    # with st.container():
-    #     st.subheader("Others")
-    #     left, middle, right = st.columns(3)
-    #     with left:
-    #         st.image(pdf_to_images('Online_Courses/Others/Developing_Your_Musicianship.pdf'))
-    #     with middle:
-    #         st.image(pdf_to_images('Online_Courses/Others/Energy_Environment_and_Everyday_Life.pdf'))
-    #     with right:
-    #         st.image(pdf_to_images('Online_Courses/Others/Guitar_for_Beginners.pdf'))
+    with st.container():
+        st.subheader("Programming, Data, and AI Related")
+        left, middle, right = st.columns(3)
+        with left:
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Advanced_Python.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Introduction_to_T-SQL.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Algorithms.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Fundamentals.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Programming_for_Everybody.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/SQL_for_Data_Analysis.pdf'))
+        with middle:
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Applied_Social_Network_Analysis_in_Python.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Learning_Power_BI_Desktop.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Beyond_the_Fundamentals.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Object_Oriented_Design.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Python_Data_Structures.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Using_Python_to_Access_Web_Data.pdf'))
+        with right:
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Generative_AI_Working_With_LLM.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Learning_Regular_Expressions.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Data_Structures.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Real_World_Examples.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/SQL_Essential_Training.pdf'))
+            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Top_Five_Things_to_Know_in_SQL.pdf'))
+    with st.container():
+        st.subheader("Project Management Related")
+        left, middle, right = st.columns(3)
+        with left:
+            st.image(pdf_to_images('Online_Courses/Proj_Mngmt/Cybersecurity_Foundations.pdf'))
+        with middle:
+            st.image(pdf_to_images('Online_Courses/Proj_Mngmt/Finance_Foundations.pdf'))
+        with right:
+            st.image(pdf_to_images('Online_Courses/Proj_Mngmt/Strategic_Planning_Foundations.pdf'))
+    with st.container():
+        st.subheader("Others")
+        left, middle, right = st.columns(3)
+        with left:
+            st.image(pdf_to_images('Online_Courses/Others/Developing_Your_Musicianship.pdf'))
+        with middle:
+            st.image(pdf_to_images('Online_Courses/Others/Energy_Environment_and_Everyday_Life.pdf'))
+        with right:
+            st.image(pdf_to_images('Online_Courses/Others/Guitar_for_Beginners.pdf'))
     return
 
 def cca():
