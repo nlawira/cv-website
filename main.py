@@ -6,7 +6,7 @@ import plotly.graph_objs as go
 from PIL import Image
 import plotly.express as px
 import pandas as pd
-from pdf2image import convert_from_path, convert_from_bytes
+from pdf2image import convert_from_path
 from pdf2image.exceptions import (
     PDFInfoNotInstalledError,
     PDFPageCountError,

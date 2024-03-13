@@ -1,6 +1,8 @@
 streamlit
 streamlit_lottie
+requests
 plotly
 pillow
 pandas
 pdf2image
+pdf2image.exceptions
