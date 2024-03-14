@@ -12,7 +12,6 @@ from pdf2image.exceptions import (
     PDFPageCountError,
     PDFSyntaxError
 )
-import os
 
 # Initial Settings
 st.set_page_config(page_title="My Webpage", layout="wide")
@@ -1182,34 +1181,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    # Pre-loading Certificates
-    # Prog, Data, AI
-    # path_pda = 'Online_Courses/Prog_and_Data/'
-    # pda_all = os.listdir(path_pda)
-    # pda_list = []
-    # for cert in pda_all:
-    #     print(cert)
-    #     pda_list.append(pdf_to_images(path_pda+cert))
-    # pda_1 = pda_list[0::3]
-    # pda_2 = pda_list[1::3]
-    # pda_3 = pda_list[2::3]
-
-    # # Proj Mngmt
-    # path_pm = 'Online_Courses/Proj_Mngmt/'
-    # pm_all = os.listdir(path_pm)
-    # pm_list = []
-    # for cert in pm_all:
-    #     pm_list.append(pdf_to_images(path_pm+cert))
-    # pm_1 = pm_list[0::3]
-    # pm_2 = pm_list[1::3]
-    # pm_3 = pm_list[2::3]
-
-    # # Others
-    # path_others = 'Online_Courses/Others/'
-    # others_all = os.listdir(path_others)
-    # others_list = []
-    # for cert in others_all:
-    #     others_list.append(pdf_to_images(path_others+cert))
-    # others_1 = others_list[0::3]
-    # others_2 = others_list[1::3]
-    # others_3 = others_list[2::3]
