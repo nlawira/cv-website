@@ -12,6 +12,7 @@ from pdf2image.exceptions import (
     PDFPageCountError,
     PDFSyntaxError
 )
+import os
 
 # Initial Settings
 st.set_page_config(page_title="My Webpage", layout="wide")
@@ -136,6 +137,7 @@ def change_image_8(delta, images):
     st.session_state.index_8 = (st.session_state.index_8 + delta) % len(images)
 
 # Convert PDF to image
+@st.cache_data
 def pdf_to_images(pdf_path):
     # Convert PDF to a list of Pillow images
     images = convert_from_path(pdf_path, 500)
@@ -153,7 +155,7 @@ def home():
                 reflects my keen interest in leveraging technologies to address and solve complex challenges!")
         st.write("Eager to apply my skills, I am actively seeking a full-time position in analyst, data science, and any-related roles where \
                  I can provide my skills and expertise in coding and data analysis to create lasting contributions and continuously improve and grow professionally!")
-   
+
     with st.container():
         # --- WORK EXPERIENCE ---
         st.write("---")
@@ -1180,3 +1182,34 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # Pre-loading Certificates
+    # Prog, Data, AI
+    # path_pda = 'Online_Courses/Prog_and_Data/'
+    # pda_all = os.listdir(path_pda)
+    # pda_list = []
+    # for cert in pda_all:
+    #     print(cert)
+    #     pda_list.append(pdf_to_images(path_pda+cert))
+    # pda_1 = pda_list[0::3]
+    # pda_2 = pda_list[1::3]
+    # pda_3 = pda_list[2::3]
+
+    # # Proj Mngmt
+    # path_pm = 'Online_Courses/Proj_Mngmt/'
+    # pm_all = os.listdir(path_pm)
+    # pm_list = []
+    # for cert in pm_all:
+    #     pm_list.append(pdf_to_images(path_pm+cert))
+    # pm_1 = pm_list[0::3]
+    # pm_2 = pm_list[1::3]
+    # pm_3 = pm_list[2::3]
+
+    # # Others
+    # path_others = 'Online_Courses/Others/'
+    # others_all = os.listdir(path_others)
+    # others_list = []
+    # for cert in others_all:
+    #     others_list.append(pdf_to_images(path_others+cert))
+    # others_1 = others_list[0::3]
+    # others_2 = others_list[1::3]
+    # others_3 = others_list[2::3]
