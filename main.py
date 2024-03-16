@@ -1030,7 +1030,7 @@ def cca():
             st.write("**Student Volunteer in Project T. A. B.**")
             st.caption("**Aug 2021 - Dec 2021**")
             st.caption("Associated with **Nanyang Technological University**")
-            st.write("- **Headed a team of 4 people** to create educational content for Spright Academy students on mental health\n",
+            st.write("- **Headed a team of 4 people** to educate Spright Academy students aged 7-13 on mental health\n",
                      "- **Delegated specific tasks to group members**, ensuring contributions were met for collaborative review\n",
                      "- **Organized regular online meetings** to discuss and refine content, aiming for seamless integration and flow")
     
