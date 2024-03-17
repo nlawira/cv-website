@@ -12,7 +12,7 @@ from pdf2image.exceptions import (
     PDFPageCountError,
     PDFSyntaxError
 )
-import os
+import pathlib
 
 # Initial Settings
 st.set_page_config(page_title="My Webpage", layout="wide")
@@ -658,44 +658,47 @@ def education():
         st.subheader("Programming, Data, and AI Related")
         left, middle, right = st.columns(3)
         pda_path = 'Online_Courses/Prog_and_Data/'
-        pda_list = sorted(os.listdir(pda_path))
+        pda = pathlib.Path(pda_path)
+        pda_list = sorted(list(pda.glob("*.pdf")))
         with left:
-            for file in pda_list[0::3]:
-                st.image(pdf_to_images(pda_path+file))
+            for file in list(map(str, pda_list[0::3])):
+                st.image(pdf_to_images(file))
         with middle:
             for file in pda_list[1::3]:
-                st.image(pdf_to_images(pda_path+file))
+                st.image(pdf_to_images(file))
         with right:
             for file in pda_list[2::3]:
-                st.image(pdf_to_images(pda_path+file))
+                st.image(pdf_to_images(file))
     with st.container():
         st.subheader("Project Management Related")
         left, middle, right = st.columns(3)
         pm_path = 'Online_Courses/Proj_Mngmt/'
-        pm_list = sorted(os.listdir(pm_path))
+        pm = pathlib.Path(pm_path)
+        pm_list = sorted(list(pm.glob("*.pdf")))
         with left:
-            for file in pm_list[0::3]:
-                st.image(pdf_to_images(pm_path+file))
+            for file in list(map(pm_list[0::3])):
+                st.image(pdf_to_images(file))
         with middle:
             for file in pm_list[1::3]:
-                st.image(pdf_to_images(pm_path+file))
+                st.image(pdf_to_images(file))
         with right:
             for file in pm_list[2::3]:
-                st.image(pdf_to_images(pm_path+file))
+                st.image(pdf_to_images(file))
     with st.container():
         st.subheader("Others")
         left, middle, right = st.columns(3)
         others_path = 'Online_Courses/Others/'
-        others_list = sorted(os.listdir(others_path))
+        others = pathlib.Path(others_path)
+        others_list = sorted(list(others.glob("*.pdf")))
         with left:
-            for file in others_list[0::3]:
-                st.image(pdf_to_images(others_path+file))
+            for file in list(map(others_list[0::3])):
+                st.image(pdf_to_images(file))
         with middle:
             for file in others_list[1::3]:
-                st.image(pdf_to_images(others_path+file))
+                st.image(pdf_to_images(file))
         with right:
             for file in others_list[2::3]:
-                st.image(pdf_to_images(others_path+file))
+                st.image(pdf_to_images(file))
     return
 
 def cca():
