@@ -464,6 +464,16 @@ def work():
     return
 
 def education():
+
+    st.session_state.index_1 = 0
+    st.session_state.index_2 = 0
+    st.session_state.index_3 = 0
+    st.session_state.index_4 = 0
+    st.session_state.index_5 = 0
+    st.session_state.index_6 = 0
+    st.session_state.index_7 = 0
+    st.session_state.index_8 = 0
+
     st.title("Education History")
     with st.container():
         st.subheader("Summary")
@@ -1175,54 +1185,14 @@ def main():
                                  ],
                                  index=0)
     if page == "Home":
-        st.session_state.index_1 = 0
-        st.session_state.index_2 = 0
-        st.session_state.index_3 = 0
-        st.session_state.index_4 = 0
-        st.session_state.index_5 = 0
-        st.session_state.index_6 = 0
-        st.session_state.index_7 = 0
-        st.session_state.index_8 = 0
         home()
     if page == "Work":
-        st.session_state.index_1 = 0
-        st.session_state.index_2 = 0
-        st.session_state.index_3 = 0
-        st.session_state.index_4 = 0
-        st.session_state.index_5 = 0
-        st.session_state.index_6 = 0
-        st.session_state.index_7 = 0
-        st.session_state.index_8 = 0
         work()
     if page == "Education":
-        st.session_state.index_1 = 0
-        st.session_state.index_2 = 0
-        st.session_state.index_3 = 0
-        st.session_state.index_4 = 0
-        st.session_state.index_5 = 0
-        st.session_state.index_6 = 0
-        st.session_state.index_7 = 0
-        st.session_state.index_8 = 0
         education()
     if page == "Co-Curricular, Leadership & Voluntary Activies":
-        st.session_state.index_1 = 0
-        st.session_state.index_2 = 0
-        st.session_state.index_3 = 0
-        st.session_state.index_4 = 0
-        st.session_state.index_5 = 0
-        st.session_state.index_6 = 0
-        st.session_state.index_7 = 0
-        st.session_state.index_8 = 0
         cca()
     if page == "Hobbies & Personal Life":
-        st.session_state.index_1 = 0
-        st.session_state.index_2 = 0
-        st.session_state.index_3 = 0
-        st.session_state.index_4 = 0
-        st.session_state.index_5 = 0
-        st.session_state.index_6 = 0
-        st.session_state.index_7 = 0
-        st.session_state.index_8 = 0
         hobbies()
 
 if __name__ == "__main__":
