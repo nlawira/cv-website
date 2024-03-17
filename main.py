@@ -430,6 +430,7 @@ def home():
             st.empty()
     return
 
+@st.cache_data
 def work():
     st.title("Work Experience")
     with st.container():
