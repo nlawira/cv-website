@@ -966,7 +966,7 @@ def cca():
         left,right=st.columns([1,1.5])
         with left:
             # Defining image paths and loading them
-            image_paths = ["Images/CBCS_1.png", "Images/Debate_1.jpg", "Images/Debate_1.jpg"]
+            image_paths = ["Images/CBCS_1.png", "Images/Debate_1.jpg", "Images/Debate_2.jpg"]
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
