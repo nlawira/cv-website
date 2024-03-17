@@ -12,6 +12,7 @@ from pdf2image.exceptions import (
     PDFPageCountError,
     PDFSyntaxError
 )
+import os
 
 # Initial Settings
 st.set_page_config(page_title="My Webpage", layout="wide")
@@ -656,45 +657,45 @@ def education():
     with st.container():
         st.subheader("Programming, Data, and AI Related")
         left, middle, right = st.columns(3)
+        pda_path = 'Online_Courses/Prog_and_Data/'
+        pda_list = os.listdir(pda_path)
         with left:
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Advanced_Python.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Introduction_to_T-SQL.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Algorithms.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Fundamentals.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Programming_for_Everybody.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/SQL_for_Data_Analysis.pdf'))
+            for file in pda_list[0::3]:
+                st.image(pdf_to_images(pda_path+file))
         with middle:
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Applied_Social_Network_Analysis_in_Python.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Learning_Power_BI_Desktop.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Beyond_the_Fundamentals.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Object_Oriented_Design.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Python_Data_Structures.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Using_Python_to_Access_Web_Data.pdf'))
+            for file in pda_list[1::3]:
+                st.image(pdf_to_images(pda_path+file))
         with right:
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Generative_AI_Working_With_LLM.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Learning_Regular_Expressions.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Data_Structures.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/PF_Real_World_Examples.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/SQL_Essential_Training.pdf'))
-            st.image(pdf_to_images('Online_Courses/Prog_and_Data/Top_Five_Things_to_Know_in_SQL.pdf'))
+            for file in pda_list[2::3]:
+                st.image(pdf_to_images(pda_path+file))
     with st.container():
         st.subheader("Project Management Related")
         left, middle, right = st.columns(3)
+        pm_path = 'Online_Courses/Proj_Mngmt/'
+        pm_list = os.listdir(pm_path)
         with left:
-            st.image(pdf_to_images('Online_Courses/Proj_Mngmt/Cybersecurity_Foundations.pdf'))
+            for file in pm_list[0::3]:
+                st.image(pdf_to_images(pm_path+file))
         with middle:
-            st.image(pdf_to_images('Online_Courses/Proj_Mngmt/Finance_Foundations.pdf'))
+            for file in pm_list[1::3]:
+                st.image(pdf_to_images(pm_path+file))
         with right:
-            st.image(pdf_to_images('Online_Courses/Proj_Mngmt/Strategic_Planning_Foundations.pdf'))
+            for file in pm_list[2::3]:
+                st.image(pdf_to_images(pm_path+file))
     with st.container():
         st.subheader("Others")
         left, middle, right = st.columns(3)
+        others_path = 'Online_Courses/Others/'
+        others_list = os.listdir(others_path)
         with left:
-            st.image(pdf_to_images('Online_Courses/Others/Developing_Your_Musicianship.pdf'))
+            for file in others_list[0::3]:
+                st.image(pdf_to_images(others_path+file))
         with middle:
-            st.image(pdf_to_images('Online_Courses/Others/Energy_Environment_and_Everyday_Life.pdf'))
+            for file in others_list[1::3]:
+                st.image(pdf_to_images(others_path+file))
         with right:
-            st.image(pdf_to_images('Online_Courses/Others/Guitar_for_Beginners.pdf'))
+            for file in others_list[2::3]:
+                st.image(pdf_to_images(others_path+file))
     return
 
 def cca():
