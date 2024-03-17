@@ -155,7 +155,7 @@ def change_image_8(delta, images):
 @st.cache_data
 def pdf_to_images(pdf_path):
     # Convert PDF to a list of Pillow images
-    images = convert_from_path(pdf_path, 150)
+    images = convert_from_path(pdf_path, 72)
     return images
 
 # Defining Pages
