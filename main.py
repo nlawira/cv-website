@@ -12,7 +12,7 @@ from pdf2image.exceptions import (
     PDFPageCountError,
     PDFSyntaxError
 )
-# import os
+import os
 
 # Initial Settings
 st.set_page_config(page_title="My Webpage", layout="wide")
@@ -658,44 +658,44 @@ def education():
         st.subheader("Programming, Data, and AI Related")
         left, middle, right = st.columns(3)
         pda_path = 'Online_Courses/Prog_and_Data/'
-        # pda_list = os.listdir(pda_path)
-        # with left:
-        #     for file in pda_list[0::3]:
-        #         st.image(pdf_to_images(pda_path+file))
-        # with middle:
-        #     for file in pda_list[1::3]:
-        #         st.image(pdf_to_images(pda_path+file))
-        # with right:
-        #     for file in pda_list[2::3]:
-        #         st.image(pdf_to_images(pda_path+file))
+        pda_list = os.listdir(pda_path)
+        with left:
+            for file in pda_list[0::3]:
+                st.image(pdf_to_images(pda_path+file))
+        with middle:
+            for file in pda_list[1::3]:
+                st.image(pdf_to_images(pda_path+file))
+        with right:
+            for file in pda_list[2::3]:
+                st.image(pdf_to_images(pda_path+file))
     with st.container():
         st.subheader("Project Management Related")
         left, middle, right = st.columns(3)
         pm_path = 'Online_Courses/Proj_Mngmt/'
-        # pm_list = os.listdir(pm_path)
-        # with left:
-        #     for file in pm_list[0::3]:
-        #         st.image(pdf_to_images(pm_path+file))
-        # with middle:
-        #     for file in pm_list[1::3]:
-        #         st.image(pdf_to_images(pm_path+file))
-        # with right:
-        #     for file in pm_list[2::3]:
-        #         st.image(pdf_to_images(pm_path+file))
+        pm_list = os.listdir(pm_path)
+        with left:
+            for file in pm_list[0::3]:
+                st.image(pdf_to_images(pm_path+file))
+        with middle:
+            for file in pm_list[1::3]:
+                st.image(pdf_to_images(pm_path+file))
+        with right:
+            for file in pm_list[2::3]:
+                st.image(pdf_to_images(pm_path+file))
     with st.container():
         st.subheader("Others")
         left, middle, right = st.columns(3)
-        # others_path = 'Online_Courses/Others/'
-        # others_list = os.listdir(others_path)
-        # with left:
-        #     for file in others_list[0::3]:
-        #         st.image(pdf_to_images(others_path+file))
-        # with middle:
-        #     for file in others_list[1::3]:
-        #         st.image(pdf_to_images(others_path+file))
-        # with right:
-        #     for file in others_list[2::3]:
-        #         st.image(pdf_to_images(others_path+file))
+        others_path = 'Online_Courses/Others/'
+        others_list = os.listdir(others_path)
+        with left:
+            for file in others_list[0::3]:
+                st.image(pdf_to_images(others_path+file))
+        with middle:
+            for file in others_list[1::3]:
+                st.image(pdf_to_images(others_path+file))
+        with right:
+            for file in others_list[2::3]:
+                st.image(pdf_to_images(others_path+file))
     return
 
 def cca():
