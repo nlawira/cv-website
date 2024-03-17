@@ -464,16 +464,6 @@ def work():
     return
 
 def education():
-
-    st.session_state.index_1 = 0
-    st.session_state.index_2 = 0
-    st.session_state.index_3 = 0
-    st.session_state.index_4 = 0
-    st.session_state.index_5 = 0
-    st.session_state.index_6 = 0
-    st.session_state.index_7 = 0
-    st.session_state.index_8 = 0
-
     st.title("Education History")
     with st.container():
         st.subheader("Summary")
