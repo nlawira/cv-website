@@ -658,7 +658,7 @@ def education():
         st.subheader("Programming, Data, and AI Related")
         left, middle, right = st.columns(3)
         pda_path = 'Online_Courses/Prog_and_Data/'
-        pda_list = os.listdir(pda_path)
+        pda_list = sorted(os.listdir(pda_path))
         with left:
             for file in pda_list[0::3]:
                 st.image(pdf_to_images(pda_path+file))
@@ -672,7 +672,7 @@ def education():
         st.subheader("Project Management Related")
         left, middle, right = st.columns(3)
         pm_path = 'Online_Courses/Proj_Mngmt/'
-        pm_list = os.listdir(pm_path)
+        pm_list = sorted(os.listdir(pm_path))
         with left:
             for file in pm_list[0::3]:
                 st.image(pdf_to_images(pm_path+file))
@@ -686,7 +686,7 @@ def education():
         st.subheader("Others")
         left, middle, right = st.columns(3)
         others_path = 'Online_Courses/Others/'
-        others_list = os.listdir(others_path)
+        others_list = sorted(os.listdir(others_path))
         with left:
             for file in others_list[0::3]:
                 st.image(pdf_to_images(others_path+file))
