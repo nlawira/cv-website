@@ -653,7 +653,7 @@ def education():
     
     # Online Courses
     st.subheader("Online Courses")
-    st.write("The certificates below are sorted in alphabetical order and not by date of completion. **They may also take a while to load.** Thank you for your patience!")
+    st.write("The certificates below are sorted in alphabetical order and not by date of completion.")
     st.write("")
 
     with st.container():
