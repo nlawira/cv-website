@@ -137,14 +137,14 @@ def change_image_8(delta, images):
     st.session_state.index_8 = (st.session_state.index_8 + delta) % len(images)
 
 # Convert PDF to image
-@st.cache
+@st.cache_data
 def pdf_to_images(pdf_path):
     # Convert PDF to a list of Pillow images
     images = convert_from_path(pdf_path, 500)
     return images
 
 # Defining Pages
-@st.cache
+@st.cache_data
 def home():
     with st.container():
         # --- TITLE & SUMMARY ---
@@ -415,7 +415,7 @@ def home():
             st.empty()
     return
 
-@st.cache
+@st.cache_data
 def work():
     st.title("Work Experience")
     with st.container():
@@ -463,7 +463,7 @@ def work():
                      "- Conducted risk assessments for **5 engagements** to completion")
     return
 
-@st.cache
+@st.cache_data
 def education():
     st.title("Education History")
     with st.container():
@@ -704,7 +704,7 @@ def education():
                 st.image(pdf_to_images(file))
     return
 
-@st.cache
+@st.cache_data
 def cca():
     st.title("Co-Curricular and Leadership Activities")
     # NTU Piano Ensemble
@@ -1077,7 +1077,7 @@ def cca():
 
     return
 
-@st.cache
+@st.cache_data
 def hobbies():
     st.title("Hobbies & Personal Life")
     # Learning New Languages
@@ -1146,7 +1146,7 @@ def hobbies():
             st.write("Some picture here")
     return
 
-@st.cache
+@st.cache_data
 def main():
     with st.container():
         # Sidebar Image and Description
