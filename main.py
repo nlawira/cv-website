@@ -119,35 +119,20 @@ def education_history():
         st.write(f"- **{row['School']} ({start_month} {row['Start'].year} - {finish_month} {row['Finish'].year}):** {row['Description']}")
 
 # Function to change the image index
-@st.cache_data
 def change_image_1(delta, images):
     st.session_state.index_1 = (st.session_state.index_1 + delta) % len(images)
-
-@st.cache_data
 def change_image_2(delta, images):
     st.session_state.index_2 = (st.session_state.index_2 + delta) % len(images)
-
-@st.cache_data
 def change_image_3(delta, images):
     st.session_state.index_3 = (st.session_state.index_3 + delta) % len(images)
-
-@st.cache_data
 def change_image_4(delta, images):
     st.session_state.index_4 = (st.session_state.index_4 + delta) % len(images)
-
-@st.cache_data
 def change_image_5(delta, images):
     st.session_state.index_5 = (st.session_state.index_5 + delta) % len(images)
-
-@st.cache_data
 def change_image_6(delta, images):
     st.session_state.index_6 = (st.session_state.index_6 + delta) % len(images)
-
-@st.cache_data
 def change_image_7(delta, images):
     st.session_state.index_7 = (st.session_state.index_7 + delta) % len(images)
-
-@st.cache_data
 def change_image_8(delta, images):
     st.session_state.index_8 = (st.session_state.index_8 + delta) % len(images)
 
