@@ -1146,7 +1146,6 @@ def hobbies():
             st.write("Some picture here")
     return
 
-@st.cache_data
 def main():
     with st.container():
         # Sidebar Image and Description
