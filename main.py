@@ -676,7 +676,7 @@ def education():
         pm = pathlib.Path(pm_path)
         pm_list = sorted(list(pm.glob("*.pdf")))
         with left:
-            for file in list(map(pm_list[0::3])):
+            for file in list(map(str, pm_list[0::3])):
                 st.image(pdf_to_images(file))
         with middle:
             for file in pm_list[1::3]:
@@ -691,7 +691,7 @@ def education():
         others = pathlib.Path(others_path)
         others_list = sorted(list(others.glob("*.pdf")))
         with left:
-            for file in list(map(others_list[0::3])):
+            for file in list(map(str, others_list[0::3])):
                 st.image(pdf_to_images(file))
         with middle:
             for file in others_list[1::3]:
