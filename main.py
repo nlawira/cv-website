@@ -119,22 +119,28 @@ def education_history():
         st.write(f"- **{row['School']} ({start_month} {row['Start'].year} - {finish_month} {row['Finish'].year}):** {row['Description']}")
 
 # Function to change the image index
-def change_image_1(delta, images):
-    st.session_state.index_1 = (st.session_state.index_1 + delta) % len(images)
-def change_image_2(delta, images):
-    st.session_state.index_2 = (st.session_state.index_2 + delta) % len(images)
-def change_image_3(delta, images):
-    st.session_state.index_3 = (st.session_state.index_3 + delta) % len(images)
-def change_image_4(delta, images):
-    st.session_state.index_4 = (st.session_state.index_4 + delta) % len(images)
-def change_image_5(delta, images):
-    st.session_state.index_5 = (st.session_state.index_5 + delta) % len(images)
-def change_image_6(delta, images):
-    st.session_state.index_6 = (st.session_state.index_6 + delta) % len(images)
-def change_image_7(delta, images):
-    st.session_state.index_7 = (st.session_state.index_7 + delta) % len(images)
-def change_image_8(delta, images):
-    st.session_state.index_8 = (st.session_state.index_8 + delta) % len(images)
+def change_image_1e(delta, images):
+    st.session_state.index_1e = (st.session_state.index_1e + delta) % len(images)
+def change_image_2e(delta, images):
+    st.session_state.index_2e = (st.session_state.index_2e + delta) % len(images)
+def change_image_3e(delta, images):
+    st.session_state.index_3e = (st.session_state.index_3e + delta) % len(images)
+def change_image_1c(delta, images):
+    st.session_state.index_1c = (st.session_state.index_1c + delta) % len(images)
+def change_image_2c(delta, images):
+    st.session_state.index_2c = (st.session_state.index_2c + delta) % len(images)
+def change_image_3c(delta, images):
+    st.session_state.index_3c = (st.session_state.index_3c + delta) % len(images)
+def change_image_4c(delta, images):
+    st.session_state.index_4c = (st.session_state.index_4c + delta) % len(images)
+def change_image_5c(delta, images):
+    st.session_state.index_5c = (st.session_state.index_5c + delta) % len(images)
+def change_image_6c(delta, images):
+    st.session_state.index_6c = (st.session_state.index_6c + delta) % len(images)
+def change_image_7c(delta, images):
+    st.session_state.index_7c = (st.session_state.index_7c + delta) % len(images)
+def change_image_8c(delta, images):
+    st.session_state.index_8c = (st.session_state.index_8c + delta) % len(images)
 
 # Convert PDF to image
 @st.cache_data
@@ -487,22 +493,22 @@ def education():
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index_1' not in st.session_state:
-                st.session_state.index_1 = 0
+            if 'index_1e' not in st.session_state:
+                st.session_state.index_1e = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_1], width=350)
+            st.image(images[st.session_state.index_1e], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_1', on_click=change_image_1, args=(-1, images))
+                st.button('Prev', key='prev_1e', on_click=change_image_1e, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_1', on_click=change_image_1, args=(1, images))
+                st.button('Next', key='next_1e', on_click=change_image_1e, args=(1, images))
 
     
     # Space Divider
@@ -520,22 +526,22 @@ def education():
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index_2' not in st.session_state:
-                st.session_state.index_2 = 0
+            if 'index_2e' not in st.session_state:
+                st.session_state.index_2e = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_2], width=350)
+            st.image(images[st.session_state.index_2e], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_2', on_click=change_image_2, args=(-1, images))
+                st.button('Prev', key='prev_2e', on_click=change_image_2e, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_2', on_click=change_image_2, args=(1, images))
+                st.button('Next', key='next_2e', on_click=change_image_2e, args=(1, images))
         with right:
             st.write("**Exchange Program**")
             st.caption("**Jan 2022 - Jun 2022**")
@@ -565,22 +571,22 @@ def education():
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index_3' not in st.session_state:
-                st.session_state.index_3 = 0
+            if 'index_3e' not in st.session_state:
+                st.session_state.index_3e = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_3], width=350)
+            st.image(images[st.session_state.index_3e], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_3', on_click=change_image_3, args=(-1, images))
+                st.button('Prev', key='prev_3e', on_click=change_image_3e, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_3', on_click=change_image_3, args=(1, images))
+                st.button('Next', key='next_3e', on_click=change_image_3e, args=(1, images))
     st.write("- - -")
 
     # Academic Projects
@@ -729,22 +735,22 @@ def cca():
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index_1' not in st.session_state:
-                st.session_state.index_1 = 0
+            if 'index_1c' not in st.session_state:
+                st.session_state.index_1c = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_1], width=350)
+            st.image(images[st.session_state.index_1c], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_1', on_click=change_image_1, args=(-1, images))
+                st.button('Prev', key='prev_1c', on_click=change_image_1c, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_1', on_click=change_image_1, args=(1, images))
+                st.button('Next', key='next_1c', on_click=change_image_1c, args=(1, images))
     
     # Space Divider
     st.write("")
@@ -761,22 +767,22 @@ def cca():
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index_2' not in st.session_state:
-                st.session_state.index_2 = 0
+            if 'index_2c' not in st.session_state:
+                st.session_state.index_2c = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_2], width=350)
+            st.image(images[st.session_state.index_2c], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_2', on_click=change_image_2, args=(-1, images))
+                st.button('Prev', key='prev_2c', on_click=change_image_2c, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_2', on_click=change_image_2, args=(1, images))
+                st.button('Next', key='next_2c', on_click=change_image_2c, args=(1, images))
         with right:
             st.write("**Corporate Liaison Officer**")
             st.caption("**Aug 2022 -  Jun 2023**")
@@ -814,22 +820,22 @@ def cca():
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index_3' not in st.session_state:
-                st.session_state.index_3 = 0
+            if 'index_3c' not in st.session_state:
+                st.session_state.index_3c = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_3], width=350)
+            st.image(images[st.session_state.index_3c], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_3', on_click=change_image_3, args=(-1, images))
+                st.button('Prev', key='prev_3c', on_click=change_image_3c, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_3', on_click=change_image_3, args=(1, images))
+                st.button('Next', key='next_3c', on_click=change_image_3c, args=(1, images))
     
     # Space Divider
     st.write("")
@@ -873,22 +879,22 @@ def cca():
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index_4' not in st.session_state:
-                st.session_state.index_4 = 0
+            if 'index_4c' not in st.session_state:
+                st.session_state.index_4c = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_4], width=350)
+            st.image(images[st.session_state.index_4c], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_4', on_click=change_image_4, args=(-1, images))
+                st.button('Prev', key='prev_4c', on_click=change_image_4c, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_4', on_click=change_image_4, args=(1, images))
+                st.button('Next', key='next_4c', on_click=change_image_4c, args=(1, images))
     
     # Space Divider
     st.write("")
@@ -905,22 +911,22 @@ def cca():
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index_5' not in st.session_state:
-                st.session_state.index_5 = 0
+            if 'index_5c' not in st.session_state:
+                st.session_state.index_5c = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_5], width=350)
+            st.image(images[st.session_state.index_5c], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_5', on_click=change_image_5, args=(-1, images))
+                st.button('Prev', key='prev_5c', on_click=change_image_5c, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_5', on_click=change_image_5, args=(1, images))
+                st.button('Next', key='next_5c', on_click=change_image_5c, args=(1, images))
         with right:
             st.write("**Board of Executive, President**")
             st.caption("**Aug 2019 - Jun 2020**")
@@ -964,22 +970,22 @@ def cca():
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index_6' not in st.session_state:
-                st.session_state.index_6 = 0
+            if 'index_6c' not in st.session_state:
+                st.session_state.index_6c = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_6], width=350)
+            st.image(images[st.session_state.index_6c], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_6', on_click=change_image_6, args=(-1, images))
+                st.button('Prev', key='prev_6c', on_click=change_image_6c, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_6', on_click=change_image_6, args=(1, images))
+                st.button('Next', key='next_6c', on_click=change_image_6c, args=(1, images))
         with right:
             st.write("**Founding Member**")
             st.caption("**Aug 2017 - Jun 2019**")
@@ -1009,22 +1015,22 @@ def cca():
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index_7' not in st.session_state:
-                st.session_state.index_7 = 0
+            if 'index_7c' not in st.session_state:
+                st.session_state.index_7c = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_7], width=350)
+            st.image(images[st.session_state.index_7c], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_7', on_click=change_image_7, args=(-1, images))
+                st.button('Prev', key='prev_7c', on_click=change_image_7c, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_7', on_click=change_image_7, args=(1, images))
+                st.button('Next', key='next_7c', on_click=change_image_7c, args=(1, images))
 
     # NTU CCEB OCEP
     with st.container():
@@ -1056,22 +1062,22 @@ def cca():
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
-            if 'index_8' not in st.session_state:
-                st.session_state.index_8 = 0
+            if 'index_8c' not in st.session_state:
+                st.session_state.index_8c = 0
 
             # Display the current image
-            st.image(images[st.session_state.index_8], width=350)
+            st.image(images[st.session_state.index_8c], width=350)
 
             # Create two columns for the arrows
             prev, _, next = st.columns([1, 1, 1])
 
             with prev:
                 # Left arrow button
-                st.button('Prev', key='prev_8', on_click=change_image_8, args=(-1, images))
+                st.button('Prev', key='prev_8c', on_click=change_image_8c, args=(-1, images))
 
             with next:
                 # Right arrow button
-                st.button('Next', key='next_8', on_click=change_image_8, args=(1, images))
+                st.button('Next', key='next_8c', on_click=change_image_8c, args=(1, images))
 
     return
 
