@@ -143,14 +143,12 @@ def change_image_8c(delta, images):
     st.session_state.index_8c = (st.session_state.index_8c + delta) % len(images)
 
 # Convert PDF to image
-@st.cache_data
 def pdf_to_images(pdf_path):
     # Convert PDF to a list of Pillow images
     images = convert_from_path(pdf_path, 72)
     return images
 
 # Defining Pages
-@st.cache_data
 def home():
     with st.container():
         # --- TITLE & SUMMARY ---
@@ -178,48 +176,34 @@ def home():
         with st.container():
             # Digital Skills Sections
             st.subheader("Computer/Digital Skills")
-            
-            st.write("This section is still a work-in-progress. Sorry!")
-
-        #     # Skills Data
-        #     data = {
-        #         'Skill': ['Python', 'Data Visualization', 'Machine Learning', 'Web Development', 'Communication'],
-        #         'Proficiency': [90, 80, 75, 70, 85],
-        #         'Description': [
-        #             'Proficient in Python programming language.',
-        #             'Experience in creating informative and visually appealing visualizations.',
-        #             'Familiarity with machine learning algorithms and frameworks.',
-        #             'Skills in building web applications using various technologies.',
-        #             'Strong communication and collaboration skills.'
-        #         ]
-        #     }
-
-        #     df = pd.DataFrame(data)
-
-        #     # Create radar chart
-        #     fig = go.Figure()
-
-        #     fig.add_trace(go.Scatterpolar(
-        #         r=df['Proficiency'],
-        #         theta=df['Skill'],
-        #         fill='toself',
-        #         text=df['Proficiency'],
-        #         hoverinfo='text+theta',
-        #         line=dict(color='rgba(50, 171, 96, 1.0)'),
-        #         marker=dict(color='rgba(50, 171, 96, 1.0)', size=8),
-        #     ))
-
-        #     # Set layout
-        #     fig.update_layout(
-        #         polar=dict(radialaxis=dict(visible=True, range=[0, 100])),
-        #         showlegend=False,
-        #     )
-
-        #     # Display description below the chart
-        #     st.plotly_chart(fig,use_container_width=True)
-        #     st.write("### Skill Descriptions:")
-        #     for skill, description in zip(df['Skill'], df['Description']):
-        #         st.write(f"- **{skill}:** {description}")
+            left, middle, right = st.columns([1, 1, 1])
+            with left:
+                st.image("Images/Python_Logo.png", caption = "Python", use_column_width = True)
+                st.write("")
+                st.write("")
+                st.image("Images/PowerBI_Logo.png", caption = "Microsoft Power BI", use_column_width = True)
+                st.write("")
+                st.write("")
+                st.image("Images/AspenPlus_Logo.png", caption = "Aspen Plus", use_column_width = True)
+                st.write("")
+                st.write("")
+                st.image("Images/PowerPoint_Logo.png", caption = "Microsoft PowerPoint", use_column_width = True)
+            with middle:
+                st.image("Images/SQL_Logo.png", caption = "Structured Query Language (SQL)", use_column_width = True)
+                st.write("")
+                st.write("")
+                st.image("Images/Excel_Logo.png", caption = "Microsoft Excel", use_column_width = True)
+                st.write("")
+                st.write("")
+                st.image("Images/HYSYS_Logo.png", caption = "Aspen HYSYS", use_column_width = True)
+            with right:
+                st.image("Images/T-SQL_Logo.png", caption = "Transact-SQL/Microsoft SQL Server", use_column_width = True)
+                st.write("")
+                st.write("")
+                st.image("Images/VBA_Logo.png", caption = "Visual Basic for Applications", use_column_width = True)
+                st.write("")
+                st.write("")
+                st.image("Images/MATLAB_Logo.png", caption = "MATLAB", use_column_width = True)
 
         # Space Divider
         st.write("")
@@ -421,7 +405,6 @@ def home():
             st.empty()
     return
 
-@st.cache_data
 def work():
     st.title("Work Experience")
     with st.container():
@@ -447,6 +430,14 @@ def work():
                      "- Supported the process engineers in day-to-day activities, including **over 15 batch books \
                         review**, **over 20 batch data documentations**, and process issues troubleshooting")
         with right:
+            st.write("")
+            st.write("")
+            st.write("")
+            st.write("")
+            st.write("")
+            st.write("")
+            st.write("")
+            st.write("")
             st.image(Image.open("Images/Pfizer_1.png"), use_column_width = True)
     
     # Space Divider
@@ -458,6 +449,7 @@ def work():
         st.subheader("KPMG Services Pte. Ltd.")
         left,right = st.columns([1,1.5])
         with left:
+            st.write("")
             st.image(Image.open("Images/KPMG_1.png"), use_column_width = True)
         with right:
             st.write("**R&D and Grants Consulting - Management Intern**")
@@ -564,7 +556,7 @@ def education():
             st.caption("**Aug 2016 - Jun 2020**")
             st.write("- Final CGPA: **3.782/4.000**\n",
                      "- Proved academic excellence and achieved **Valedictorian** award for Class of 2020 Natural Science track\n",
-                     "- **Actively involved** in various student clubs and activities")
+                     "- **Actively involved** in various student clubs and activities in both leadership and supporting roles")
         with right:
             # Defining image paths and loading them
             image_paths = ["Images/CBCS_1.png", "Images/CBCS_2.jpg", "Images/CBCS_3.jpg", "Images/CBCS_4.jpg"]
@@ -593,20 +585,36 @@ def education():
     st.subheader("Academic Projects")
     with st.container():
         st.subheader("Final Year Design Project (FYDP)")
-        st.write("On the topic of **Biomass Wastes Valorization to Platform Chemicals**")
-        st.caption("**Jan 2024 -  May 2024 (Expected)**")
+        st.write("Topic: **Biomass Wastes Valorization to Platform Chemicals**")
+        st.caption("**Jan 2024 -  May 2024**")
         st.caption("Associated with **Nanyang Technological University**")
-        st.write("-	Developing a **sustainable production line processing biomass wastes into furfural and acids** via Aspen Plus and HYSYS\n",
-                 "- **Collaborating with a group of 6 people** in designing the simulation, reviewing literature, and conducting cost and market analysis")
+        st.write("-	**Spearheaded the development of a sustainable production line** for converting biomass waste into furfural, leveraging advanced simulation tools such as Aspen Plus and HYSYS to optimize processes\n",
+                 "- **Orchestrated the design of the pretreatment simulation** by conducting thorough literature reviews to assess viability and performing rigorous testing and sensitivity analysis to optimize the process\n,"
+                 "- Engineered innovative solutions to enhance the efficiency and sustainability of biomass waste conversion")
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")
+
     with st.container():
-        st.subheader("Senior Thesis Defence")
-        st.write("On the topic of **Diving Deeper into Indonesia's Voting Age and Being Politically Informed**")
+        st.subheader("Thesis Defense")
+        st.write("Topic: **Towards a More Informed Democracy in Indonesia**")
         st.caption("**Aug 2019 -  May 2020**")
         st.caption("Associated with **Cahaya Bangsa Classical School**")
-        st.write("This part is still a work-in-progress. Sorry!")
+        st.caption("Delivered in **English**")
+        st.write("-	**Authored and delivered a compelling thesis defense** highlighting the critical need for informed political engagement\n",
+                 "- Conducted an extensive literature review, spearheaded community surveys, and conducted detailed interviews, **employing a strategic mix of qualitative and quantitative research methods** to gather robust primary and secondary data underpinning the thesis\n",
+                 "- **Exhibited exceptional persuasive communication skills and effectively presented complex ideas** to a panel, ensuring a clear and impactful delivery of research findings and insights")
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")
+    
     with st.container():
         st.subheader("Karya Ilmiah (Indonesian Thesis Defence)")
-        st.write("On the topic of **Article 222 Law No. 7 of 2017 Governing Elections (Presidential Threshold)**")
+        st.write("Topic: **Article 222 Law No. 7 of 2017 Governing Elections (Presidential Threshold)**")
         st.caption("**Aug 2018 -  May 2019**")
         st.caption("Associated with **Cahaya Bangsa Classical School**")
         st.caption("Delivered in **Bahasa Indonesia**")
