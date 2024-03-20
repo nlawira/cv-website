@@ -471,254 +471,253 @@ def education():
         education_history()
     st.write("- - -")
     
-    tab1, tab2 = st.tabs(["Education", "Online Courses"])
     # NTU
-    with tab1:
-        with st.container():
-            st.subheader("Nanyang Technological University, Singapore (NTU)")
-            left,right = st.columns([1.5,1])
-            with left:
-                st.write("**Bachelor's of Engineering (Honours)**")
-                st.caption("**Aug 2020 - Jun 2024 (Expected)**")
-                st.write("- Major: **Chemical & Biomolecular Engineering**\n",
-                        "- CGPA: **4.47/5.00** (As of end of 2023)\n",
-                        "- Currently pursuing a **Specialization in Intellectual Property** and a **Minor in Modern Languages**\n",
-                        "- **Actively involved in leadership positions** across various CCAs and clubs")
-            with right:
-                # Defining image paths and loading them
-                image_paths = ["Images/NTU_1.png", "Images/NTU_2.jpg", "Images/NTU_3.jpg", "Images/NTU_4.jpg"]
-                images = [Image.open(image_path) for image_path in image_paths]
+    with st.container():
+        st.subheader("Nanyang Technological University, Singapore (NTU)")
+        left,right = st.columns([1.5,1])
+        with left:
+            st.write("**Bachelor's of Engineering (Honours)**")
+            st.caption("**Aug 2020 - Jun 2024 (Expected)**")
+            st.write("- Major: **Chemical & Biomolecular Engineering**\n",
+                     "- CGPA: **4.47/5.00** (As of end of 2023)\n",
+                     "- Currently pursuing a **Specialization in Intellectual Property** and a **Minor in Modern Languages**\n",
+                     "- **Actively involved in leadership positions** across various CCAs and clubs")
+        with right:
+            # Defining image paths and loading them
+            image_paths = ["Images/NTU_1.png", "Images/NTU_2.jpg", "Images/NTU_3.jpg", "Images/NTU_4.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
 
-                # Session state to store the current image index
-                if 'index_1e' not in st.session_state:
-                    st.session_state.index_1e = 0
+            # Session state to store the current image index
+            if 'index_1e' not in st.session_state:
+                st.session_state.index_1e = 0
 
-                # Display the current image
-                st.image(images[st.session_state.index_1e], width=350)
+            # Display the current image
+            st.image(images[st.session_state.index_1e], width=350)
 
-                # Create two columns for the arrows
-                prev, _, next = st.columns([1, 1, 1])
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
 
-                with prev:
-                    # Left arrow button
-                    st.button('Prev', key='prev_1e', on_click=change_image_1e, args=(-1, images))
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_1e', on_click=change_image_1e, args=(-1, images))
 
-                with next:
-                    # Right arrow button
-                    st.button('Next', key='next_1e', on_click=change_image_1e, args=(1, images))
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_1e', on_click=change_image_1e, args=(1, images))
+
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")
+    
+    # NUS
+    with st.container():
+        st.subheader("National University of Singapore, Singapore (NUS)")
+        left,right = st.columns([1,1.5])
+        with left:
+            # Defining image paths and loading them
+            image_paths = ["Images/NUS_1.png", "Images/NUS_2.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_2e' not in st.session_state:
+                st.session_state.index_2e = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_2e], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_2e', on_click=change_image_2e, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_2e', on_click=change_image_2e, args=(1, images))
+        with right:
+            st.write("**Exchange Program**")
+            st.caption("**Jan 2022 - Jun 2022**")
+            st.write("- Exchanged under the **Singaporean Universities Student Exchange Program (SUSEP)**\n",
+                     "- Exposed to a new educational environment and student community\n",
+                     "- Expanded network and made new connections with NUS students")
 
         
-        # Space Divider
-        st.write("")
-        st.write("")
-        st.write("")
-        
-        # NUS
-        with st.container():
-            st.subheader("National University of Singapore, Singapore (NUS)")
-            left,right = st.columns([1,1.5])
-            with left:
-                # Defining image paths and loading them
-                image_paths = ["Images/NUS_1.png", "Images/NUS_2.jpg"]
-                images = [Image.open(image_path) for image_path in image_paths]
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")
 
-                # Session state to store the current image index
-                if 'index_2e' not in st.session_state:
-                    st.session_state.index_2e = 0
+    # CBCS        
+    with st.container():
+        st.subheader("Cahaya Bangsa Classical School, Indonesia (CBCS)")
+        left,right = st.columns([1.5,1])
+        with left:
+            st.write("**Indonesian High School Degree**")
+            st.caption("**Aug 2016 - Jun 2020**")
+            st.write("- Final CGPA: **3.782/4.000**\n",
+                     "- Proved academic excellence and achieved **Valedictorian** award for Class of 2020 Natural Science track\n",
+                     "- **Actively involved** in various student clubs and activities in both leadership and supporting roles")
+        with right:
+            # Defining image paths and loading them
+            image_paths = ["Images/CBCS_1.png", "Images/CBCS_2.jpg", "Images/CBCS_3.jpg", "Images/CBCS_4.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
 
-                # Display the current image
-                st.image(images[st.session_state.index_2e], width=350)
+            # Session state to store the current image index
+            if 'index_3e' not in st.session_state:
+                st.session_state.index_3e = 0
 
-                # Create two columns for the arrows
-                prev, _, next = st.columns([1, 1, 1])
+            # Display the current image
+            st.image(images[st.session_state.index_3e], width=350)
 
-                with prev:
-                    # Left arrow button
-                    st.button('Prev', key='prev_2e', on_click=change_image_2e, args=(-1, images))
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
 
-                with next:
-                    # Right arrow button
-                    st.button('Next', key='next_2e', on_click=change_image_2e, args=(1, images))
-            with right:
-                st.write("**Exchange Program**")
-                st.caption("**Jan 2022 - Jun 2022**")
-                st.write("- Exchanged under the **Singaporean Universities Student Exchange Program (SUSEP)**\n",
-                        "- Exposed to a new educational environment and student community\n",
-                        "- Expanded network and made new connections with NUS students")
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_3e', on_click=change_image_3e, args=(-1, images))
 
-            
-        # Space Divider
-        st.write("")
-        st.write("")
-        st.write("")
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_3e', on_click=change_image_3e, args=(1, images))
+    st.write("- - -")
 
-        # CBCS        
-        with st.container():
-            st.subheader("Cahaya Bangsa Classical School, Indonesia (CBCS)")
-            left,right = st.columns([1.5,1])
-            with left:
-                st.write("**Indonesian High School Degree**")
-                st.caption("**Aug 2016 - Jun 2020**")
-                st.write("- Final CGPA: **3.782/4.000**\n",
-                        "- Proved academic excellence and achieved **Valedictorian** award for Class of 2020 Natural Science track\n",
-                        "- **Actively involved** in various student clubs and activities in both leadership and supporting roles")
-            with right:
-                # Defining image paths and loading them
-                image_paths = ["Images/CBCS_1.png", "Images/CBCS_2.jpg", "Images/CBCS_3.jpg", "Images/CBCS_4.jpg"]
-                images = [Image.open(image_path) for image_path in image_paths]
+    # Academic Projects
+    st.subheader("Academic Projects")
+    with st.container():
+        st.subheader("Final Year Design Project (FYDP)")
+        st.write("Topic: **Biomass Wastes Valorization to Platform Chemicals**")
+        st.caption("**Jan 2024 -  May 2024**")
+        st.caption("Associated with **Nanyang Technological University**")
+        st.write("-	**Spearheaded the development of a sustainable production line** for converting biomass waste into furfural, leveraging advanced simulation tools such as Aspen Plus and HYSYS to optimize processes\n",
+                 "- **Orchestrated the design of the pretreatment simulation** by conducting thorough literature reviews to assess viability and performing rigorous testing and sensitivity analysis to optimize the process\n,"
+                 "- Engineered innovative solutions to enhance the efficiency and sustainability of biomass waste conversion")
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")
 
-                # Session state to store the current image index
-                if 'index_3e' not in st.session_state:
-                    st.session_state.index_3e = 0
+    with st.container():
+        st.subheader("Thesis Defense")
+        st.write("Topic: **Towards a More Informed Democracy in Indonesia**")
+        st.caption("**Aug 2019 -  May 2020**")
+        st.caption("Associated with **Cahaya Bangsa Classical School**")
+        st.caption("Delivered in **English**")
+        st.write("-	**Authored and delivered a compelling thesis defense** highlighting the critical need for informed political engagement\n",
+                 "- Conducted an extensive literature review, spearheaded community surveys, and conducted detailed interviews, **employing a strategic mix of qualitative and quantitative research methods** to gather robust primary and secondary data underpinning the thesis\n",
+                 "- **Exhibited exceptional persuasive communication skills and effectively presented complex ideas** to a panel, ensuring a clear and impactful delivery of research findings and insights")
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")
+    
+    with st.container():
+        st.subheader("Karya Ilmiah (Indonesian Thesis Defence)")
+        st.write("Topic: **Article 222 Law No. 7 of 2017 Governing Elections (Presidential Threshold)**")
+        st.caption("**Aug 2018 -  May 2019**")
+        st.caption("Associated with **Cahaya Bangsa Classical School**")
+        st.caption("Delivered in **Bahasa Indonesia**")
+        st.write("This part is still a work-in-progress. Sorry!")
+    st.write("- - -")
+    
+    # Relevant Classes/Modules
+    st.subheader("Relevant Classes/Modules")
+    st.write("")
 
-                # Display the current image
-                st.image(images[st.session_state.index_3e], width=350)
-
-                # Create two columns for the arrows
-                prev, _, next = st.columns([1, 1, 1])
-
-                with prev:
-                    # Left arrow button
-                    st.button('Prev', key='prev_3e', on_click=change_image_3e, args=(-1, images))
-
-                with next:
-                    # Right arrow button
-                    st.button('Next', key='next_3e', on_click=change_image_3e, args=(1, images))
-        st.write("- - -")
-
-        # Academic Projects
-        st.subheader("Academic Projects")
-        with st.container():
-            st.subheader("Final Year Design Project (FYDP)")
-            st.write("Topic: **Biomass Wastes Valorization to Platform Chemicals**")
-            st.caption("**Jan 2024 -  May 2024**")
+    #CB4247
+    with st.container():
+        st.subheader("CB4247 Statistics & Computational Inference to Big Data")
+        left,right=st.columns([1.5,1])
+        with left:
+            st.caption("**2023-2024 Semester 2**")
             st.caption("Associated with **Nanyang Technological University**")
-            st.write("-	**Spearheaded the development of a sustainable production line** for converting biomass waste into furfural, leveraging advanced simulation tools such as Aspen Plus and HYSYS to optimize processes\n",
-                    "- **Orchestrated the design of the pretreatment simulation** by conducting thorough literature reviews to assess viability and performing rigorous testing and sensitivity analysis to optimize the process\n,"
-                    "- Engineered innovative solutions to enhance the efficiency and sustainability of biomass waste conversion")
-        
-        # Space Divider
-        st.write("")
-        st.write("")
-        st.write("")
-
-        with st.container():
-            st.subheader("Thesis Defense")
-            st.write("Topic: **Towards a More Informed Democracy in Indonesia**")
-            st.caption("**Aug 2019 -  May 2020**")
-            st.caption("Associated with **Cahaya Bangsa Classical School**")
-            st.caption("Delivered in **English**")
-            st.write("-	**Authored and delivered a compelling thesis defense** highlighting the critical need for informed political engagement\n",
-                    "- Conducted an extensive literature review, spearheaded community surveys, and conducted detailed interviews, **employing a strategic mix of qualitative and quantitative research methods** to gather robust primary and secondary data underpinning the thesis\n",
-                    "- **Exhibited exceptional persuasive communication skills and effectively presented complex ideas** to a panel, ensuring a clear and impactful delivery of research findings and insights")
-        
-        # Space Divider
-        st.write("")
-        st.write("")
-        st.write("")
-        
-        with st.container():
-            st.subheader("Karya Ilmiah (Indonesian Thesis Defence)")
-            st.write("Topic: **Article 222 Law No. 7 of 2017 Governing Elections (Presidential Threshold)**")
-            st.caption("**Aug 2018 -  May 2019**")
-            st.caption("Associated with **Cahaya Bangsa Classical School**")
-            st.caption("Delivered in **Bahasa Indonesia**")
             st.write("This part is still a work-in-progress. Sorry!")
-        st.write("- - -")
-        
-        # Relevant Classes/Modules
-        st.subheader("Relevant Classes/Modules")
-        st.write("")
+        with right:
+            st.write("")
+    
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")
 
-        #CB4247
-        with st.container():
-            st.subheader("CB4247 Statistics & Computational Inference to Big Data")
-            left,right=st.columns([1.5,1])
-            with left:
-                st.caption("**2023-2024 Semester 2**")
-                st.caption("Associated with **Nanyang Technological University**")
-                st.write("This part is still a work-in-progress. Sorry!")
-            with right:
-                st.write("")
-        
-        # Space Divider
-        st.write("")
-        st.write("")
-        st.write("")
+    #CB0494
+    with st.container():
+        st.subheader("CB0494 Introduction to Data Science and Artificial Intelligence")
+        left,right=st.columns([1,1.5])
+        with left:
+            st.write("")
+        with right:
+            st.caption("**2021-2022 Semester 2**")
+            st.caption("Associated with **Nanyang Technological University**")
+            st.write("This part is still a work-in-progress. Sorry!")
 
-        #CB0494
-        with st.container():
-            st.subheader("CB0494 Introduction to Data Science and Artificial Intelligence")
-            left,right=st.columns([1,1.5])
-            with left:
-                st.write("")
-            with right:
-                st.caption("**2021-2022 Semester 2**")
-                st.caption("Associated with **Nanyang Technological University**")
-                st.write("This part is still a work-in-progress. Sorry!")
+    #CH2010
+    with st.container():
+        st.subheader("CH2010 Engineering Statistics")
+        left,right=st.columns([1.5,1])
+        with left:
+            st.caption("**2021-2022 Semester 1**")
+            st.caption("Associated with **Nanyang Technological University**")
+            st.write("This part is still a work-in-progress. Sorry!")
+        with right:
+            st.write("")
 
-        #CH2010
-        with st.container():
-            st.subheader("CH2010 Engineering Statistics")
-            left,right=st.columns([1.5,1])
-            with left:
-                st.caption("**2021-2022 Semester 1**")
-                st.caption("Associated with **Nanyang Technological University**")
-                st.write("This part is still a work-in-progress. Sorry!")
-            with right:
-                st.write("")
+    st.write("- - -")
+    
+    # Online Courses
+    st.subheader("Online Courses")
+    st.write("The certificates below are sorted in alphabetical order and not by date of completion.")
+    st.write("")
 
-    with tab2:
-        # Online Courses
-        st.subheader("Online Courses")
-        st.write("The certificates below are sorted in alphabetical order and not by date of completion.")
-        st.write("")
-
-        with st.container():
-            st.subheader("Programming, Data, and AI Related")
-            left, middle, right = st.columns(3)
-            pda_path = 'Online_Courses/Prog_and_Data/'
-            pda = pathlib.Path(pda_path)
-            pda_list = sorted(list(pda.glob("*.pdf")))
-            with left:
-                for file in list(map(str, pda_list[0::3])):
-                    st.image(pdf_to_images(file))
-            with middle:
-                for file in pda_list[1::3]:
-                    st.image(pdf_to_images(file))
-            with right:
-                for file in pda_list[2::3]:
-                    st.image(pdf_to_images(file))
-        with st.container():
-            st.subheader("Project Management Related")
-            left, middle, right = st.columns(3)
-            pm_path = 'Online_Courses/Proj_Mngmt/'
-            pm = pathlib.Path(pm_path)
-            pm_list = sorted(list(pm.glob("*.pdf")))
-            with left:
-                for file in list(map(str, pm_list[0::3])):
-                    st.image(pdf_to_images(file))
-            with middle:
-                for file in pm_list[1::3]:
-                    st.image(pdf_to_images(file))
-            with right:
-                for file in pm_list[2::3]:
-                    st.image(pdf_to_images(file))
-        with st.container():
-            st.subheader("Others")
-            left, middle, right = st.columns(3)
-            others_path = 'Online_Courses/Others/'
-            others = pathlib.Path(others_path)
-            others_list = sorted(list(others.glob("*.pdf")))
-            with left:
-                for file in list(map(str, others_list[0::3])):
-                    st.image(pdf_to_images(file))
-            with middle:
-                for file in others_list[1::3]:
-                    st.image(pdf_to_images(file))
-            with right:
-                for file in others_list[2::3]:
-                    st.image(pdf_to_images(file))
+    with st.container():
+        st.subheader("Programming, Data, and AI Related")
+        left, middle, right = st.columns(3)
+        pda_path = 'Online_Courses/Prog_and_Data/'
+        pda = pathlib.Path(pda_path)
+        pda_list = sorted(list(pda.glob("*.pdf")))
+        with left:
+            for file in list(map(str, pda_list[0::3])):
+                st.image(pdf_to_images(file))
+        with middle:
+            for file in pda_list[1::3]:
+                st.image(pdf_to_images(file))
+        with right:
+            for file in pda_list[2::3]:
+                st.image(pdf_to_images(file))
+    with st.container():
+        st.subheader("Project Management Related")
+        left, middle, right = st.columns(3)
+        pm_path = 'Online_Courses/Proj_Mngmt/'
+        pm = pathlib.Path(pm_path)
+        pm_list = sorted(list(pm.glob("*.pdf")))
+        with left:
+            for file in list(map(str, pm_list[0::3])):
+                st.image(pdf_to_images(file))
+        with middle:
+            for file in pm_list[1::3]:
+                st.image(pdf_to_images(file))
+        with right:
+            for file in pm_list[2::3]:
+                st.image(pdf_to_images(file))
+    with st.container():
+        st.subheader("Others")
+        left, middle, right = st.columns(3)
+        others_path = 'Online_Courses/Others/'
+        others = pathlib.Path(others_path)
+        others_list = sorted(list(others.glob("*.pdf")))
+        with left:
+            for file in list(map(str, others_list[0::3])):
+                st.image(pdf_to_images(file))
+        with middle:
+            for file in others_list[1::3]:
+                st.image(pdf_to_images(file))
+        with right:
+            for file in others_list[2::3]:
+                st.image(pdf_to_images(file))
     return
 
 def cca():
