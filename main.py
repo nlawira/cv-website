@@ -681,13 +681,13 @@ def education():
         pda_list = sorted(list(pda.glob("*.pdf")))
         with left:
             for file in pda_list[0::3]:
-                st.image(pdf_to_images(file))
+                st.image(pdf_to_images(file), caption = caption_text)
         with middle:
             for file in pda_list[1::3]:
-                st.image(pdf_to_images(file))
+                st.image(pdf_to_images(file), caption = caption_text)
         with right:
             for file in pda_list[2::3]:
-                st.image(pdf_to_images(file))
+                st.image(pdf_to_images(file), caption = caption_text)
     with st.container():
         st.subheader("Project Management Related")
         left, middle, right = st.columns(3)
@@ -696,13 +696,13 @@ def education():
         pm_list = sorted(list(pm.glob("*.pdf")))
         with left:
             for file in pm_list[0::3]:
-                st.image(pdf_to_images(file))
+                st.image(pdf_to_images(file), caption = caption_text)
         with middle:
             for file in pm_list[1::3]:
-                st.image(pdf_to_images(file))
+                st.image(pdf_to_images(file), caption = caption_text)
         with right:
             for file in pm_list[2::3]:
-                st.image(pdf_to_images(file))
+                st.image(pdf_to_images(file), caption = caption_text)
     with st.container():
         st.subheader("Others")
         left, middle, right = st.columns(3)
@@ -711,13 +711,13 @@ def education():
         others_list = sorted(list(others.glob("*.pdf")))
         with left:
             for file in others_list[0::3]:
-                st.image(pdf_to_images(file))
+                st.image(pdf_to_images(file), caption = caption_text)
         with middle:
             for file in others_list[1::3]:
-                st.image(pdf_to_images(file))
+                st.image(pdf_to_images(file), caption = caption_text)
         with right:
             for file in others_list[2::3]:
-                st.image(pdf_to_images(file))
+                st.image(pdf_to_images(file), caption = caption_text)
     return
 
 def cca():
