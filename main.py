@@ -673,10 +673,11 @@ def education():
     st.write("The certificates below are sorted in alphabetical order and not by date of completion.")
     st.write("")
 
+    # Programming,  Data, and AI Theory
     with st.container():
-        st.subheader("Programming, Data, and AI Related")
+        st.subheader("Programming, Data, and AI Theory")
         left, middle, right = st.columns(3)
-        pda_path = 'Online_Courses/Prog_and_Data/'
+        pda_path = 'Online_Courses/Prog_Data_AI/'
         pda = pathlib.Path(pda_path)
         pda_list = sorted(list(pda.glob("*.pdf")))
         with left:
@@ -688,6 +689,42 @@ def education():
         with right:
             for file in pda_list[2::3]:
                 st.image(pdf_to_images(file))
+    
+    # Python Programming
+    with st.container():
+        st.subheader("Python Programming")
+        left, middle, right = st.columns(3)
+        pda_path = 'Online_Courses/Python/'
+        pda = pathlib.Path(pda_path)
+        pda_list = sorted(list(pda.glob("*.pdf")))
+        with left:
+            for file in pda_list[0::3]:
+                st.image(pdf_to_images(file))
+        with middle:
+            for file in pda_list[1::3]:
+                st.image(pdf_to_images(file))
+        with right:
+            for file in pda_list[2::3]:
+                st.image(pdf_to_images(file))
+    
+    # SQL Programming
+    with st.container():
+        st.subheader("Structured Query Language (SQL) Programming")
+        left, middle, right = st.columns(3)
+        pda_path = 'Online_Courses/SQL/'
+        pda = pathlib.Path(pda_path)
+        pda_list = sorted(list(pda.glob("*.pdf")))
+        with left:
+            for file in pda_list[0::3]:
+                st.image(pdf_to_images(file))
+        with middle:
+            for file in pda_list[1::3]:
+                st.image(pdf_to_images(file))
+        with right:
+            for file in pda_list[2::3]:
+                st.image(pdf_to_images(file))
+    
+    # Project Management Related
     with st.container():
         st.subheader("Project Management Related")
         left, middle, right = st.columns(3)
@@ -703,6 +740,8 @@ def education():
         with right:
             for file in pm_list[2::3]:
                 st.image(pdf_to_images(file))
+    
+    # Others
     with st.container():
         st.subheader("Others")
         left, middle, right = st.columns(3)
