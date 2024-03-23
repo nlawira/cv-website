@@ -689,7 +689,8 @@ def education():
         with right:
             for file in pda_list[2::3]:
                 st.image(pdf_to_images(file))
-    
+    st.write("")
+
     # Python Programming
     with st.container():
         st.subheader("Python Programming")
@@ -706,7 +707,8 @@ def education():
         with right:
             for file in pda_list[2::3]:
                 st.image(pdf_to_images(file))
-    
+    st.write("")
+
     # SQL Programming
     with st.container():
         st.subheader("Structured Query Language (SQL) Programming")
@@ -723,7 +725,8 @@ def education():
         with right:
             for file in pda_list[2::3]:
                 st.image(pdf_to_images(file))
-    
+    st.write("")
+
     # Project Management Related
     with st.container():
         st.subheader("Project Management Related")
@@ -740,7 +743,8 @@ def education():
         with right:
             for file in pm_list[2::3]:
                 st.image(pdf_to_images(file))
-    
+    st.write("")
+
     # Others
     with st.container():
         st.subheader("Others")
