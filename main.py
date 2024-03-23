@@ -143,14 +143,12 @@ def change_image_8c(delta, images):
     st.session_state.index_8c = (st.session_state.index_8c + delta) % len(images)
 
 # Convert PDF to image
-@st.cache_data
 def pdf_to_images(pdf_path):
     # Convert PDF to a list of Pillow images
     images = convert_from_path(pdf_path, 72)
     return images
 
 # Defining Pages
-@st.cache_data
 def home():
     with st.container():
         # --- TITLE & SUMMARY ---
@@ -407,7 +405,6 @@ def home():
             st.empty()
     return
 
-@st.cache_data
 def work():
     st.title("Work Experience")
     with st.container():
