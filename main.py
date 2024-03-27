@@ -671,6 +671,8 @@ def education():
     st.write("The certificates below are sorted in alphabetical order and not by date of completion.")
     st.write("")
 
+    types = ('*.pdf', '*.png')
+
     # Programming,  Data, and AI Theory
     with st.container():
         st.subheader("Programming, Data, and AI Theory")
@@ -693,29 +695,41 @@ def education():
     with st.container():
         st.subheader("Python Programming")
         left, middle, right = st.columns(3)
-        pda_path = 'Online_Courses/Python/'
-        pda = pathlib.Path(pda_path)
-        pda_list = sorted(list(pda.glob("*.pdf")))
+        py_path = 'Online_Courses/Python/'
+        py = pathlib.Path(py_path)
+        py_list = []
+        for files in types:
+            py_list.extend(py.glob(files))
+        py_list = sorted(list(map(str,py_list)))
         with left:
-            for file in pda_list[0::3]:
-                st.image(pdf_to_images(file))
+            for file in py_list[0::3]:
+                if file.endswith('.pdf'):
+                    st.image(pdf_to_images(file))
+                else:
+                    st.image(file)
         with middle:
-            for file in pda_list[1::3]:
-                st.image(pdf_to_images(file))
+            for file in py_list[1::3]:
+                if file.endswith('.pdf'):
+                    st.image(pdf_to_images(file))
+                else:
+                    st.image(file)
         with right:
-            for file in pda_list[2::3]:
-                st.image(pdf_to_images(file))
+            for file in py_list[2::3]:
+                if file.endswith('.pdf'):
+                    st.image(pdf_to_images(file))
+                else:
+                    st.image(file)
     st.write("")
 
     # SQL Programming
     with st.container():
         st.subheader("Structured Query Language (SQL) Programming")
         left, middle, right = st.columns(3)
-        pda_path = 'Online_Courses/SQL/'
-        pda = pathlib.Path(pda_path)
-        pda_list = sorted(list(pda.glob("*.pdf")))
+        sql_path = 'Online_Courses/SQL/'
+        sql = pathlib.Path(sql_path)
+        sql_list = sorted(list(sql.glob("*.pdf")))
         with left:
-            for file in pda_list[0::3]:
+            for file in sql_list[0::3]:
                 st.image(pdf_to_images(file))
         with middle:
             for file in pda_list[1::3]:
