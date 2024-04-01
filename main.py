@@ -283,12 +283,12 @@ def home():
                 These thoughtful tacticians love perfecting the details of life, applying creativity and rationality. \
                 They embrace rationality and impartiality, excelling in intellectual debates and scientific or technological fields. \
                 They are fiercely independent, open-minded, and strong-willed."
-            last_taken_mbti = "Test was taken on June 20, 2022 via 16personalities."
+            last_taken_mbti = "Test was taken on April 1, 2024 via 16personalities."
             # Data & Storing it into a Dataframe
             data = {
             'Category': ['Energy', 'Energy', 'Mind', 'Mind', 'Nature', 'Nature', 'Tactics', 'Tactics', 'Identity', 'Identity'],
             'Subcategory': ['Extraverted', 'Introverted', 'Intuitive', 'Observant', 'Thinking', 'Feeling', 'Judging', 'Prospecting', 'Assertive', 'Turbulent'],
-            'Values': ['13%', '87%', '66%', '34%', '57%', '43%', '65%', '35%', '49%', '51%']
+            'Values': ['22%', '78%', '62%', '38%', '72%', '28%', '90%', '10%', '60%', '40%']
             }
             df = pd.DataFrame(data)
             df['Text'] = df['Subcategory'] + '  ' + df['Values']
@@ -304,8 +304,8 @@ def home():
                 'Feeling': '#a5e3c9',
                 'Judging': '#88619a',
                 'Prospecting': '#d0bfd7',
-                'Assertive': '#fabfc0',
-                'Turbulent': '#f25e62',
+                'Assertive': '#f25e62',
+                'Turbulent': '#fabfc0',
             }
 
             # Creating the plotly bar graph
