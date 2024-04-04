@@ -588,8 +588,8 @@ def education():
         st.write("Topic: **Biomass Wastes Valorization to Platform Chemicals**")
         st.caption("**Jan 2024 -  May 2024**")
         st.caption("Associated with **Nanyang Technological University**")
-        st.write("-	**Spearheaded the development of a sustainable production line** for converting biomass waste into furfural, leveraging advanced simulation tools such as Aspen Plus and HYSYS to optimize processes\n",
-                 "- **Orchestrated the design of the pretreatment simulation** by conducting thorough literature reviews to assess viability and performing rigorous testing and sensitivity analysis to optimize the process\n,"
+        st.write("-	**Spearheaded the development of a sustainable production line** for converting biomass waste into furfural, leveraging Aspen Plus and HYSYS to design the process simulation\n",
+                 "- **Orchestrated the design of the pretreatment simulation** by conducting thorough literature reviews to assess viability and performing rigorous testing and sensitivity analysis to optimize the process\n",
                  "- Engineered innovative solutions to enhance the efficiency and sustainability of biomass waste conversion")
     
     # Space Divider
