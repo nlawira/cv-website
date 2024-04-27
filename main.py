@@ -1123,28 +1123,7 @@ def cca():
             st.write("- **Engaged in a 10-day volunteer program** serving and teaching the children of the Dayak tribe\n",
                      "- Assisting the adults with day-to-day labor activities, such as construction, farming, and cooking")
         with right:
-            # Defining image paths and loading them
-            image_paths = ["Images/LWV_1.jpg", "Images/LWV_2.JPG", "Images/LWV_3.JPG"]
-            images = [Image.open(image_path) for image_path in image_paths]
-
-            # Session state to store the current image index
-            if 'index_8c' not in st.session_state:
-                st.session_state.index_8c = 0
-
-            # Display the current image
-            st.image(images[st.session_state.index_8c], width=350)
-
-            # Create two columns for the arrows
-            prev, _, next = st.columns([1, 1, 1])
-
-            with prev:
-                # Left arrow button
-                st.button('Prev', key='prev_8c', on_click=change_image_8c, args=(-1, images))
-
-            with next:
-                # Right arrow button
-                st.button('Next', key='next_8c', on_click=change_image_8c, args=(1, images))
-
+            st.image(Image.open("Images/LWV_1.jpg"), width = 350)
     return
 
 def hobbies():
