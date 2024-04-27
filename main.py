@@ -139,8 +139,6 @@ def change_image_6c(delta, images):
     st.session_state.index_6c = (st.session_state.index_6c + delta) % len(images)
 def change_image_7c(delta, images):
     st.session_state.index_7c = (st.session_state.index_7c + delta) % len(images)
-def change_image_8c(delta, images):
-    st.session_state.index_8c = (st.session_state.index_8c + delta) % len(images)
 
 # Convert PDF to image
 def pdf_to_images(pdf_path):
