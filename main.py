@@ -1165,10 +1165,19 @@ def main():
 
         # Social Media Links
         st.sidebar.markdown("""
-        <div style="display: flex; justify-content: center;">
-            <a href='mailto:nathanlawira@gmail.com'><img src='https://static.vecteezy.com/system/resources/previews/020/009/614/original/email-and-mail-icon-black-free-png.png' width='30' style='margin-right: 20px;'></a>
-            <a href='https://www.linkedin.com/in/nathan-lawira/'><img src='https://img.icons8.com/color/48/000000/linkedin.png' width='30' style='margin-right: 20px;'></a>      
-            <a href='https://www.instagram.com/nlawira/'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png' width='30'></a>
+        <div style='display: grid; grid-template-columns: auto auto; gap: 20px; justify-content: center;'>
+            <a href='mailto:nathanlawira@gmail.com' target='_blank'>
+                <img src='https://static.vecteezy.com/system/resources/previews/020/009/614/original/email-and-mail-icon-black-free-png.png' width='50px'>
+            </a>
+            <a href='https://www.linkedin.com/in/nathan-lawira/' target='_blank'>
+                <img src='https://img.icons8.com/color/48/000000/linkedin.png' width='50px'>
+            </a>
+            <a href='https://www.instagram.com/nlawira/' target='_blank'>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png' width='50px'>
+            </a>
+            <a href='https://github.com/nlawira' target='_blank'>
+                <img src='https://cdn-icons-png.flaticon.com/512/25/25231.png' width='50px'>
+            </a>
         </div>
         """, unsafe_allow_html=True)
 
