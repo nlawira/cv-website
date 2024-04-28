@@ -588,7 +588,8 @@ def education():
         st.caption("Associated with **Nanyang Technological University**")
         st.write("-	**Spearheaded the development of a sustainable production line** for converting biomass waste into furfural, leveraging Aspen Plus and HYSYS to design the process simulation\n",
                  "- **Orchestrated the design of the pretreatment simulation** by conducting thorough literature reviews to assess viability and performing rigorous testing and sensitivity analysis to optimize the process\n",
-                 "- Engineered innovative solutions to enhance the efficiency and sustainability of biomass waste conversion")
+                 "- Engineered innovative solutions to enhance the efficiency and sustainability of biomass waste conversion\n",
+                 "- Designed and optimized a heat exchanger network, **reducing utility costs from heat exchangers by over 92%**")
     
     # Space Divider
     st.write("")
@@ -620,49 +621,6 @@ def education():
                  "- Reviewed historical election data and legal documents to understand the evolution and implementation of the presidential threshold since its inception\n",
                  "- **Engaged in critical discourse analysis** to identify and discuss the implications of the presidential threshold on political party strategies and voter behavior")
     st.write("- - -")
-    
-    # # Relevant Classes/Modules
-    # st.subheader("Relevant Classes/Modules")
-    # st.write("")
-
-    # #CB4247
-    # with st.container():
-    #     st.subheader("CB4247 Statistics & Computational Inference to Big Data")
-    #     left,right=st.columns([1.5,1])
-    #     with left:
-    #         st.caption("**2023-2024 Semester 2**")
-    #         st.caption("Associated with **Nanyang Technological University**")
-    #         st.write("This part is still a work-in-progress. Sorry!")
-    #     with right:
-    #         st.write("")
-    
-    # # Space Divider
-    # st.write("")
-    # st.write("")
-    # st.write("")
-
-    # #CB0494
-    # with st.container():
-    #     st.subheader("CB0494 Introduction to Data Science and Artificial Intelligence")
-    #     left,right=st.columns([1,1.5])
-    #     with left:
-    #         st.write("")
-    #     with right:
-    #         st.caption("**2021-2022 Semester 2**")
-    #         st.caption("Associated with **Nanyang Technological University**")
-    #         st.write("This part is still a work-in-progress. Sorry!")
-
-    # #CH2010
-    # with st.container():
-    #     st.subheader("CH2010 Engineering Statistics")
-    #     left,right=st.columns([1.5,1])
-    #     with left:
-    #         st.caption("**2021-2022 Semester 1**")
-    #         st.caption("Associated with **Nanyang Technological University**")
-    #         st.write("This part is still a work-in-progress. Sorry!")
-    #     with right:
-    #         st.write("")
-    # st.write("- - -")
     
     # Online Courses
     st.subheader("Online Courses")
