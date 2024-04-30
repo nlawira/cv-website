@@ -13,4 +13,4 @@ This project was started to create a professional online presence that accuratel
 
 ![image](https://github.com/nlawira/cv-website/assets/153707364/da0a1a13-cd10-4c59-a8e0-37ab19e3eb48)
 
-If you have any questions or want to contact me for any purpose, you may fill in the form at the bottom of the website's main page!
+If you have any questions or want to contact me for any purpose, you may fill in the form at the bottom of my website's main page or email me at `nathanlawira@gmail.com`!
