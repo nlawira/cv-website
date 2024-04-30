@@ -11,4 +11,6 @@ The main medium of display is Streamlit, while other libraries such as Pandas an
 ## Motivation
 This project was started to create a professional online presence that accurately displays my skills, achievements, and experiences. In today's competitive job market, having a standout personal CV website can make a significant difference. This site serves as a dynamic and interactive resume and a platform to showcase my portfolio and projects in a manner that is not feasible on traditional resume formats.
 
+![image](https://github.com/nlawira/cv-website/assets/153707364/da0a1a13-cd10-4c59-a8e0-37ab19e3eb48)
+
 If you have any questions or want to contact me for any purpose, you may fill in the form at the bottom of the website's main page!
