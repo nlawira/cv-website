@@ -1178,7 +1178,7 @@ def hobbies():
                       "- Check out my piano performances in my Instagram account! [@nlawira](https://www.instagram.com/nlawira)")
         with right:
             # Defining image paths and loading them
-            image_paths = ["Images/Playing_Piano_1.jpg", "Images/Playing_Piano_2.jpg"]
+            image_paths = ["Images/Playing_Piano_1.JPG", "Images/Playing_Piano_2.jpg"]
             images = [Image.open(image_path) for image_path in image_paths]
 
             # Session state to store the current image index
