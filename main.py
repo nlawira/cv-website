@@ -144,6 +144,8 @@ def change_image_1h(delta, images):
     st.session_state.index_1h = (st.session_state.index_1h + delta) % len(images)
 def change_image_2h(delta, images):
     st.session_state.index_2h = (st.session_state.index_2h + delta) % len(images)
+def change_image_3h(delta, images):
+    st.session_state.index_3h = (st.session_state.index_3h + delta) % len(images)
 
 # Convert PDF to image
 def pdf_to_images(pdf_path):
@@ -1092,7 +1094,7 @@ def hobbies():
     # Learning New Languages
     with st.container():
         st.subheader("Learning New Languages")
-    left,right=st.columns([2,1])
+    left,right=st.columns([1.5,1])
     with left:
         st.write("- Fluent in English and Bahasa Indonesia\n",
                      "- Passionate in learning other languages to boost confidence when travelling and broaden career opportunities\n",
@@ -1130,7 +1132,7 @@ def hobbies():
     # Photography
     with st.container():
         st.subheader("Photography")
-        left,right=st.columns([1,2])
+        left,right=st.columns([1,1.5])
         with left:
             # Defining image paths and loading them
             image_paths = ["Images/Photo_1.jpg", "Images/Photo_2.webp", "Images/Photo_3.jpg","Images/Photo_4.jpg", "Images/Photo_5.webp", "Images/Photo_6.jpg"]
@@ -1157,49 +1159,45 @@ def hobbies():
              st.write("- Enjoy taking pictures of animals, plants, and landscape\n"
                       "- Most pictures are captured and editted via a OnePlus 6 phone\n",
                       "- Please give me feedback and let me know how I can improve!\n"
-                      "- Check out my photos in my instagram account! [@nlawira](https://www.instagram.com/nlawira)")
+                      "- Check out my photos in my Instagram account! [@nlawira](https://www.instagram.com/nlawira)")
     
-    # # Space Divider
-    # st.write("")
-    # st.write("")
-    # st.write("")    
+    # Space Divider
+    st.write("")
+    st.write("")
+    st.write("")    
     
-    # # Music
-    # with st.container():
-    #     st.subheader("Listening & Playing Music")
-    #     left,right=st.columns([2,1])
-    #     with left:
-    #         st.write("Some description here")
-    #     with right:
-    #         st.write("Some picture here")
-    
-    # # Space Divider
-    # st.write("")
-    # st.write("")
-    # st.write("")
-    
-    # # Reading
-    # with st.container():
-    #     st.subheader("Reading")
-    #     left,right=st.columns([1,2])
-    #     with left:
-    #         st.write("Some picture here")
-    #     with right:
-    #          st.write("Some description here")
-    
-    # # Space Divider
-    # st.write("")
-    # st.write("")
-    # st.write("")    
-    
-    # # Exercising
-    # with st.container():
-    #     st.subheader("Exercising")
-    #     left,right=st.columns([2,1])
-    #     with left:
-    #         st.write("Some description here")
-    #     with right:
-    #         st.write("Some picture here")
+    # Music
+    with st.container():
+        st.subheader("Listening & Playing Music")
+        left,right=st.columns([1.5,1])
+        with left:
+            st.write("- Plays piano and learning guitar!\n",
+                     "- Plays both classical and pop music on piano\n",
+                      "- Favorite Classical Composer: Ludwig van Beethoven\n",
+                      "- Favorite Modern Composer: Ludovico Einaudi\n"
+                      "- Check out my piano performances in my Instagram account! [@nlawira](https://www.instagram.com/nlawira)")
+        with right:
+            # Defining image paths and loading them
+            image_paths = ["Images/Playing_Piano_1.jpg", "Images/Playing_Piano_2.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_3h' not in st.session_state:
+                st.session_state.index_3h = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_3h], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_3h', on_click=change_image_3h, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_3h', on_click=change_image_3h, args=(1, images))
     return
 
 def main():
