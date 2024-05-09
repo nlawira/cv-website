@@ -13,6 +13,7 @@ from pdf2image.exceptions import (
     PDFSyntaxError
 )
 import pathlib
+from datetime import date
 
 # Initial Settings
 st.set_page_config(page_title="My Webpage", layout="wide")
@@ -139,6 +140,10 @@ def change_image_6c(delta, images):
     st.session_state.index_6c = (st.session_state.index_6c + delta) % len(images)
 def change_image_7c(delta, images):
     st.session_state.index_7c = (st.session_state.index_7c + delta) % len(images)
+def change_image_1h(delta, images):
+    st.session_state.index_1h = (st.session_state.index_1h + delta) % len(images)
+def change_image_2h(delta, images):
+    st.session_state.index_2h = (st.session_state.index_2h + delta) % len(images)
 
 # Convert PDF to image
 def pdf_to_images(pdf_path):
@@ -1087,11 +1092,35 @@ def hobbies():
     # Learning New Languages
     with st.container():
         st.subheader("Learning New Languages")
-        left,right=st.columns([2,1])
-        with left:
-            st.write("Some description here")
-        with right:
-            st.write("Some picture here")
+    left,right=st.columns([2,1])
+    with left:
+        st.write("- Fluent in English and Bahasa Indonesia\n",
+                     "- Passionate in learning other languages to boost confidence when travelling and broaden career opportunities\n",
+                     "- Took Korean Level 1-4 in Nanyang Technological University (Pictures on the right are me, friends, and the Korean teachers)\n",
+                     "- Improving Korean and studying Chinese using Duolingo, currently maintaining a streak of :fire: "+str(267+(date.today()-date(2024, 5, 9)).days)+"\n",
+                     "- Bucket list is to be fluent in **at least 5** languages!")
+    with right:
+        # Defining image paths and loading them
+        image_paths = ["Images/Korean_1.jpg", "Images/Korean_2.jpg", "Images/Korean_3.jpg"]
+        images = [Image.open(image_path) for image_path in image_paths]
+
+        # Session state to store the current image index
+        if 'index_1h' not in st.session_state:
+            st.session_state.index_1h = 0
+
+        # Display the current image
+        st.image(images[st.session_state.index_1h], width=350)
+
+        # Create two columns for the arrows
+        prev, _, next = st.columns([1, 1, 1])
+
+        with prev:
+            # Left arrow button
+            st.button('Prev', key='prev_1h', on_click=change_image_1h, args=(-1, images))
+
+        with next:
+            # Right arrow button
+            st.button('Next', key='next_1h', on_click=change_image_1h, args=(1, images))
 
     # Space Divider
     st.write("")
@@ -1103,51 +1132,74 @@ def hobbies():
         st.subheader("Photography")
         left,right=st.columns([1,2])
         with left:
-            st.write("Some picture here")
+            # Defining image paths and loading them
+            image_paths = ["Images/Photo_1.jpg", "Images/Photo_2.webp", "Images/Photo_3.jpg","Images/Photo_4.jpg", "Images/Photo_5.webp", "Images/Photo_6.jpg"]
+            images = [Image.open(image_path) for image_path in image_paths]
+
+            # Session state to store the current image index
+            if 'index_2h' not in st.session_state:
+                st.session_state.index_2h = 0
+
+            # Display the current image
+            st.image(images[st.session_state.index_2h], width=350)
+
+            # Create two columns for the arrows
+            prev, _, next = st.columns([1, 1, 1])
+
+            with prev:
+                # Left arrow button
+                st.button('Prev', key='prev_2h', on_click=change_image_2h, args=(-1, images))
+
+            with next:
+                # Right arrow button
+                st.button('Next', key='next_2h', on_click=change_image_2h, args=(1, images))
         with right:
-             st.write("Some description here")
+             st.write("- Enjoy taking pictures of animals, plants, and landscape\n"
+                      "- Most pictures are captured and editted via a OnePlus 6 phone\n",
+                      "- Please give me feedback and let me know how I can improve!\n"
+                      "- Check out my photos in my instagram account! [@nlawira](https://www.instagram.com/nlawira)")
     
-    # Space Divider
-    st.write("")
-    st.write("")
-    st.write("")    
+    # # Space Divider
+    # st.write("")
+    # st.write("")
+    # st.write("")    
     
-    # Music
-    with st.container():
-        st.subheader("Listening & Playing Music")
-        left,right=st.columns([2,1])
-        with left:
-            st.write("Some description here")
-        with right:
-            st.write("Some picture here")
+    # # Music
+    # with st.container():
+    #     st.subheader("Listening & Playing Music")
+    #     left,right=st.columns([2,1])
+    #     with left:
+    #         st.write("Some description here")
+    #     with right:
+    #         st.write("Some picture here")
     
-    # Space Divider
-    st.write("")
-    st.write("")
-    st.write("")
+    # # Space Divider
+    # st.write("")
+    # st.write("")
+    # st.write("")
     
-    # Reading
-    with st.container():
-        st.subheader("Reading")
-        left,right=st.columns([1,2])
-        with left:
-            st.write("Some picture here")
-        with right:
-             st.write("Some description here")
+    # # Reading
+    # with st.container():
+    #     st.subheader("Reading")
+    #     left,right=st.columns([1,2])
+    #     with left:
+    #         st.write("Some picture here")
+    #     with right:
+    #          st.write("Some description here")
     
-    # Space Divider
-    st.write("")
-    st.write("")
-    st.write("")    
+    # # Space Divider
+    # st.write("")
+    # st.write("")
+    # st.write("")    
     
-    # Exercising
-    with st.container():
-        st.subheader("Exercising")
-        left,right=st.columns([2,1])
-        with left:
-            st.write("Some description here")
-        with right:
-            st.write("Some picture here")
+    # # Exercising
+    # with st.container():
+    #     st.subheader("Exercising")
+    #     left,right=st.columns([2,1])
+    #     with left:
+    #         st.write("Some description here")
+    #     with right:
+    #         st.write("Some picture here")
     return
 
 def main():
@@ -1188,6 +1240,7 @@ def main():
                                  "Work",
                                  "Education",
                                  "Co-Curricular, Leadership & Voluntary Activies",
+                                 "Hobbies & Personal Life",
                                  ],
                                  index=0)
     if page == "Home":
