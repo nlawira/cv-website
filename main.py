@@ -159,7 +159,7 @@ def home():
         # --- TITLE & SUMMARY ---
         st.title("Hello, I am Nathan! :wave:")
         st.subheader("Summary")
-        st.write("I am a Chemical & Biomolecular Engineering student at Nanyang Technological University and will graduate in June 2024. \
+        st.write("I am a Chemical & Biomolecular Engineering student at Nanyang Technological University and will graduate on 29 July 2024. \
                 My academic background equips me with strong analytical, problem-solving, and \
                 critical thinking skills, while my enthusiasm and passion for data analytics, coding, and software development \
                 reflects my keen interest in leveraging technologies to address and solve complex challenges!")
@@ -1209,7 +1209,7 @@ def main():
             <h1>Nathan Lawira</h1>
             <p>Senior Undergraduate Student in <b>Nanyang Technological University</b></p>
             <p>Pursuing a <b>Bachelor of Engineering in Chemical & Biomolecular Engineering</b> Specializing in Intellectual Property with a Minor in Modern Languages</p>
-            <p>Expected to graduate in <b>June 2024</b></p>
+            <p>Will graduate on <b>29 July 2024</b></p>
         </center>
         """, unsafe_allow_html=True)
 
