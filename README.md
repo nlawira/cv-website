@@ -2,10 +2,10 @@
 
 ## Project Overview
 This self-started project aims to:
-- Provide a comprehensive and visually appealing overview of my professional journey, including education, work experiences, technical skills, and projects
-- Offer a platform where recruiters, colleagues, and peers can explore my work and contact me directly
-- Enhance my visibility and accessibility in the job market, making it easier for potential employers to discover and evaluate my credentials and work ethos
-- Allow continuous updates and expansions, reflecting my professional growth in real-time
+- Provide a comprehensive and visually appealing overview of my professional journey, including education, work experiences, technical skills, and projects.
+- Offer a platform where recruiters, colleagues, and peers can explore my work and contact me directly.
+- Enhance my visibility and accessibility in the job market, making it easier for potential employers to discover and evaluate my credentials and work ethos.
+- Allow continuous updates and expansions, reflecting my professional growth in real-time.
 The main medium of display is Streamlit, while other libraries such as Pandas and Plotly help to display relevant information.
 
 ## Motivation
