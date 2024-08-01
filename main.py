@@ -159,8 +159,9 @@ def home():
         # --- TITLE & SUMMARY ---
         st.title("Hello, I am Nathan! :wave:")
         st.subheader("Summary")
-        st.write("I am a Chemical & Biomolecular Engineering student at Nanyang Technological University and will graduate on 29 July 2024. \
-                My academic background equips me with strong analytical, problem-solving, and \
+        st.write("I am a Chemical & Biomolecular Engineering graduate from Nanyang Technological University. My family and friends would consider me as \
+                 someone who is curious and passionate about learning, which leads me to achieve a Specialization in Intellectual Property and a\
+                Minor in Modern Languages along with my degree! My academic background equips me with strong analytical, problem-solving, and \
                 critical thinking skills, while my enthusiasm and passion for data analytics, coding, and software development \
                 reflects my keen interest in leveraging technologies to address and solve complex challenges!")
         st.write("Eager to apply my skills, I am actively seeking a full-time position in analyst, data science, and any-related roles where \
@@ -1207,9 +1208,9 @@ def main():
         st.sidebar.markdown("""
         <center>
             <h1>Nathan Lawira</h1>
-            <p>Senior Undergraduate Student in <b>Nanyang Technological University</b></p>
-            <p>Pursuing a <b>Bachelor of Engineering in Chemical & Biomolecular Engineering</b> Specializing in Intellectual Property with a Minor in Modern Languages</p>
-            <p>Will graduate on <b>29 July 2024</b></p>
+            <p>Graduated from <b>Nanyang Technological University</b> with <b>First Class Honours/Honours (Highest Distinction)</b></p>
+            <p>Achieved a <b>Bachelor of Engineering in Chemical & Biomolecular Engineering</b></p>
+            <p>Pursued a <b>Specialization in Intellectual Property</b> and a <b>Minor in Modern Languages</b></p>
         </center>
         """, unsafe_allow_html=True)
 
