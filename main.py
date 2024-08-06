@@ -1204,7 +1204,7 @@ def hobbies():
 def main():
     with st.container():
         # Sidebar Image and Description
-        st.sidebar.image(Image.open("Images/Personal_Photo.JPG"), use_column_width = True)
+        st.sidebar.image(Image.open("Images/Personal_Photo.jpg"), use_column_width = True)
         st.sidebar.markdown("""
         <center>
             <h1>Nathan Lawira</h1>
