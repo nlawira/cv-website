@@ -482,7 +482,7 @@ def education():
             st.write("**Bachelor's of Engineering (Honours)**")
             st.caption("**Aug 2020 - Jun 2024 (Expected)**")
             st.write("- Major: **Chemical & Biomolecular Engineering**\n",
-                     "- CGPA: **4.47/5.00** (As of end of 2023)\n",
+                     "- CGPA: **First Class Honours / Honours (Highest Distinction)**\n",
                      "- Currently pursuing a **Specialization in Intellectual Property** and a **Minor in Modern Languages**\n",
                      "- **Actively involved in leadership positions** across various CCAs and clubs")
         with right:
