@@ -168,6 +168,15 @@ def home():
                  I can provide my skills and expertise in coding and data analysis to create lasting contributions and continuously improve and grow professionally!")
 
     with st.container():
+        # --- AWARDS & HONORS ---
+        st.write("---")
+        st.subheader("Awards & Honors")
+        st.write("**Dean's List** for Academic Year 2023-2024")
+        st.caption("Awarded on **June 2024**")
+        st.caption("Associated with **Nanyang Technological University**")
+        st.write("- Granted to students in the **top 5% of the cohort** for academic excellence, subject to attaining a minimum YGPA of 4.50 and taking at least 16 AU of graded courses in the academic year")
+
+    with st.container():
         # --- WORK EXPERIENCE ---
         st.write("---")
         st.subheader("Work Experience")
@@ -1100,8 +1109,8 @@ def hobbies():
         st.write("- Fluent in English and Bahasa Indonesia\n",
                      "- Passionate in learning other languages to boost confidence when travelling and broaden career opportunities\n",
                      "- Took Korean Level 1-4 in Nanyang Technological University (Pictures on the right are me, friends, and the Korean teachers)\n",
-                     "- Improving Korean and studying Chinese using Duolingo, currently maintaining a streak of :fire: "+str(267+(date.today()-date(2024, 5, 9)).days)+"\n",
-                     "- Bucket list is to be fluent in **at least 5** languages!")
+                     "- Improving Korean and studying Chinese using Duolingo, currently maintaining a streak of :fire: "+str(265+(date.today()-date(2024, 5, 9)).days)+"\n",
+                     "- My bucket list is to be fluent in **at least 5** languages!")
     with right:
         # Defining image paths and loading them
         image_paths = ["Images/Korean_1.jpg", "Images/Korean_2.jpg", "Images/Korean_3.jpg"]
@@ -1210,7 +1219,7 @@ def main():
             <h1>Nathan Lawira</h1>
             <p>Graduated from <b>Nanyang Technological University</b> with <b>First Class Honours/Honours (Highest Distinction)</b></p>
             <p>Achieved a <b>Bachelor of Engineering in Chemical & Biomolecular Engineering</b></p>
-            <p>Pursued a <b>Specialization in Intellectual Property</b> and a <b>Minor in Modern Languages</b></p>
+            <p>Earned a <b>Specialization in Intellectual Property</b> and a <b>Minor in Modern Languages</b></p>
         </center>
         """, unsafe_allow_html=True)
 
