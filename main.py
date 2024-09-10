@@ -359,7 +359,7 @@ def home():
         
         with st.container():
             # DISC Type and Description and Last Taken
-            disc_type = "DISC Personality: Conscientiousness & Steadiness"
+            disc_type = "DISC Personality: Conscientiousness, Dominance & Steadiness"
             last_taken_disc = "Test was taken on September 10, 2024 via 123test."
 
             # DISC Personality Data
