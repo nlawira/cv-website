@@ -360,13 +360,13 @@ def home():
         with st.container():
             # DISC Type and Description and Last Taken
             disc_type = "DISC Personality: Conscientiousness & Steadiness"
-            last_taken_disc = "Test was taken on January 16, 2024 via Truity."
+            last_taken_disc = "Test was taken on September 10, 2024 via 123test."
 
             # DISC Personality Data
             data = dict(
                 trait=['Dominance', 'Influence', 'Steadiness', 'Conscientiousness'],
-                score=[50, 32.1, 78.2, 100],
-                percentage=[19.2, 12.3, 30.1, 38.4],
+                score=[94.11, 20.59, 79.41, 100],
+                percentage=[32, 7, 27, 34],
                 description=[
                     'Takes charge to get things done. Makes decisions and takes action.',
                     'Engages others and shares enthusiasm. Inspires and persuades others.',
