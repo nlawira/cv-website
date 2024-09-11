@@ -706,10 +706,10 @@ def education():
             for file in sql_list[0::3]:
                 st.image(pdf_to_images(file))
         with middle:
-            for file in pda_list[1::3]:
+            for file in sql_list[1::3]:
                 st.image(pdf_to_images(file))
         with right:
-            for file in pda_list[2::3]:
+            for file in sql_list[2::3]:
                 st.image(pdf_to_images(file))
     st.write("")
 
