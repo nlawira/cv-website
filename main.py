@@ -16,7 +16,7 @@ import pathlib
 from datetime import date
 
 # Initial Settings
-st.set_page_config(page_title="My Webpage", layout="wide")
+st.set_page_config(page_title="Nathan Lawira's CV Website", layout="wide")
 
 # Use Local CSS
 def local_css(file_name):
