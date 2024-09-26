@@ -173,7 +173,7 @@ def home():
         st.subheader("Awards & Honors")
         with st.container():
             st.subheader("**Dean's List** for Academic Year 2023-2024")
-            st.caption("Awarded on **June 2024** by **Dean, College of Engineering**")
+            st.caption("Awarded on **September 2024** by **Dean, College of Engineering**")
             st.caption("Associated with **Nanyang Technological University**")
             st.write("- Granted to students in the **top 5% of the cohort** for academic excellence, subject to attaining a minimum YGPA of 4.50 and taking at least 16 AU of graded courses in the academic year")
 
